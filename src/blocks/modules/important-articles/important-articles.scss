@@ -1,0 +1,57 @@
+.important-articles {
+  background-color: $white;
+  padding: 50px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 100px 0;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    @media  screen and  (min-width: 768px){
+      font-size: 34px;
+    }
+  }
+
+  &__titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    .button {
+      display: none;
+
+      @media  screen and  (min-width: 768px){
+        display: flex;
+      }
+    }
+
+    @media  screen and  (min-width: 768px){
+      margin-bottom: 38px;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    @media screen and (min-width: 1024px) {
+      grid-gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1280px) {
+      grid-gap: 32px;
+    }
+  }
+
+  &__vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

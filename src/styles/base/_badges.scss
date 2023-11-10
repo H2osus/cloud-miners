@@ -1,0 +1,56 @@
+p.green-badge, p.purple-badge, .green-badge, .purple-badge {
+  background-color: transparent;
+  padding: 5px 8px 5px 18px;
+  position: relative;
+  margin-bottom: 12px;
+  display: inline-flex;
+  border-radius: 3px;
+  font-size: $font-xxs;
+  color: rgba(21, 21, 21, 0.70);
+  &:before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    width: 4px;
+    height: 4px;
+    background-color:  #297D3A;
+    border-radius: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: $font-xs;
+  }
+}
+.purple-badge {
+  &:before {
+    background-color:  $purple;
+  }
+}
+
+.orange-badge {
+  &:before {
+    background-color:  orange;
+  }
+}
+
+.bg-light-bg, p.bg-light-bg {
+  background-color: $light-bg;
+}
+
+.tag-purple, p.tag-purple {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  padding: 5px;
+  background-color: $purple;
+  font-size: 12px;
+  z-index: 10;
+  color: $white;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}

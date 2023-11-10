@@ -1,0 +1,63 @@
+.one-article {
+
+  img {
+    max-width: 100%;
+  }
+
+  h2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 26px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__date-time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .green-badge {
+      margin-bottom: 12px;
+      margin-right: 18px;
+    }
+
+    .article-data {
+      margin-right: 18px;
+      margin-bottom: 12px;
+
+      img {
+        max-width: 10px;
+      }
+
+       p{
+         color: #151515;
+         font-size: 12px;
+         font-weight: 400;
+         line-height: 16px;
+         opacity: 0.64;
+
+         @media screen and (min-width: 768px) {
+           font-size: 16px;
+         }
+       }
+    }
+  }
+
+  .yellow-link {
+    color: #FCA016;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration-line: underline;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 4px;
+      max-width: 10px;
+    }
+  }
+}

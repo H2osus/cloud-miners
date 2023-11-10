@@ -1,0 +1,125 @@
+.author {
+  &:not(.archive) {
+    padding: 30px 15px;
+    background-color: $light-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 2fr 9fr;
+      align-items: flex-start;
+      text-align: left;
+      grid-gap: 32px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
+     img {
+       width: 100%;
+       border-radius: 50%;
+     }
+  }
+
+  &__aut {
+    color: rgba(21, 21, 21, 0.36);
+    font-size: $font-xs;
+    line-height: 22.5px;
+    margin-bottom: 6px;
+    @media screen and (min-width: 1024px) {
+      font-size: $font-sm;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 18px;
+    text-decoration: none;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 32px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__descr {
+    font-size: $font-xs;
+    margin-bottom: 18px;
+
+    @media screen and (min-width: 1024px) {
+      font-size: $font-md;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__container {
+    padding: 40px 0;
+
+    h3 {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-left: 25px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $purple;
+        display: block;
+        z-index: 2;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $purple;
+        display: block;
+        opacity: 0.15;
+        z-index: 1;
+      }
+
+      @media screen and (min-width: 1024px) {
+        margin-top: 60px;
+        font-size: 28px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+}

@@ -1,0 +1,355 @@
+.header {
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+
+  a,p {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 70px;
+  }
+
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_li {
+    list-style-type: none;
+    margin: 0 11px;
+    padding: 0;
+    @media screen and (min-width: 1024px) {
+      margin: 0 21px;
+    }
+    &:before {
+      display: none;
+    }
+    a, button {
+      text-decoration: none;
+      font-size: $font-xs;
+      font-weight: 400;
+      text-transform: capitalize;
+      cursor: pointer;
+      position: relative;
+      padding: 2px 2px 4px;
+      margin-bottom: 0;
+
+      &:before {
+        width: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        content: '';
+        height: 1px;
+        background-color: $white;
+        transition: 1s;
+      }
+
+      @media screen and (min-width: 1024px) {
+        &:hover {
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &_link {
+    text-decoration: none;
+    font-size: $font-xs;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: capitalize;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $white;
+  }
+
+  .logo {
+    max-width: 160px;
+    @media screen and (min-width: 768px) {
+      max-width: 100px;
+    }
+    @media screen and (min-width: 1024px) {
+      max-width: 120px;
+    }
+    @media screen and (min-width: 1280px) {
+      max-width: 160px;
+    }
+  }
+
+  .search {
+    z-index: 102;
+    position: relative;
+    cursor: pointer;
+
+    &-input__container {
+      position: relative;
+      margin-right: 20px;
+      a {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        img {
+          transform: rotate(-90deg);
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  .search-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 25%;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      max-width: initial;
+      width: auto;
+    }
+
+    .search-link {
+      z-index: -1;
+      opacity: 0;
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+
+      &.opened {
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid $white;
+      outline: none;
+      color: $white;
+      padding: 5px;
+      font-size: 12px;
+      opacity: 0;
+      z-index: -1;
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
+
+      @media screen and (min-width: 1024px) {
+        width: 150px;
+      }
+
+      @media screen and (min-width: 1280px) {
+        width: 170px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        width: 225px;
+      }
+
+      &.opened {
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.header-light {
+    background: rgba(37, 8, 110, 0.5);
+
+  li {
+    a {
+      color: $white;
+    }
+  }
+
+  link {
+    color: $white;
+  }
+}
+
+.header-dark {
+  background-color: rgba(255, 255, 255, 0.8);
+
+  li {
+    a, button {
+      color: $black;
+      &:before {
+        background-color: $purple;
+      }
+    }
+  }
+
+  link {
+    color: $black;
+  }
+  .search-hamburger {
+    input {
+      border-color: $black;
+      color: $black;
+    }
+  }
+  .hamburger-slim {
+    &:before, &:after {
+      background: $black;
+    }
+    &:before {
+      box-shadow: #000 0 6px 0 0;
+    }
+  }
+}
+
+.hamburger-slim {
+  background: transparent;
+  position: relative;
+  height: 14px;
+  width: 16px;
+  border: none;
+  z-index: 102;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    background: #fff;
+    backface-visibility: hidden;
+    content: "";
+    height: 1px;
+    left: 0;
+    transition: 0.75s;
+    width: 16px;
+  }
+
+  &:before {
+    box-shadow: #fff 0 6px 0 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: calc(100% - 2px);
+  }
+
+  &.opened {
+    &:before {
+      box-shadow: transparent 0 0 0 0;
+      top: 50%;
+      transform: rotate(225deg);
+      background: $black;
+    }
+
+    &:after {
+      top: 50%;
+      transform: rotate(315deg);
+      background: $black;
+    }
+  }
+}
+
+.menu-mobile {
+  position: absolute;
+  background: $white;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 54px;
+  transform: translateX(300%);
+  z-index: -1;
+  transition: 0.75s;
+  nav {
+    display: block;
+    .logo {
+      margin-bottom: 40px;
+    }
+    .header {
+      &_list {
+        flex-direction: column;
+      }
+      &_li {
+        padding: 20px 0;
+        margin: 0;
+        width: 100%;
+        &:not(:last-child) {
+          border-bottom: 1px solid #EAEAEA;
+        }
+      }
+      &_link {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%;
+        text-transform: capitalize;
+        color: $black;
+      }
+    }
+  }
+
+  &.opened {
+    z-index: 101;
+    transform: translateX(0);
+  }
+}
+
+.search-mobile {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  top: 50px;
+  left: 0;
+  background: $light-bg;
+  transition: 0.75s;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  .search-input__container {
+    margin-right: 0;
+  }
+
+  input {
+    border: 0;
+    border-bottom: 1px solid black;
+    width: 90%;
+    background: $light-bg;
+  }
+
+  &.opened {
+    z-index: 105;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,83 @@
+.comment-author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 14px;
+  }
+
+  &__img {
+    margin: 0;
+    margin-right: 17px;
+    width: 32px;
+    height: 32px;
+    display: block;
+
+    @media screen and (min-width: 768px) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 4px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 8px;
+    }
+
+    &-name {
+      margin-bottom: 0;
+      color: $black;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 130%;
+      margin-right: 8px;
+      text-decoration: none;
+
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    &-stars {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 8px;
+
+      img {
+        width: 10px;
+        @media screen and (min-width: 768px) {
+          width: 12px;
+        }
+      }
+    }
+
+    &-graduate {
+      margin: 0;
+      color: $black;
+      font-size: 8px;
+      line-height: 130%;
+      font-weight: 400;
+      @media screen and (min-width: 768px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__data {
+    margin: 0;
+    color: rgba(21, 21, 21, 0.58);
+    font-size: 8px;
+    font-weight: 400;
+    @media screen and (min-width: 768px) {
+      font-size: 10px;
+    }
+  }
+}

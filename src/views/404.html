@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cloud Miner</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<main class="main">
+    @@include("../blocks/modules/header/header-dark.html")
+    <div class="page-404">
+        <img src="img/images/404-bg-desk.png" alt="" class="page-404__img-desk"/>
+        <img src="img/images/404-bg-mob.png" alt="" class="page-404__img-mob"/>
+        <p class="page-404__error-bg">Error</p>
+        <p class="page-404__404">404</p>
+        <p class="page-404__error">Ошибка </p>
+        <p class="page-404__not-found">Страница не найдена!</p>
+        <a href="/" class="button purple-contain-button">На Главную</a>
+    </div>
+    @@include("../blocks/modules/footer/footer.html")
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

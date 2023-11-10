@@ -1,0 +1,54 @@
+.breadcrumbs {
+  padding: 10px 0;
+  border-bottom: 0.6px solid #E8E8E8;
+  border-top: 0.6px solid #E8E8E8;
+  position: relative;
+
+  .decoration {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    @media screen and (max-width: 540px) {
+        max-width: 80px;
+      right: -30px;
+      z-index: 0;
+    }
+  }
+
+
+
+  .breadcrumbs-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 85%;
+    margin-bottom: 0 !important;
+
+    span {
+      font-size: $font-xxs;
+      font-weight: 300;
+    }
+
+    a {
+      font-weight: 300;
+      color: $black;
+      font-size: $font-xxs;
+      text-decoration: none;
+      padding: 2px;
+      margin: 0;
+    }
+
+    .breadcrumb_last {
+      font-weight: 300;
+      color: $black;
+      font-size: $font-xxs;
+      opacity: 0.45;
+      padding: 2px;
+      margin: 0;
+    }
+  }
+}

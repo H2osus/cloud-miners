@@ -1,0 +1,93 @@
+const modalAddService = document.getElementById("modal-add-service");
+const modalServiceSuccess = document.getElementById("modal-service-success");
+const buttonServiceSuccess = document.getElementById("button-service-success");
+
+const modalAddComplaint = document.getElementById("modal-add-complaint");
+const modalComplaintSuccess = document.getElementById("modal-complaint-success");
+const buttonComplaintSuccess = document.getElementById("button-modal-complaint-success");
+
+const modalCommentSuccess = document.getElementById("modal-comment-success");
+const buttonCommentSuccess = document.getElementById("button-comment-success");
+
+const addService = document.getElementsByClassName( "js-add-service");
+const leftComplaint = document.getElementById( "left-complaint");
+const leftComplaintMob = document.getElementById( "left-complaint-mob");
+
+const modalBgClass = document.getElementsByClassName("modal-bg");
+const modalBg = document.getElementById("modal-bg");
+const modals = document.getElementsByClassName("modal");
+
+const body = document.getElementById("body");
+const closeModalElements = document.getElementsByClassName("modal__close");
+
+for (let i = 0; i < closeModalElements.length; i++) {
+    closeModalElements[i].addEventListener("click", (e) => {
+        e.preventDefault();
+        for (let j = 0; j < modals.length; j++) {
+            modals[j].classList.remove("opened");
+        }
+        modalBg.classList.remove("opened");
+        body.classList.remove("opened");
+    });
+}
+
+for (let i = 0; i < modalBgClass.length; i++) {
+    modalBgClass[i].addEventListener("click", (e) => {
+        e.preventDefault();
+        for (let j = 0; j < modals.length; j++) {
+            modals[j].classList.remove("opened");
+        }
+        modalBg.classList.remove("opened");
+        body.classList.remove("opened");
+    });
+}
+
+leftComplaint?.addEventListener("click", (e) => {
+    e.preventDefault();
+    modalAddComplaint.classList.add("opened");
+    modalBg.classList.add("opened");
+    body.classList.add("opened");
+});
+
+leftComplaintMob?.addEventListener("click", (e) => {
+    e.preventDefault();
+    modalAddComplaint.classList.add("opened");
+    modalBg.classList.add("opened");
+    body.classList.add("opened");
+});
+
+for (let i = 0; i < closeModalElements.length; i++) {
+    addService[i]?.addEventListener("click", (e) => {
+        e.preventDefault();
+        modalAddService.classList.add("opened");
+        modalBg.classList.add("opened");
+        body.classList.add("opened");
+    });
+}
+
+buttonComplaintSuccess?.addEventListener("click", (e) => {
+    e.preventDefault();
+    for (let j = 0; j < modals.length; j++) {
+        modals[j].classList.remove("opened");
+    }
+    modalComplaintSuccess.classList.add("opened");
+    modalBg.classList.add("opened");
+    body.classList.add("opened");
+});
+
+buttonCommentSuccess?.addEventListener("click", (e) => {
+    e.preventDefault();
+    modalCommentSuccess.classList.add("opened");
+    modalBg.classList.add("opened");
+    body.classList.add("opened");
+});
+
+buttonServiceSuccess?.addEventListener("click", (e) => {
+    e.preventDefault();
+    for (let j = 0; j < modals.length; j++) {
+        modals[j].classList.remove("opened");
+    }
+    modalServiceSuccess.classList.add("opened");
+    modalBg.classList.add("opened");
+    body.classList.add("opened");
+});

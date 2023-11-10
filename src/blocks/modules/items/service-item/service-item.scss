@@ -1,0 +1,123 @@
+.service-item {
+  background-color: #FFFFFF;
+  padding: 14px;
+  border-radius: 5px;
+
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    &__all-rate {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      margin-bottom: 8px;
+
+      &_graduate {
+        color: $black;
+        font-weight: 600;
+        font-size: $font-8;
+        margin: 0 4px;
+
+        @media screen and (min-width: 768px) {
+          font-size: $font-xxs;
+        }
+      }
+
+      &_count {
+        color: $black;
+        opacity: 0.58;
+        font-size: $font-8;
+        margin: 0;
+
+        @media screen and (min-width: 768px) {
+          font-size: $font-xxs;
+        }
+      }
+    }
+  }
+
+  &_title {
+    color: $black;
+    font-size: $font-sm;
+    line-height: 130%;
+    font-weight: 600;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: 768px) {
+      font-size: $font-md;
+    }
+  }
+
+  &_percent {
+    color: $black;
+    font-size: $font-8;
+    line-height: 130%;
+    margin: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: $font-xxs;
+    }
+  }
+
+  &__text {
+    color: $black;
+    font-size: $font-xs;
+    opacity: 0.75;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 768px) {
+      font-size: $font-xxs;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 64px;
+    height: 64px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    border-radius: 5px;
+    position: relative;
+    border: 0.4px solid #DDDDDD;
+
+    img {
+      max-width: 60%;
+      width: 100%;
+      max-height: 60%;
+      height: 100%;
+    }
+  }
+
+  .crown {
+    display: none;
+  }
+
+  &.favorite {
+    background-color: $light-bg;
+    border: 0.4px solid #FCA016;
+    .crown {
+      position: absolute;
+      display: block;
+      width: 28px;
+      height: 28px;
+      left: -10px;
+      top: -10px;
+
+      @media screen and (min-width: 1024px) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}

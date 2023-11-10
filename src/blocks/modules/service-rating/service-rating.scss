@@ -1,0 +1,117 @@
+.service-rating {
+
+  &__title {
+    h2 {
+      margin-bottom: 10px;
+      @media screen and (min-width: 1024px) {
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      font-size: $font-xs;
+      margin-bottom: 12px;
+      @media screen and (min-width: 1024px) {
+        font-size: $font-md;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .select-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    //
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+      &.opened {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+    }
+
+    &__container {
+      border-radius: 3px;
+      border: 0.6px solid #460BF9;
+      margin-bottom: 20px;
+
+      @media screen and (min-width: 768px) {
+        border: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        &.opened {
+          .arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &__mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        p {
+          margin: 0 0 0 8px;
+        }
+      }
+    }
+
+    .facetwp-facet {
+      margin-bottom: 0;
+
+      & .facetwp-dropdown {
+        padding: 12px 17px;
+        width: 100%;
+        background: #F3F6FB;
+        border: unset;
+        color: rgba(21, 21, 21, 0.21);
+        font-family: 'Commissioner', sans-serif;
+      }
+    }
+
+    .button-select-approve {
+      padding: 20px;
+      margin: 0;
+      border: none;
+      outline: none;
+      background: #F3F6FB;
+      color: $purple;
+      cursor: pointer;
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 25px;
+        border: 1px solid $purple;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 23.5px;
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+  }
+}

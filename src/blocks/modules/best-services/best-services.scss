@@ -1,0 +1,79 @@
+.best-services {
+  background-color: $light-bg;
+  padding: 40px 0 60px;
+
+  @media screen and (min-width: 1024px) {
+    padding: 100px 0;
+  }
+
+  &-three {
+    padding: 42px 15px;
+
+    @media screen and (min-width: 1024px) {
+      padding: 36px;
+    }
+  }
+
+  .best-services__title {
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin: 0;
+      @media screen and (min-width: 1024px) {
+        font-size: 34px;
+      }
+    }
+
+    .button {
+      display: none;
+      white-space: nowrap;
+      @media screen and (min-width: 1024px) {
+        display: flex;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 36px;
+      justify-content: space-between;
+    }
+  }
+
+  &__container {
+    @media screen and (min-width: 640px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 12px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 32px;
+    }
+
+    .service-item {
+      margin-bottom: 12px;
+      @media screen and (min-width: 768px) {
+        margin: 0;
+      }
+    }
+
+    &-three {
+      @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 32px;
+      }
+    }
+  }
+}
+

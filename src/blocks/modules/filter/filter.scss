@@ -1,0 +1,42 @@
+.filter {
+  margin-bottom: 44px;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+
+    li, .filter-item {
+      padding: 6px 12px;
+      white-space: nowrap;
+      border-radius: 3px;
+      background: #F3F6FB;
+      margin-right: 10px;
+      color: rgba(21, 21, 21, 0.70);
+      font-size: 12px;
+      text-decoration: none;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      @media screen and (min-width: 1024px) {
+        font-size: 16px;
+      }
+    }
+
+    .filter-item.filter-active {
+      background-color: $purple;
+      a {
+        color: $white;
+      }
+    }
+  }
+}

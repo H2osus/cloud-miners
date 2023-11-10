@@ -1,0 +1,31 @@
+.article-item {
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+  &_img {
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .article-title {
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: $font-xs;
+    @media screen and (min-width: 1024px) {
+      font-size: $font-xl;
+      margin-bottom: 14px;
+    }
+  }
+}

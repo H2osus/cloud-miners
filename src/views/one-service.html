@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cloud Miner</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <main class="main">
+        @@include("../blocks/modules/modal/modal-bg.html")
+        @@include("../blocks/modules/modal/modal-add-service.html")
+        @@include("../blocks/modules/modal/modal-add-complaint.html")
+        @@include("../blocks/modules/modal/modal-complaint-success.html")
+        @@include("../blocks/modules/modal/modal-thank-comment-success.html")
+        @@include("../blocks/modules/modal/modal-thank-service-success.html")
+
+        @@include("../blocks/modules/header/header-dark.html")
+        @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+
+        <div class="one-service__container">
+            <div class="container container-with-sidebar">
+                <div>
+                    @@include("../blocks/modules/one-service/one-service.html")
+                    @@include("../blocks/modules/comment/comment-title.html")
+                    @@include("../blocks/modules/comment/comment-with-img.html")
+                    @@include("../blocks/modules/comment/comment-steps.html")
+                    @@include("../blocks/modules/comment/comment-one.html")
+                    @@include("../blocks/modules/comment/show-more-comment.html")
+                    @@include("../blocks/modules/comment/comment-authorize.html")
+                    @@include("../blocks/modules/leave-comment/leave-comment.html")
+                </div>
+                @@include("../blocks/modules/sidebar/sidebar.html")
+            </div>
+        </div>
+
+        @@include("../blocks/modules/best-services/best-services.html")
+        <div class="mob-sidebar container">
+            @@include("../blocks/modules/sidebar/sidebar.html")
+        </div>
+        @@include("../blocks/modules/footer/footer.html")
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
