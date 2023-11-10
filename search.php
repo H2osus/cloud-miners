@@ -32,20 +32,26 @@ get_header('dark');
 
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-
-                    // Определите тип поста текущей записи
                     $current_post_type = get_post_type();
-
-                    // Если тип поста изменился, выведите заголовок
                     if ($current_post_type != $post_type) {
                         $post_type = $current_post_type;
 
                         if ($post_type == 'services') {
                             // Включите файл services-long.php
                             require get_template_directory() . "/template-parts/items/services-long.php";
-                        } elseif ($post_type == 'articles') {
-                            echo '<h4>'.esc_html__('Статьи', 'cloud_miners').'</h4>';
-                            // Включите файл author-article.php
+                        }
+                    }
+
+                endwhile;
+
+                /* Start the Loop */
+                echo '<h4>'.esc_html__('Статьи', 'cloud_miners').'</h4>';
+                while ( have_posts() ) : the_post();
+                    $current_post_type = get_post_type();
+                    if ($current_post_type != $post_type) {
+                        $post_type = $current_post_type;
+
+                        if ($post_type == 'articles') {
                             require get_template_directory() . "/template-parts/items/author-article.php";
                         }
                     }
