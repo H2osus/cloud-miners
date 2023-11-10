@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cloud Miner</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <main class="main">
+        <div class="modal-bg" id="modal-bg"></div>
+        <div class="modal modal-form" id="modal-add-service">
+    <button class="modal__close">
+        <img src="img/images/svg/close.svg" alt="" class="modal__close-img"/>
+    </button>
+    <img src="img/images/modal-bg-mobile.png" alt="" class="modal__bg-mob"/>
+    <img src="img/images/modal-bg-desk.png" alt="" class="modal__bg-desk"/>
+    <div class="modal__container">
+    <div class="modal__title">
+        <p>Добавить Сервис</p>
+    </div>
+    <div class="modal__content">
+       <form>
+           <div class="input-two">
+               <div class="input-container">
+                   <label>Имя</label>
+                   <input type="text" >
+               </div>
+               <div class="input-container">
+                   <label>Email</label>
+                   <input type="text" >
+               </div>
+           </div>
+           <div class="input-container">
+               <label>Название проекта</label>
+               <input type="text" >
+           </div>
+           <div class="input-container">
+               <label>Ссылка на канал</label>
+               <input type="text" name="link">
+           </div>
+           <div class="input-container">
+               <label>Краткое описание</label>
+               <textarea></textarea>
+           </div>
+           <div class="group-checkbox-title">
+               <p>Тип канала</p>
+           </div>
+           <div class="group-checkbox">
+               <div class="form-group">
+                   <input type="checkbox" id="FREE">
+                   <label for="FREE">Публичный (FREE)</label>
+               </div>
+               <div class="form-group">
+                   <input type="checkbox" id="VIP">
+                   <label for="VIP">Приватный (VIP)</label>
+               </div>
+           </div>
+           <div>
+               <button class="button purple-contain-button" id="button-service-success">Отправить</button>
+           </div>
+       </form>
+    </div>
+    </div>
+</div>
+
+        <div class="modal modal-form" id="modal-add-complaint">
+    <button class="modal__close">
+        <img src="img/images/svg/close.svg" alt="" class="modal__close-img"/>
+    </button>
+    <img src="img/images/modal-bg-mobile.png" alt="" class="modal__bg-mob"/>
+    <img src="img/images/modal-bg-desk.png" alt="" class="modal__bg-desk"/>
+    <div class="modal__container">
+    <div class="modal__title">
+        <p>Оставить жалобу</p>
+    </div>
+    <div class="modal__content">
+        <form>
+            <div class="input-container">
+                <label>Отзыв</label>
+                <input />
+            </div>
+            <div class="input-container">
+                <label>Отзыв</label>
+                <textarea></textarea>
+            </div>
+            <div>
+                <button class="button purple-contain-button" id="button-modal-complaint-success" >Отправить</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+        <div class="modal" id="modal-complaint-success">
+    <button class="modal__close">
+        <img src="img/images/svg/close.svg" alt="" class="modal__close-img"/>
+    </button>
+    <img src="img/images/modal-bg-mobile.png" alt="" class="modal__bg-mob modal__bg-desk"/>
+    <div class="modal__container">
+    <div class="modal__title">
+        <p>Спасибо</p>
+    </div>
+    <div class="modal__content">
+        <p>Жалоба успешно добавлена на модерацию.</p>
+    </div>
+    </div>
+</div>
+        <div class="modal" id="modal-comment-success">
+    <button class="modal__close">
+        <img src="img/images/svg/close.svg" alt="" class="modal__close-img"/>
+    </button>
+    <img src="img/images/modal-bg-mobile.png" alt="" class="modal__bg-mob  modal__bg-desk"/>
+    <div class="modal__container">
+    <div class="modal__title">
+        <p>Спасибо</p>
+    </div>
+    <div class="modal__content">
+        <p>Ваш коментарий отправлен на модерацию.</p>
+    </div>
+    </div>
+</div>
+        <div class="modal" id="modal-service-success">
+    <button class="modal__close">
+        <img src="img/images/svg/close.svg" alt="" class="modal__close-img"/>
+    </button>
+    <img src="img/images/modal-bg-mobile.png" alt="" class="modal__bg-mob  modal__bg-desk"/>
+    <div class="modal__container">
+    <div class="modal__title">
+        <div class="modal__check">
+            <img src="img/images/svg/check.svg" alt=""/>
+        </div>
+        <p>Спасибо</p>
+    </div>
+    <div class="modal__content">
+        <p>Сервис успешно добавлен на модерацию.</p>
+    </div>
+    </div>
+</div>
+        <header class='header header-dark' id="header">
+    <div class="container">
+        <div class="header_container">
+            <a href="/">
+                <img src="img/images/svg/logo-purple.svg" alt="Cloud Miners" class="logo"/>
+            </a>
+            <nav>
+                <ul class="header_list">
+                    <li class="header_li">
+                        <a class="header_link" href="/">Главная</a>
+                    </li>
+                    <li class="header_li">
+                        <a class="header_link" href="/catalog.html">Рейтинг Сервисов</a>
+                    </li>
+                    <li class="header_li">
+                        <a class="header_link" href="/articles.html">Статьи</a>
+                    </li>
+                    <li class="header_li">
+                        <button class="header_link js-add-service">Добавить Сервис</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search-hamburger">
+                <div class="search-input__container">
+                    <input class="search-input" id="search-input">
+                    <a href="/search.html" class="search-link" id="search-input-button">
+                        <img src="img/images/svg/arrow-down.svg" alt="banner mask" class=""/>
+                    </a>
+                </div>
+                <div class="search" id="search-button">
+                    <img src="img/images/svg/search-black.svg" alt="Cloud Miners"/>
+                </div>
+                <button class="hamburger-slim" id="hamburger-slim"></button>
+            </div>
+            <div class="menu-mobile" id="menu-mobile">
+                <nav class="container">
+                    <a href="/">
+                        <img src="img/images/svg/logo-purple.svg" alt="Cloud Miners" class="logo"/>
+                    </a>
+                    <ul class="header_list">
+                        <li class="header_li">
+                            <a class="header_link" href="/">Главная</a>
+                        </li>
+                        <li class="header_li">
+                            <a class="header_link" href="/catalog.html">Рейтинг Сервисов</a>
+                        </li>
+                        <li class="header_li">
+                            <a class="header_link" href="/articles.html">Статьи</a>
+                        </li>
+                        <li class="header_li">
+                            <button class="header_link js-add-service" >Добавить Сервис</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search-mobile" id="search-mobile">
+                <div class="search-input__container">
+                    <input class="search-input">
+                    <a href="/search.html" class="search-link">
+                        <img src="img/images/svg/arrow-down.svg" alt="banner mask" class=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="breadcrumbs">
+    <img src="img/images/breadcrumbs.png" alt="banner mask" class="decoration"/>
+    <div class="container">
+        <div>
+            <ul>
+                <li>
+                    <a href='/'>Главная</a>
+                </li>
+                <li>
+                    <a href='/'>Следующая ссылка</a>
+                </li>
+                <li>
+                    <p>Текущая страница</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="container">
+                <div class="article-category  container-with-sidebar">
+                <div class="article-category__left">
+    <h2>
+        Обучение
+    </h2>
+    <p>Лучшей системой, которая позволит каждому желающему получать криптовалюту без внушительных вложений фиатных средств, является сервис BitMine. По сравнению с другими проектами, этот ресурс выглядит очень перспективно. Развивается он стабильно и платить хорошие деньги всем пользователям.</p>
+    <p>Лучшей системой, которая позволит каждому желающему получать криптовалюту без внушительных вложений фиатных средств, является сервис BitMine. По сравнению с другими проектами, этот ресурс выглядит очень перспективно. Развивается он стабильно и платить хорошие деньги всем пользователям.</p>
+
+    <h3>Реферальная программа обучения</h3>
+    <p>На сервисе, конечно, же есть реферальная программа. Как и в многих подобных проектах сюда также можно приглашать неограниченное количество пользователей, что принесет на счет реферала дополнительные средства за каждого нового участника.</p>
+    <div class="article-category__three-item">
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+    </div>
+
+    <h3>О проекте</h3>
+    <p>Данный проект является довольно востребованным среди пользователей. Он отличается удобным интерфейсом и позволяет майнить достаточное количество альткоинов.</p>
+    <div class="article-category__three-item">
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+    </div>
+
+    <h3>Реферальная программа обучения</h3>
+    <p>На сервисе, конечно, же есть реферальная программа. Как и в многих подобных проектах сюда также можно приглашать неограниченное количество пользователей, что принесет на счет реферала дополнительные средства за каждого нового участника.</p>
+    <p>Лучшей системой, которая позволит каждому желающему получать криптовалюту без внушительных вложений фиатных средств, является сервис BitMine. По сравнению с другими проектами, этот ресурс выглядит очень перспективно. Развивается он стабильно и платить хорошие деньги всем пользователям.</p>
+    <div class="article-category__three-item">
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+        <div class="article-item">
+    <div class="article-item_img">
+        <img src="img/images/news-item.png" alt="news item"/>
+    </div>
+<!--    use class - purple-badge - for badge with purple circle-->
+    <p class="green-badge bg-light-bg">Обучение</p>
+    <p class="article-title">Enim sed interdum vel bibendum risus in sed maecenas diam.</p>
+    <div class="horizontal-article-item__content-bot">
+        <div class="article-data">
+            <div class="article-data">
+                <img src="img/images/svg/calendar.svg" alt=""/>
+                <p>26.08.2022</p>
+            </div>
+            <div class="article-data">
+                <img src="img/images/svg/message.svg" alt=""/>
+                <p>8</p>
+            </div>
+        </div>
+        <a href="/one-article.html" class="button purple-outline-button">Читать
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+
+    </div>
+    <p>На сервисе, конечно, же есть реферальная программа. Как и в многих подобных проектах сюда также можно приглашать неограниченное количество пользователей, что принесет на счет реферала дополнительные средства за каждого нового участника.</p>
+</div>
+                    <div>
+                        <div class="sidebar">
+    <h4>Топ Сервисы</h4>
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="sidebar__button">
+        <a href="catalog.html" class="button purple-outline-button">Смотреть все
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+    <div class="add-service">
+    <img src="img/images/add-service.png" alt="decoration" class="decoration desk"/>
+    <img src="img/images/add-service.png" alt="decoration" class="decoration mob"/>
+    <div class="add-service__content">
+        <p class="add-service__title ">Добавить Сервис</p>
+        <p class="add-service__description">Лучшей системой, которая позволит каждому желающему получать криптовалюту </p>
+        <button class="button purple-contain-button button-w-full js-add-service">Добавить</button>
+    </div>
+</div>
+
+</div>
+                        <div class="sidebar popular-articles">
+    <h4>Популярные Статьи</h4>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+
+    <div class="sidebar__button">
+        <a href="/articles.html" class="button purple-outline-button">Смотреть все
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        <div class="mob-sidebar container">
+            <div class="sidebar">
+    <h4>Топ Сервисы</h4>
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!--add class favorite to add crown and styles-->
+<div class="service-item favorite">
+    <div class="service-item_top">
+        <div class="service-item__image">
+            <img src="img/images/btc.png" alt="banner mask" crossorigin="main-img"/>
+            <img src="img/images/svg/crown.svg" alt="crown" class="crown"/>
+         </div>
+        <div>
+            <div class="service-item_top__all-rate">
+                <img src="img/images/svg/star.svg" alt="banner mask" crossorigin="main-img"/>
+                <p class="service-item_top__all-rate_graduate">5.6</p>
+                <p class="service-item_top__all-rate_count">(56 оценок)</p>
+            </div>
+            <p class="service-item_title">Minersale</p>
+            <p class="service-item_percent">130% / год</p>
+        </div>
+    </div>
+    <p class="service-item__text">Лучшей системой, которая позволит каждому желающему получать  ...</p>
+    <div class="service-item__buttons">
+        <a href="/one-service.html" class="button purple-contain-button">Обзор</a>
+        <div class="social-buttons">
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/facebook.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button" rel=”nofollow”>
+                <img src="img/images/svg/instagram.svg" alt="facebook" />
+            </a>
+            <a href="/" target="_blank" class="social-button">
+                <img src="img/images/svg/linkedin.svg" alt="facebook" />
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="sidebar__button">
+        <a href="catalog.html" class="button purple-outline-button">Смотреть все
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+    <div class="add-service">
+    <img src="img/images/add-service.png" alt="decoration" class="decoration desk"/>
+    <img src="img/images/add-service.png" alt="decoration" class="decoration mob"/>
+    <div class="add-service__content">
+        <p class="add-service__title ">Добавить Сервис</p>
+        <p class="add-service__description">Лучшей системой, которая позволит каждому желающему получать криптовалюту </p>
+        <button class="button purple-contain-button button-w-full js-add-service">Добавить</button>
+    </div>
+</div>
+
+</div>
+            <div class="sidebar popular-articles">
+    <h4>Популярные Статьи</h4>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+    <div class="popular-article">
+    <div>
+        <p class="green-badge bg-light-bg">Обучение</p>
+        <h5>Enim sed interdum vel bibendum risus in sed maecenas diam.</h5>
+        <div class="big-article-item__content-bot">
+            <div class="article-data">
+                <div class="article-data">
+                    <img src="img/images/svg/calendar.svg" alt=""/>
+                    <p>26.08.2022</p>
+                </div>
+                <div class="article-data">
+                    <img src="img/images/svg/message.svg" alt=""/>
+                    <p>8</p>
+                </div>
+            </div>
+            <a href="/one-article.html" class="button purple-outline-button">Читать <img src="img/images/svg/button-arrow-purple.svg" alt=""/></a>
+        </div>
+    </div>
+</div>
+
+    <div class="sidebar__button">
+        <a href="/articles.html" class="button purple-outline-button">Смотреть все
+            <img src="img/images/svg/button-arrow-purple.svg" alt=""/>
+        </a>
+    </div>
+</div>
+        </div>
+        <footer class="footer">
+    <img src="img/images/footer-mask.png" alt="Clound Miners" class="footer__img footer__img__desk"/>
+    <img src="img/images/footer-mobile.png" alt="Clound Miners" class="footer__img footer__img__mobile"/>
+    <div class="container">
+        <div class="footer-container">
+            <a href="/">
+                <img src="img/images/svg/logo-purple.svg" alt="banner mask" class="Cloud Miners"/>
+            </a>
+            <nav>
+                <ul class="footer_list">
+                    <li class="footer_li">
+                        <a class="footer_link">Рейтинг Сервисов</a>
+                    </li>
+                    <li class="footer_li">
+                        <a class="footer_link">Статьи</a>
+                    </li>
+                    <li class="footer_li">
+                        <a class="footer_link js-add-service">Добавить Сервис</a>
+                    </li>
+                    <li class="footer_li">
+                        <a class="footer_link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="footer__copyright">Copyright © 2022. Все права защищены</p>
+        </div>
+    </div>
+</footer>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
