@@ -93,6 +93,10 @@ function custom_change_cars_posts_per_page( $query ) {
         $query->set( 'posts_per_page', '12' );
     }
 
+    if ( is_post_type_archive('articles') && ! is_admin() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', '12' );
+    }
+
     return $query;
 
 }

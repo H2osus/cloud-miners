@@ -65,29 +65,44 @@ for (let i = 0; i < closeModalElements.length; i++) {
     });
 }
 
-buttonComplaintSuccess?.addEventListener("click", (e) => {
-    e.preventDefault();
-    for (let j = 0; j < modals.length; j++) {
-        modals[j].classList.remove("opened");
-    }
-    modalComplaintSuccess.classList.add("opened");
-    modalBg.classList.add("opened");
-    body.classList.add("opened");
-});
+// buttonCommentSuccess?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     modalCommentSuccess.classList.add("opened");
+//     modalBg.classList.add("opened");
+//     body.classList.add("opened");
+// });
 
-buttonCommentSuccess?.addEventListener("click", (e) => {
-    e.preventDefault();
-    modalCommentSuccess.classList.add("opened");
-    modalBg.classList.add("opened");
-    body.classList.add("opened");
-});
 
-buttonServiceSuccess?.addEventListener("click", (e) => {
-    e.preventDefault();
-    for (let j = 0; j < modals.length; j++) {
-        modals[j].classList.remove("opened");
-    }
-    modalServiceSuccess.classList.add("opened");
-    modalBg.classList.add("opened");
-    body.classList.add("opened");
-});
+const wpcf7Elm = document.querySelector("#modal-add-service .wpcf7");
+
+// wpcf7invalid , wpcf7spam , wpcf7mailsent , wpcf7mailfailed , wpcf7submit
+wpcf7Elm.addEventListener(
+    "wpcf7mailsent",
+    function (event) {
+        event.preventDefault();
+        for (let j = 0; j < modals.length; j++) {
+            modals[j].classList.remove("opened");
+        }
+        modalServiceSuccess.classList.add("opened");
+        modalBg.classList.add("opened");
+        body.classList.add("opened");
+    },
+    false
+);
+
+const wpcf7Elm2 = document.querySelector("#modal-add-complaint .wpcf7");
+
+// wpcf7invalid , wpcf7spam , wpcf7mailsent , wpcf7mailfailed , wpcf7submit
+wpcf7Elm2.addEventListener(
+    "wpcf7mailsent",
+    function (event) {
+        event.preventDefault();
+        for (let j = 0; j < modals.length; j++) {
+            modals[j].classList.remove("opened");
+        }
+        modalComplaintSuccess.classList.add("opened");
+        modalBg.classList.add("opened");
+        body.classList.add("opened");
+    },
+    false
+);

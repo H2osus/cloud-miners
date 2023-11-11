@@ -167,30 +167,38 @@ for (var _i2 = 0; _i2 < closeModalElements.length; _i2++) {
     body.classList.add("opened");
   });
 }
-buttonComplaintSuccess === null || buttonComplaintSuccess === void 0 || buttonComplaintSuccess.addEventListener("click", function (e) {
-  e.preventDefault();
-  for (var j = 0; j < modals.length; j++) {
-    modals[j].classList.remove("opened");
-  }
-  modalComplaintSuccess.classList.add("opened");
-  modalBg.classList.add("opened");
-  body.classList.add("opened");
-});
-buttonCommentSuccess === null || buttonCommentSuccess === void 0 || buttonCommentSuccess.addEventListener("click", function (e) {
-  e.preventDefault();
-  modalCommentSuccess.classList.add("opened");
-  modalBg.classList.add("opened");
-  body.classList.add("opened");
-});
-buttonServiceSuccess === null || buttonServiceSuccess === void 0 ? void 0 : buttonServiceSuccess.addEventListener("click", function (e) {
-  e.preventDefault();
+
+// buttonCommentSuccess?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     modalCommentSuccess.classList.add("opened");
+//     modalBg.classList.add("opened");
+//     body.classList.add("opened");
+// });
+
+var wpcf7Elm = document.querySelector("#modal-add-service .wpcf7");
+
+// wpcf7invalid , wpcf7spam , wpcf7mailsent , wpcf7mailfailed , wpcf7submit
+wpcf7Elm.addEventListener("wpcf7mailsent", function (event) {
+  event.preventDefault();
   for (var j = 0; j < modals.length; j++) {
     modals[j].classList.remove("opened");
   }
   modalServiceSuccess.classList.add("opened");
   modalBg.classList.add("opened");
   body.classList.add("opened");
-});
+}, false);
+var wpcf7Elm2 = document.querySelector("#modal-add-complaint .wpcf7");
+
+// wpcf7invalid , wpcf7spam , wpcf7mailsent , wpcf7mailfailed , wpcf7submit
+wpcf7Elm2.addEventListener("wpcf7mailsent", function (event) {
+  event.preventDefault();
+  for (var j = 0; j < modals.length; j++) {
+    modals[j].classList.remove("opened");
+  }
+  modalComplaintSuccess.classList.add("opened");
+  modalBg.classList.add("opened");
+  body.classList.add("opened");
+}, false);
 
 /***/ }),
 

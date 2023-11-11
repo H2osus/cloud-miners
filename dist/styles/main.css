@@ -3912,6 +3912,10 @@ p.tag-purple {
   display: none;
 }
 
+.modal form .wpcf7-spinner {
+  display: none !important;
+}
+
 .modal form .input-container {
   display: flex;
   flex-direction: column;
