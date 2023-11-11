@@ -40,7 +40,7 @@ function register_post_types()
         //'capabilities'      => 'post',
         //'map_meta_cap'      => null,
         'hierarchical' => false,
-        'supports' => ['title', 'thumbnail', 'excerpt', 'editor', 'author'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => ['title', 'thumbnail', 'excerpt', 'editor', 'author', 'comments'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies' => [],
         'has_archive' => true,
         'rewrite' => true,
@@ -79,7 +79,7 @@ function register_post_types()
         //'capabilities'      => 'post',
         //'map_meta_cap'      => null,
         'hierarchical' => false,
-        'supports' => ['title', 'thumbnail', 'excerpt', 'editor', 'page-attributes', 'post-formats', 'custom-fields'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => ['title', 'thumbnail', 'excerpt', 'editor', 'page-attributes', 'post-formats', 'custom-fields', 'comments'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies' => [],
         'has_archive' => true,
         'rewrite' => true,
