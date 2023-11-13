@@ -15,8 +15,7 @@
                     </div>
                     <div class="article-data">
                         <img src="<?= get_template_directory_uri() . '/src/img/images/svg/message.svg'?>" alt=""/>
-                        <!-- Временно -->
-                        <p>8</p>
+                        <p><?= get_comments_number($article_id) ?></p>
                     </div>
                 </div>
                 <a href="<?= get_the_permalink($article_id); ?>" class="button purple-contain-button">

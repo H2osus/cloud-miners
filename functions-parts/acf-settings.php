@@ -62,6 +62,7 @@ class Acf_Config
             'useful-articles',
             'actual-articles',
             'seo-module',
+            'best-services',
         );
 
         if (function_exists('acf_register_block_type')) {

@@ -19,6 +19,10 @@
       width: 42px;
       height: 42px;
     }
+
+    & img {
+      max-width: 42px;
+    }
   }
 
   &__info {
@@ -50,6 +54,16 @@
       align-items: center;
       justify-content: flex-start;
       margin-right: 8px;
+      
+      & li:before {
+        display: none;
+      }
+
+      & li {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12px;
+      }
 
       img {
         width: 10px;

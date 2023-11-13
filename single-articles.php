@@ -44,7 +44,9 @@ get_header();
                         </div>
                     </div>
                     <?php require get_template_directory() . '/template-parts/static-blocks/similar-articles.php'; ?>
-<!--                    @@include("../blocks/modules/similar-articles/similar-articles.html")-->
+
+                    <?php comments_template(); ?>
+
 <!--                    @@include("../blocks/modules/comment/comment-title.html")-->
 <!--                    @@include("../blocks/modules/comment/comment-with-img.html")-->
 <!--                    @@include("../blocks/modules/comment/comment-steps.html")-->

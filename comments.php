@@ -26,25 +26,19 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3 class="comment__title">
 			<?php
 			$cloud_miners_comment_count = get_comments_number();
-			if ( '1' === $cloud_miners_comment_count ) {
+
 				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'cloud_miners' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
-					number_format_i18n( $cloud_miners_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					esc_html( _nx( 'Комментарий (%1$s)', 'Комментарии (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+					number_format_i18n( $cloud_miners_comment_count ),
+
 				);
-			}
 			?>
-		</h2><!-- .comments-title -->
+            <button class="button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
@@ -54,7 +48,12 @@ if ( post_password_required() ) {
 				array(
 					'style'      => 'ol',
 					'short_ping' => true,
-				)
+                    'type' => 'all',
+                    'max_depth' => 4,
+                    'per_page' => 6,
+                    'callback' => 'cloud_miners_comment',
+                    'end-callback' => 'cloud_miners_comment_end'
+                )
 			);
 			?>
 		</ol><!-- .comment-list -->
@@ -69,9 +68,34 @@ if ( post_password_required() ) {
 			<?php
 		endif;
 
-	endif; // Check for have_comments().
+        else: ?>
+            <h3 class="comment__title">
+                <?php
+                $cloud_miners_comment_count = get_comments_number();
 
-	comment_form();
+                printf(
+                /* translators: 1: comment count number, 2: title. */
+                    esc_html( _nx( 'Комментарий (%1$s)', 'Комментарии (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+                    number_format_i18n( $cloud_miners_comment_count ),
+
+                );
+                ?>
+                <button class="button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+            </h3><!-- .comments-title -->
+	<?php endif; // Check for have_comments().
+
+    $comments_args = array(
+        // change the title of send button
+        'label_submit'=> __('Оставить отзыв', 'cloud_miners'),
+        'logged_in_as'=> '<p class="logged-in-as">Вы вошли как "'.$user_identity.'"</p>',
+        'comment_field' => '
+			<p class="comment-form-comment">
+				<label for="comment">' . __( 'Ваш Отзыв', 'cloud_miners' ) . '</label>
+				<textarea id="comment" name="comment" cols="60" maxlength="65525" rows="7"></textarea>
+			</p>',
+    );
+
+    comment_form($comments_args);
 	?>
 
 </div><!-- #comments -->

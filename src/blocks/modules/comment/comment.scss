@@ -1,3 +1,158 @@
+.comment-respond {
+  background: #F3F6FB;
+
+  & .comment-reply-title {
+    display: none;
+  }
+
+  & li:before {
+    display: none;
+  }
+
+  & a:before {
+    display: none;
+  }
+
+  & .acf-field {
+    width: max-content;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 44px;
+
+    p,
+    label,
+    a,
+    input{
+      font-family: "Commissioner", sans-serif;
+    }
+
+    & .logged-in-as {
+      width: 100%;
+      padding: 44px 0 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #151515;
+
+      & a,
+      & span {
+        display: none;
+      }
+    }
+
+    & .comment-form-comment {
+      display: flex;
+      flex-direction: column;
+      max-width: 533px;
+
+      & textarea {
+        border: unset;
+        resize: none;
+        border-radius: 5px;
+        padding: 12px;
+      }
+
+      & label {
+        font-size: 12px;
+        margin-bottom: 12px;
+        font-weight: 400;
+        line-height: 130%;
+        color: #151515;
+      }
+    }
+
+    & .acf-comment-fields {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & .acf-field-gallery {
+        order: 2;
+
+        & label {
+          max-width: 180px;
+          line-height: 130%;
+        }
+
+        & a {
+          border: 1px solid #460BF9;
+          color: #460BF9;
+          text-decoration: none;
+          background: #F3F6FB;
+        }
+      }
+      & .acf-field-star-rating-field {
+        order: 1;
+
+        & .star-rating {
+          & li {
+            font-size: 22px;
+            padding-left: 6px;
+            margin: 0;
+          }
+        }
+      }
+
+      & .btn-star-clear {
+        display: none;
+      }
+
+      & label {
+        font-size: 12px;
+        margin-bottom: 12px;
+        font-weight: 400;
+      }
+    }
+
+    & .form-submit {
+      width: 100%;
+      padding: 0 0 44px;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+
+      & input.submit {
+        padding: 13px 34px;
+        font-size: 14px;
+        background: #460BF9;
+        color: #FFFFFF;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        outline: none;
+        border: 1px solid #460BF9;
+        cursor: pointer;
+        margin: 0;
+        text-decoration: none;
+        font-family: "Commissioner", sans-serif;
+      }
+    }
+  }
+
+  & .acf-input {
+    width: max-content;
+    & .acf-gallery {
+      height: 30px !important;
+      border: unset;
+
+      & .acf-gallery-toolbar {
+        padding: 0;
+        width: max-content;
+
+        & .acf-fr {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .comment {
   border-radius: 2px;
   border: 1px solid rgba(236, 241, 255, 0.07);
@@ -88,6 +243,10 @@
         }
       }
     }
+  }
+
+  & .children {
+    border-top: 1px solid rgba(21, 21, 21, 0.12);;
   }
 
   &__title {

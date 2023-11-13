@@ -26,8 +26,7 @@
                 </div>
                 <div class="author__button">
                     <?= facetwp_display('facet','articles_pager_author'); ?>
-                    <!-- Временно-->
-                    <a href="articles.html" class="button purple-outline-button"><?= esc_html__('Показать ещё', 'cloud_miners') ?> <img src="<?= get_template_directory_uri() . '/src/img/images/svg/button-arrow-purple.svg'?>" alt="look"/></a>
+                    <a href="<?= get_post_type_archive_link('articles'); ?>" class="button purple-outline-button"><?= esc_html__('Показать ещё', 'cloud_miners') ?> <img src="<?= get_template_directory_uri() . '/src/img/images/svg/button-arrow-purple.svg'?>" alt="look"/></a>
                 </div>
             </div>
             <?php require get_template_directory() . "/template-parts/static-blocks/sidebar.php"; ?>

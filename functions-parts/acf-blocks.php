@@ -6,6 +6,7 @@ $block_files = [
     'useful-articles',
     'actual-articles',
     'seo-module',
+    'best-services',
 ];
 
 foreach ($block_files as $block) {

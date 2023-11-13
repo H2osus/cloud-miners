@@ -139,5 +139,96 @@ function modify_search_results($query) {
 
 add_action('pre_get_posts', 'modify_search_results');
 
+function enqueue_comment_reply() {
+    if( is_single() && comments_open() && (get_option('thread_comments') == 1) )
+        wp_enqueue_script('comment-reply');
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply' );
+
+
+add_filter( 'comment_reply_link', 'wpdocs_comment_reply_link_class' );
+
+function wpdocs_comment_reply_link_class( $class ) {
+
+    $class = str_replace( "class='comment-reply-link", "class='comment-reply-link comment-button-answered", $class );
+
+    return $class;
+}
+
+function cloud_miners_comment ( $comment, $args, $depth ){
+    ?><li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
+        <div class="comment-inner">
+
+            <div class="comment-author">
+                <?php
+                    $authorLogo = get_field('avatar', 'user_'. $comment->user_id) ?? 0;
+                    if ($authorLogo && $authorLogo !== 0) : ?>
+                        <a href="<?= esc_attr(get_author_posts_url($comment->user_id)) ?>" class="comment-author__img">
+                            <img src="<?= esc_attr($authorLogo['url']) ?>" alt="look"/>
+                        </a>
+                    <?php else: ?>
+                        <a href="<?= esc_attr(get_author_posts_url($comment->user_id)) ?>" class="comment-author__img">
+                            <img src="<?= get_template_directory_uri() . '/src/img/images/svg/user-avatar.png'?>" alt="look"/>
+                        </a>
+                    <?php endif; ?>
+                <div class="comment-author__right">
+                    <div class="comment-author__info">
+                        <?php
+                        $fName = get_the_author_meta('first_name', $comment->user_id);
+                        $lName = get_the_author_meta('last_name', $comment->user_id);
+                        ?>
+                        <a href="<?= esc_attr(get_author_posts_url($comment->user_id)) ?>" class="comment-author__info-name"><?= esc_html($lName . ' ' . $fName); ?></a>
+                        <div class="comment-author__info-stars">
+                            <?php $rating = get_field('star_rating', $comment); ?>
+                            <?= $rating; ?>
+<!--                            <img src="img/images/svg/star.svg" alt="star" />-->
+<!--                            <img src="img/images/svg/star-grey.svg" alt="star" />-->
+                        </div>
+<!--                        <p class="comment-author__info-graduate">4.0</p>-->
+                    </div>
+                    <p class="comment-author__data"><?= get_comment_date('d.m.Y', get_comment_ID()); ?></p>
+                </div>
+            </div>
+
+            <p class="comment-content"><?= get_comment_text(get_comment_ID()); ?></p>
+
+            <?php
+                $images = get_field('image_comment', $comment) ?? 0;
+                if ($images && $images !== 0): ?>
+                    <div class="comment-inner__images">
+                   <?php foreach ($images as $image) :?>
+                        <a href="<?= esc_attr($image['url']) ?>" class="img-block__show" data-lightbox="roadtrip">
+                            <img src="<?= get_template_directory_uri() . '/src/img/images/svg/search-show.svg'?>" alt="look" class="img-block__show-icon"/>
+                            <img src="<?= esc_attr($image['url']) ?>" alt="<?= esc_attr($image['alt']) ?>" class="img-block__image"/>
+                        </a>
+                <?php endforeach; ?>
+                    </div>
+            <?php endif; ?>
+
+            <?php
+            $post_id = get_the_ID();
+
+            //get the setting configured in the admin panel under settings discussions "Enable threaded (nested) comments  levels deep"
+            $max_depth = get_option('thread_comments_depth');
+            //add max_depth to the array and give it the value from above and set the depth to 1
+            $default = array(
+                'add_below'  => 'comment',
+                'respond_id' => 'respond',
+                'reply_text' => __('Reply'),
+                'login_text' => __('Log in to Reply'),
+                'depth'      => 1,
+                'before'     => '',
+                'after'      => '',
+                'max_depth'  => $max_depth
+            );
+            comment_reply_link($default,$comment->ID,$post_id);
+            ?>
+
+        </div>
+    <?php // без закрывающего </li> (!)
+}
+function cloud_miners_comment_end ( $comment, $args, $depth ){
+    echo '</li>';
+}
 
 ?>
