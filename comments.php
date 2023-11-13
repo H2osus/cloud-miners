@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 
 				);
 			?>
-            <button class="button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+            <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
 		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
@@ -80,7 +80,7 @@ if ( post_password_required() ) {
 
                 );
                 ?>
-                <button class="button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+                <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
             </h3><!-- .comments-title -->
 	<?php endif; // Check for have_comments().
 

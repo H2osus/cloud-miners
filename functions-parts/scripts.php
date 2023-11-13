@@ -45,7 +45,7 @@
 		function post_scripts() {
 			if (is_single()) {
 				
-				wp_enqueue_script( 'script_name_3', get_template_directory_uri() . '/dist/js/templates/_script_name_3', '', 1.0, true );
+				wp_enqueue_script( 'script_name_3', get_template_directory_uri() . '/src/js/helper/comment.js', '', 1.0, true );
 			}
 		}
 	}
