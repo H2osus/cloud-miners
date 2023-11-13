@@ -2044,6 +2044,10 @@ p.tag-purple {
   margin: 0;
 }
 
+.comment-respond form .acf-comment-fields .acf-field-star-rating-field .star-rating li i::before {
+  color: #F8CC32;
+}
+
 .comment-respond form .acf-comment-fields .btn-star-clear {
   display: none;
 }
@@ -2096,6 +2100,10 @@ p.tag-purple {
 
 .comment-respond .acf-input .acf-gallery .acf-gallery-toolbar .acf-fr {
   display: none;
+}
+
+.star-rating li i::before {
+  color: #F8CC32;
 }
 
 .comment {

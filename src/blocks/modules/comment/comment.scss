@@ -93,6 +93,10 @@
             font-size: 22px;
             padding-left: 6px;
             margin: 0;
+
+            & i::before {
+              color: #F8CC32;
+            }
           }
         }
       }
@@ -149,6 +153,14 @@
           display: none;
         }
       }
+    }
+  }
+}
+
+.star-rating {
+  & li {
+    & i::before {
+      color: #F8CC32;
     }
   }
 }
