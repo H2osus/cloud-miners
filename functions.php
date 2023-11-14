@@ -231,4 +231,28 @@ function cloud_miners_comment_end ( $comment, $args, $depth ){
     echo '</li>';
 }
 
+    add_action( 'wpcf7_init', 'custom_add_form_tag_checkboxes' );
+    function custom_add_form_tag_checkboxes() {
+        wpcf7_add_form_tag( 'checkboxes', 'custom_checkboxes_form_tag_handler' );
+    }
+    function custom_checkboxes_form_tag_handler( $tag ) {
+
+
+        $responce = '
+        <div class="group-checkbox-title">
+               <p>Тип канала</p>
+           </div>
+           <div class="group-checkbox">
+               <div class="form-group">
+                   <input type="checkbox" id="FREE">
+                   <label for="FREE">Публичный (FREE)</label>
+               </div>
+               <div class="form-group">
+                   <input type="checkbox" id="VIP">
+                   <label for="VIP">Приватный (VIP)</label>
+               </div>
+           </div>
+        ';
+        return $responce;
+    }
 ?>
