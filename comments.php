@@ -84,6 +84,19 @@ if ( post_password_required() ) {
             </h3><!-- .comments-title -->
 	<?php endif; // Check for have_comments().
 
+    $auth_title = get_field('autorisation_title', 'option') ?? '';
+    $auth_text = get_field('autorisation_text', 'option') ?? '';
+    $auth_links = get_field('autorisation_links', 'option') ?? 0;
+    $total_links = null;
+    if ($auth_links && $auth_links !== 0) {
+        foreach ($auth_links as $link) {
+            $total_links .= '
+            <a href="'.esc_attr($link['link']['url']).'" target="'.esc_attr($link['link']['target']).'" class="social-button" rel=”nofollow”>
+               <img src="'.esc_attr($link['logo']['url']).'" alt="'.esc_attr($link['logo']['alt']).'" />
+            </a>';
+        }
+    }
+
     $comments_args = array(
         // change the title of send button
         'label_submit'=> __('Оставить отзыв', 'cloud_miners'),
@@ -93,6 +106,21 @@ if ( post_password_required() ) {
 				<label for="comment">' . __( 'Ваш Отзыв', 'cloud_miners' ) . '</label>
 				<textarea id="comment" name="comment" cols="60" maxlength="65525" rows="7"></textarea>
 			</p>',
+        'must_log_in' =>
+            '
+            <div class="comment-authorize">
+                <div class="comment-authorize__left">
+                    <img src="'.get_template_directory_uri() . '/src/img/images/svg/star.svg'.'" alt="banner mask" crossorigin="main-img"/>
+                    <p>'.esc_html($auth_title).'</p>
+                </div>
+                <div class="comment-authorize__right">
+                    <p>'.esc_html($auth_text).'</p>
+                    <div class="social-buttons">
+                    '.$total_links.'
+                    </div>
+                </div>
+            </div>
+            ',
     );
 
     comment_form($comments_args);

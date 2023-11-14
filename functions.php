@@ -181,8 +181,6 @@ function cloud_miners_comment ( $comment, $args, $depth ){
                         <div class="comment-author__info-stars">
                             <?php $rating = get_field('star_rating', $comment); ?>
                             <?= $rating; ?>
-<!--                            <img src="img/images/svg/star.svg" alt="star" />-->
-<!--                            <img src="img/images/svg/star-grey.svg" alt="star" />-->
                         </div>
 <!--                        <p class="comment-author__info-graduate">4.0</p>-->
                     </div>
@@ -221,7 +219,9 @@ function cloud_miners_comment ( $comment, $args, $depth ){
                 'after'      => '',
                 'max_depth'  => $max_depth
             );
-            comment_reply_link($default,$comment->ID,$post_id);
+            if (is_user_logged_in()) {
+                comment_reply_link($default,$comment->ID,$post_id);
+            }
             ?>
 
         </div>
