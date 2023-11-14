@@ -108,7 +108,7 @@ if ( post_password_required() ) {
 			</p>',
         'must_log_in' =>
             '
-            <div class="comment-authorize">
+            <div class="comment-authorize" id="comment-authorize">
                 <div class="comment-authorize__left">
                     <img src="'.get_template_directory_uri() . '/src/img/images/svg/star.svg'.'" alt="banner mask" crossorigin="main-img"/>
                     <p>'.esc_html($auth_title).'</p>

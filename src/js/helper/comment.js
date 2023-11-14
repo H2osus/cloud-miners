@@ -1,7 +1,9 @@
 $(document).ready(function () {
     $('.leave-comment-trigger').on('click', function () {
+        var targetElement = $('#commentform').length ? $('#commentform') : $('#comment-authorize');
+
         $('html, body').animate({
-            scrollTop: $('#commentform').offset().top - 200
-        }, 1000); // 1000 - время прокрутки в миллисекундах
+            scrollTop: targetElement.offset().top - 200
+        }, 1000);
     });
 });
