@@ -244,11 +244,11 @@ function cloud_miners_comment_end ( $comment, $args, $depth ){
            </div>
            <div class="group-checkbox">
                <div class="form-group">
-                   <input type="checkbox" id="FREE">
+                   <input name="FREE" type="checkbox" id="FREE">
                    <label for="FREE">Публичный (FREE)</label>
                </div>
                <div class="form-group">
-                   <input type="checkbox" id="VIP">
+                   <input name="VIP" type="checkbox" id="VIP">
                    <label for="VIP">Приватный (VIP)</label>
                </div>
            </div>
