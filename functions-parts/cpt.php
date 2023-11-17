@@ -71,7 +71,7 @@ function register_post_types()
         // 'show_in_nav_menus'   => null,
         'show_in_menu' => null,
         // 'show_in_admin_bar'   => null,
-        'show_in_rest' => false,
+        'show_in_rest' => true,
         'rest_base' => null,
         'menu_position' => null,
         'menu_icon' => 'dashicons-cart',

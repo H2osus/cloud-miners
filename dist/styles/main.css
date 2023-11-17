@@ -1741,6 +1741,10 @@ p.tag-purple {
   opacity: 1;
 }
 
+.search-input {
+  font-family: "Commissioner", sans-serif !important;
+}
+
 .footer {
   position: relative;
   padding: 50px 0;
@@ -3140,6 +3144,11 @@ p.tag-purple {
 
 .one-service__content .video-block__image {
   max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .one-service__content .video-block__show {
@@ -3230,7 +3239,7 @@ p.tag-purple {
 
 .one-service__content .sharing__share img {
   margin-right: 0;
-  width: 5px;
+  width: auto;
 }
 
 .one-service__content .sharing__share p {
@@ -3246,6 +3255,10 @@ p.tag-purple {
 
 .one-service__content .button img {
   margin-right: 4px;
+}
+
+.one-article ol {
+  list-style: auto;
 }
 
 .one-article img {
@@ -4130,6 +4143,10 @@ p.tag-purple {
 
 .modal form .group-checkbox {
   margin-bottom: 20px;
+}
+
+.modal form .group-checkbox label {
+  font-family: "Commissioner", sans-serif !important;
 }
 
 .modal form .group-checkbox-title p {
@@ -5165,7 +5182,7 @@ p.tag-purple {
 
   .modal form .group-checkbox .form-group {
     margin-bottom: 0;
-    margin-right: 20px;
+    margin-right: 43px;
   }
 
   .modal form .group-checkbox {

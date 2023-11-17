@@ -119,20 +119,46 @@
         <?= the_content() ?>
         <div class="sharing">
             <div class="sharing__share">
-                <p>Поделиться</p>
+                <p><?= esc_html__('Поделиться', 'cloud_miners') ?></p>
                 <div class="social-buttons">
-                    <a href="/" target="_blank" class="social-button" rel=”nofollow”>
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/facebook.svg'?>" alt="facebook" />
-                    </a>
-                    <a href="/" target="_blank" class="social-button" rel=”nofollow”>
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/instagram.svg'?>" alt="facebook" />
-                    </a>
-                    <a href="/" target="_blank" class="social-button" rel=”nofollow”>
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/instagram.svg'?>" alt="facebook" />
-                    </a>
+                    <?php
+                    $links = get_field('sharing', 'option') ?? 0;
+
+                    if ($links && $links !== 0 && !empty($links)) :
+                        foreach ($links['items'] as $item) :
+                            switch ($item):
+                                case 'facebook': ?>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= esc_attr(get_permalink()) ?>" target="_blank" class="social-button" rel=”nofollow”>
+                                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/facebook.svg'?>" alt="facebook" />
+                                    </a>
+                                    <?php break;
+                                case 'telegram': ?>
+                                    <a href="https://t.me/share/url?url=<?= esc_attr(get_permalink())?>" target="_blank" class="social-button" rel=”nofollow”>
+                                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram-1.svg'?>" alt="telegram" />
+                                    </a>
+                                    <?php break;
+                                case 'twitter': ?>
+                                    <a href="https://twitter.com/intent/tweet?url=<?= esc_attr(get_permalink())?>&text=Отличная статья!" target="_blank" class="social-button" rel=”nofollow”>
+                                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/twitter-1.svg'?>" alt="twitter" />
+                                    </a>
+                                    <?php break;
+                                case 'gmail': ?>
+                                    <a href="mailto:?subject=Новая статья!&body=<?= esc_attr(get_permalink())?>" target="_blank" class="social-button" rel=”nofollow”>
+                                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/gmail-1.svg'?>" alt="gmail" />
+                                    </a>
+                                    <?php break;
+                                case 'linkedin': ?>
+                                    <a href="https://www.linkedin.com/shareArticle?url=<?= esc_attr(get_permalink()) ?>" target="_blank" class="social-button" rel=”nofollow”>
+                                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="linkedin" />
+                                    </a>
+                                    <?php break;
+                            endswitch;
+                        endforeach;
+                    endif;
+                    ?>
                 </div>
             </div>
-            <a href="#" target="_blank" rel=”nofollow” class="button telegram-button"> <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram.svg'?>" alt="facebook" /> Telegram</a>
+            <a href="https://t.me/share/url?url=<?= esc_attr(get_permalink()) ?>" target="_blank" rel=”nofollow” class="button telegram-button"> <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram.svg'?>" alt="facebook" /> Telegram</a>
         </div>
     </div>
 </div>

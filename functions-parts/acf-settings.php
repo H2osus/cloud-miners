@@ -63,6 +63,15 @@ class Acf_Config
             'actual-articles',
             'seo-module',
             'best-services',
+            'single-nav',
+            'note',
+            'quote',
+            'text-for-nav',
+            'cloud-link',
+            'advantages-and-disadvantages',
+            'video-block',
+            'chosen-comment',
+            'gallery',
         );
 
         if (function_exists('acf_register_block_type')) {

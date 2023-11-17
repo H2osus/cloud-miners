@@ -31,6 +31,7 @@ get_header('dark');
                 $post_type = '';
 
                 /* Start the Loop */
+                echo '<h4>'.esc_html__('Сервисы', 'cloud_miners').'</h4>';
                 while ( have_posts() ) : the_post();
                     $current_post_type = get_post_type();
                     if ($current_post_type != $post_type) {

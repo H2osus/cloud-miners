@@ -30,17 +30,40 @@ get_header();
                         <p><?= esc_html__('Поделиться', 'cloud_miners') ?></p>
                         <div class="social-buttons">
                             <?php
-                                $links = get_field('networks_article');
+                                $links = get_field('sharing', 'option') ?? 0;
+
+                                if ($links && $links !== 0 && !empty($links)) :
+                                    foreach ($links['items'] as $item) :
+                                        switch ($item):
+                                        case 'facebook': ?>
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?= esc_attr(get_permalink()) ?>" target="_blank" class="social-button" rel=”nofollow”>
+                                                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/facebook.svg'?>" alt="facebook" />
+                                            </a>
+                                           <?php break;
+                                           case 'telegram': ?>
+                                               <a href="https://t.me/share/url?url=<?= esc_attr(get_permalink())?>" target="_blank" class="social-button" rel=”nofollow”>
+                                                   <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram-1.svg'?>" alt="telegram" />
+                                               </a>
+                                               <?php break;
+                                            case 'twitter': ?>
+                                                <a href="https://twitter.com/intent/tweet?url=<?= esc_attr(get_permalink())?>&text=Отличная статья!" target="_blank" class="social-button" rel=”nofollow”>
+                                                    <img src="<?= get_template_directory_uri() . '/src/img/images/svg/twitter-1.svg'?>" alt="twitter" />
+                                                </a>
+                                                <?php break;
+                                            case 'gmail': ?>
+                                                <a href="mailto:?subject=Новая статья!&body=<?= esc_attr(get_permalink())?>" target="_blank" class="social-button" rel=”nofollow”>
+                                                    <img src="<?= get_template_directory_uri() . '/src/img/images/svg/gmail-1.svg'?>" alt="gmail" />
+                                                </a>
+                                                <?php break;
+                                            case 'linkedin': ?>
+                                                <a href="https://www.linkedin.com/shareArticle?url=<?= esc_attr(get_permalink()) ?>" target="_blank" class="social-button" rel=”nofollow”>
+                                                    <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="linkedin" />
+                                                </a>
+                                                <?php break;
+                                        endswitch;
+                                    endforeach;
+                                endif;
                             ?>
-                            <a href="<?= $links['facebook_link'] ? esc_attr($links['facebook_link']) : '#' ?>" target="_blank" class="social-button" rel=”nofollow”>
-                                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/facebook.svg'?>" alt="facebook" />
-                            </a>
-                            <a href="<?= $links['instagram_link'] ? esc_attr($links['instagram_link']) : '#' ?>" target="_blank" class="social-button" rel=”nofollow”>
-                                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/instagram.svg'?>" alt="instagram" />
-                            </a>
-                            <a href="<?= $links['linkedin_link'] ? esc_attr($links['linkedin_link']) : '#' ?>" target="_blank" class="social-button" rel=”nofollow”>
-                                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="linkedin" />
-                            </a>
                         </div>
                     </div>
                     <?php require get_template_directory() . '/template-parts/static-blocks/similar-articles.php'; ?>

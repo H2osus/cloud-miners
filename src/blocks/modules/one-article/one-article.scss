@@ -1,5 +1,9 @@
 .one-article {
 
+  & ol {
+    list-style: auto;
+  }
+
   img {
     max-width: 100%;
   }

@@ -253,6 +253,10 @@
     .group-checkbox {
       margin-bottom: 20px;
 
+      & label {
+        font-family: 'Commissioner', sans-serif !important;
+      }
+
       &-title {
         p {
           font-size: 10px;
@@ -272,7 +276,7 @@
         margin-bottom: 12px;
         @media screen and (min-width: 768px) {
           margin-bottom: 0;
-          margin-right: 20px;
+          margin-right: 43px;
         }
       }
 

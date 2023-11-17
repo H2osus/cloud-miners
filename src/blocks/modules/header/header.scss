@@ -346,10 +346,14 @@
     border-bottom: 1px solid black;
     width: 90%;
     background: $light-bg;
+
   }
 
   &.opened {
     z-index: 105;
     opacity: 1;
   }
+}
+.search-input {
+  font-family: 'Commissioner', sans-serif !important;
 }
