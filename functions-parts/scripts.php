@@ -14,7 +14,6 @@
 	if(!function_exists("lib_scripts")) {
 		function lib_scripts() {
 
-
 			wp_enqueue_script( 'cloud_miners-swiper', get_template_directory_uri() . '/libs/swiper/js/swiper.min.js', null, 1.0, true );
 
 		}
@@ -58,15 +57,20 @@
 
     if (!function_exists("fonts_scripts")) {
         function fonts_scripts() {
-//            wp_enqueue_style('preconnect', 'https://fonts.gstatic.com');
-//            wp_enqueue_style('preconnect-2', 'https://fonts.googleapis.com');
             wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        }
+    }
+
+    if (!function_exists("faset_scripts")) {
+        function faset_scripts() {
+            wp_enqueue_script( 'faset-scripts', get_template_directory_uri() . '/src/js/helper/facet-scripts.js', null, 1.0, true );
         }
     }
 
     //enqueue jquery
     add_action('wp_enqueue_scripts', 'jquery_scripts');
 
+    add_action( 'wp_enqueue_scripts', 'faset_scripts' );
 	add_action( 'wp_enqueue_scripts', 'style_scripts' );
 	add_action( 'wp_enqueue_scripts', 'lib_scripts' );
 //	add_action( 'wp_enqueue_scripts', 'module_scripts' );

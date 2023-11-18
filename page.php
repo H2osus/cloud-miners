@@ -25,5 +25,4 @@ require  get_template_directory() . "/template-parts/modal/modal-thank-service-s
     <?php the_content(); ?>
 </main>
 
-
 <?php get_footer(); ?>

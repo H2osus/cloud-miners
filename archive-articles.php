@@ -115,7 +115,7 @@
 
     <?php $seo = get_field('articles_seo', 'option'); ?>
 
-    <div class="text">
+    <div class="text seo-text">
         <div class="container">
             <?= $seo; ?>
         </div>

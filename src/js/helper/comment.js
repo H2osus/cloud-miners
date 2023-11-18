@@ -37,5 +37,3 @@ $(document).ready(function () {
         e.preventDefault(); // Предотвращаем переход по ссылке
     });
 });
-
-

@@ -18,7 +18,7 @@
     </div>
     <?php $seo = get_field('services_seo', 'option'); ?>
 
-    <div class="text">
+    <div class="text seo-text">
         <div class="container">
             <?= $seo; ?>
         </div>
