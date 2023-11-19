@@ -86,7 +86,7 @@ add_filter( 'pre_get_posts', 'custom_change_cars_posts_per_page' );
 function custom_change_cars_posts_per_page( $query ) {
 
     if ( is_author() && ! is_admin() && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', '-1' );
+        $query->set( 'posts_per_page', '8' );
     }
 
     if ( is_post_type_archive('services') && ! is_admin() && $query->is_main_query() ) {

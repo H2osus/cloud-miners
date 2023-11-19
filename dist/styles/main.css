@@ -2736,6 +2736,38 @@ p.tag-purple {
   justify-content: center;
 }
 
+.author__button .facetwp-facet {
+  margin: 0;
+}
+
+.author__button .facetwp-load-more {
+  font-size: 14px;
+  border: 1px solid #460BF9;
+  color: #460BF9;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 22px 6px 26px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.author__button .facetwp-load-more::after {
+  content: "";
+  background-image: url("../img/images/svg/button-arrow-purple.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: 0 0 0 10px;
+}
+
 .best-services {
   background-color: #F3F6FB;
   padding: 40px 0 60px;
