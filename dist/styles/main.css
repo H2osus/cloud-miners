@@ -1192,6 +1192,22 @@ ul.list-bordered li:after {
   align-items: center;
 }
 
+.wptelegram-login-output-wrap.container {
+  padding: 0;
+}
+
+.tgme_widget_login_button {
+  font-size: 0 !important;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.tgme_widget_login_button_icon {
+  margin: 0;
+  height: 24px;
+}
+
 .social-button {
   display: flex;
   align-items: center;
@@ -2268,7 +2284,7 @@ p.tag-purple {
 }
 
 .comment-authorize__right .social-button {
-  width: 32px;
+  width: 37.08px;
   height: 32px;
 }
 
