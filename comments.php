@@ -89,6 +89,7 @@ if ( post_password_required() ) {
     $auth_links = get_field('autorisation_links', 'option') ?? 0;
     $total_links = null;
 
+
     if ($auth_links && $auth_links !== 0) {
         foreach ($auth_links as $link) {
             $total_links .= '
@@ -96,6 +97,7 @@ if ( post_password_required() ) {
                <img src="'.esc_attr($link['logo']['url']).'" alt="'.esc_attr($link['logo']['alt']).'" />
             </a>';
         }
+        $total_links .= wptelegram_login();
     }
 
     $comments_args = array(
@@ -118,7 +120,6 @@ if ( post_password_required() ) {
                     <p>'.esc_html($auth_text).'</p>
                     <div class="social-buttons">
                     '.$total_links.'
-                    '.wptelegram_login().'
                     </div>
                 </div>
             </div>
