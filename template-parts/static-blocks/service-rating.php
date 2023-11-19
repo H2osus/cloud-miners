@@ -6,21 +6,21 @@
     <div class="select-group__container" id="select-group__container">
         <div class="select-group__mobile" id="open-filter">
             <div>
-                <img src="img/images/svg/filter.svg" alt=""/>
-                <p>Фильтр рейтинга</p>
+                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/filter.svg'?>" alt=""/>
+                <p><?= esc_html__('Фильтр рейтинга', 'cloud_miners') ?></p>
             </div>
 
-            <img src="img/images/svg/arrow-small.svg" alt="" class="arrow"/>
+            <img src="<?= get_template_directory_uri() . '/src/img/images/svg/arrow-small.svg'?>" alt="" class="arrow"/>
         </div>
         <div class="select-group" id="select-group">
             <?php echo facetwp_display('facet','services_status');  ?>
             <?php echo facetwp_display('facet','services_dostup');  ?>
             <?php echo facetwp_display('facet','rating');  ?>
             <?php echo facetwp_display('facet','min_sum');  ?>
-            <button class="button-select-approve">Применить</button>
+            <button onclick="FWP.refresh()" class="button-select-approve">Применить</button>
         </div>
     </div>
-
+    <div class="facetwp-template">
     <?php
     if (have_posts()) :
         while (have_posts()) : the_post();
@@ -31,5 +31,6 @@
         echo 'No services found.';
     endif;
     ?>
+    </div>
     <?php echo facetwp_display('facet','services_pager');  ?>
 </div>

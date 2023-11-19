@@ -2464,7 +2464,6 @@ p.tag-purple {
   justify-content: flex-start;
   flex-direction: column;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .service-rating .select-group__container {
@@ -2494,6 +2493,7 @@ p.tag-purple {
   margin-bottom: 0;
 }
 
+.service-rating .select-group .facetwp-facet .fs-label-wrap,
 .service-rating .select-group .facetwp-facet .facetwp-dropdown {
   padding: 12px 17px;
   width: 100%;

@@ -255,4 +255,21 @@ function cloud_miners_comment_end ( $comment, $args, $depth ){
         ';
         return $responce;
     }
+
+
+    add_action( 'wp_footer', function() {
+        if (is_post_type_archive('services')) {
+        ?>
+        <script>
+            (function($) {
+                $(function() {
+                    if ('undefined' !== typeof FWP) {
+                        FWP.auto_refresh = false;
+                    }
+                });
+            })(fUtil);
+        </script>
+        <?php
+        }
+    }, 100 );
 ?>
