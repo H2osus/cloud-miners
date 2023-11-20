@@ -7,32 +7,26 @@
             <h2><?= $title ? esc_html($title) : '' ?></h2>
             <div class="services_content facetwp-template">
                 <?php
-                $args = array(
-                    'post_type' => 'services',
-                    'posts_per_page' => 16,
-                    'orderby' => 'date',
-                    'order' => 'asc',
-                );
 
-//                $args = array(
-//                    'post_type'      => 'services',
-//                    'posts_per_page' => 16,
-//                    'meta_query'     => array(
-//                        'relation' => 'OR',
-//                        array(
-//                            'key'   => 'status',
-//                            'value' => 'a:1:{i:0;s:3:"fav";}',
-//                        ),
-//                        array(
-//                            'key'     => 'status',
-//                            'compare' => 'NOT EXISTS',
-//                        ),
-//                    ),
-//                    'orderby'        => array(
-//                        'meta_value' => 'DESC', // Сначала по убыванию мета-поля
-//                        'title'      => 'ASC',  // Затем по возрастанию заголовка (по алфавиту)
-//                    ),
-//                );
+                $args = array(
+                    'post_type'      => 'services',
+                    'posts_per_page' => 16,
+                    'meta_query'     => array(
+                        'relation' => 'OR',
+                        array(
+                            'key'   => 'status',
+                            'value' => 'a:1:{i:0;s:3:"fav";}',
+                        ),
+                        array(
+                            'key'     => 'status',
+                            'compare' => 'NOT EXISTS',
+                        ),
+                    ),
+                    'orderby'        => array(
+                        'meta_value' => 'DESC',
+                        'title'      => 'ASC',
+                    ),
+                );
 
 
                 $custom_query = new WP_Query($args);
