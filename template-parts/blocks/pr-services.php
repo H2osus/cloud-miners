@@ -21,6 +21,10 @@
                             'key'     => 'status',
                             'compare' => 'NOT EXISTS',
                         ),
+                        array(
+                            'key'     => 'status',
+                            'compare' => '',
+                        ),
                     ),
                     'orderby'        => array(
                         'meta_value' => 'DESC',
