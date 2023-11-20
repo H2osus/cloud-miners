@@ -226,7 +226,10 @@
         height: 30px;
 
         img {
-          width: 8px;
+          //width: 8px;
+          width: 12px;
+          height: 14px;
+          object-fit: contain;
         }
       }
 

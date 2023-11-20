@@ -3063,7 +3063,9 @@ p.tag-purple {
 }
 
 .one-service__title .social-buttons .social-button img {
-  width: 8px;
+  width: 12px;
+  height: 14px;
+  object-fit: contain;
 }
 
 .one-service__title h2 {
