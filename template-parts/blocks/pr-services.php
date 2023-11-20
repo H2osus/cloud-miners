@@ -7,12 +7,28 @@
             <h2><?= $title ? esc_html($title) : '' ?></h2>
             <div class="services_content facetwp-template">
                 <?php
+
                 $args = array(
-                    'post_type' => 'services',
+                    'post_type'      => 'services',
                     'posts_per_page' => 16,
-                    'orderby' => 'date',
-                    'order' => 'DESC',
+                    'orderby'        => array(
+                        'meta_value' => 'DESC',  // Сначала по убыванию мета-поля (посты с "fav" будут первыми)
+                        'title'      => 'ASC',   // Затем по возрастанию заголовка (по алфавиту)
+                    ),
+                    'meta_query'     => array(
+                        'relation' => 'OR',
+                        array(
+                            'key'   => 'status',
+                            'value' => 'a:1:{i:0;s:3:"fav";}',
+                        ),
+                        array(
+                            'key'     => 'status',
+                            'compare' => 'NOT EXISTS',
+                        ),
+                    ),
                 );
+
+
 
                 $custom_query = new WP_Query($args);
 
