@@ -87,6 +87,12 @@
         color: rgba(21, 21, 21, 0.21);
         font-family: 'Commissioner', sans-serif;
       }
+
+      & .fs-dropdown {
+        & * {
+          font-family: 'Commissioner', sans-serif;
+        }
+      }
     }
 
     .button-select-approve {

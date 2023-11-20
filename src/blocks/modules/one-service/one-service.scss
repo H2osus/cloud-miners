@@ -405,9 +405,8 @@
 
     .video-block {
       @media screen and (min-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 12px;
+        display: flex;
+        gap: 12px;
       }
 
       &__image {
@@ -419,8 +418,18 @@
         height: 100%;
       }
       &__show {
+        width: max-content;
         margin-bottom: 12px;
         position: relative;
+
+        @media screen and (max-width: 980px) {
+          width: 100%;
+
+          & iframe {
+            width: 100%;
+          }
+        }
+
         &-icon {
           position: absolute;
           top: 0;

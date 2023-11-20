@@ -192,10 +192,11 @@ function cloud_miners_comment ( $comment, $args, $depth ){
 
             <?php
                 $images = get_field('image_comment', $comment) ?? 0;
-                if ($images && $images !== 0): ?>
+                if ($images && $images !== 0):
+                    $unicID = uniqid(); ?>
                     <div class="comment-inner__images">
                    <?php foreach ($images as $image) :?>
-                        <a href="<?= esc_attr($image['url']) ?>" class="img-block__show" data-lightbox="roadtrip">
+                        <a href="<?= esc_attr($image['url']) ?>" class="img-block__show" data-lightbox="gallery-<?= esc_attr($unicID) ?>">
                             <img src="<?= get_template_directory_uri() . '/src/img/images/svg/search-show.svg'?>" alt="look" class="img-block__show-icon"/>
                             <img src="<?= esc_attr($image['url']) ?>" alt="<?= esc_attr($image['alt']) ?>" class="img-block__image"/>
                         </a>

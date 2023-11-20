@@ -2503,6 +2503,10 @@ p.tag-purple {
   font-family: "Commissioner", sans-serif;
 }
 
+.service-rating .select-group .facetwp-facet .fs-dropdown * {
+  font-family: "Commissioner", sans-serif;
+}
+
 .service-rating .select-group .button-select-approve {
   padding: 20px;
   margin: 0;
@@ -3202,6 +3206,7 @@ p.tag-purple {
 }
 
 .one-service__content .video-block__show {
+  width: max-content;
   margin-bottom: 12px;
   position: relative;
 }
@@ -4931,9 +4936,8 @@ p.tag-purple {
   }
 
   .one-service__content .video-block {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 12px;
+    display: flex;
+    gap: 12px;
   }
 
   .one-service__content .img-block {
@@ -5730,6 +5734,16 @@ p.tag-purple {
 
   .banner_text {
     max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .one-service__content .video-block__show {
+    width: 100%;
+  }
+
+  .one-service__content .video-block__show iframe {
+    width: 100%;
   }
 }
 
