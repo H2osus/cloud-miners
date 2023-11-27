@@ -2033,10 +2033,28 @@ p.tag-purple {
   color: #151515;
 }
 
-.comment-respond form .acf-comment-fields {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.comment-respond form .comment-form-attachment {
+  width: 100%;
+}
+
+.comment-respond form .comment-form-attachment__label {
+  display: none;
+}
+
+.comment-respond form .comment-form-attachment__file-size-notice {
+  display: none !important;
+}
+
+.comment-respond form .comment-form-attachment__file-types-notice {
+  display: none !important;
+}
+
+.comment-respond form .comment-form-attachment__autoembed-links-notice {
+  display: none !important;
+}
+
+.comment-respond form .comment-form-attachment__file-size-notice {
+  display: none !important;
 }
 
 .comment-respond form .acf-comment-fields .acf-field-gallery {
@@ -4037,6 +4055,10 @@ p.tag-purple {
   opacity: 0;
   z-index: -1;
   transition: 0.75s;
+}
+
+.modal .wpcf7-not-valid-tip {
+  display: none;
 }
 
 .modal__close {

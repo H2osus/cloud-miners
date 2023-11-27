@@ -191,20 +191,28 @@ function cloud_miners_comment ( $comment, $args, $depth ){
             <p class="comment-content"><?= get_comment_text(get_comment_ID()); ?></p>
 
             <?php
-                $images = get_field('image_comment', $comment) ?? 0;
-                if ($images && $images !== 0):
+            $comment = get_comment();
+            $attach = get_comment_meta($comment->comment_ID);
+
+            if (!empty($attach['attachment_id'])) {
+                $attachment_data = $attach['attachment_id'][0];
+
+                $attachment_ids = is_serialized($attachment_data) ? unserialize($attachment_data) : array($attachment_data);
+
+                if (!empty($attachment_ids)) {
                     $unicID = uniqid(); ?>
                     <div class="comment-inner__images">
-                   <?php foreach ($images as $image) :?>
-                        <a href="<?= esc_attr($image['url']) ?>" class="img-block__show" data-lightbox="gallery-<?= esc_attr($unicID) ?>">
-                            <img src="<?= get_template_directory_uri() . '/src/img/images/svg/search-show.svg'?>" alt="look" class="img-block__show-icon"/>
-                            <img src="<?= esc_attr($image['url']) ?>" alt="<?= esc_attr($image['alt']) ?>" class="img-block__image"/>
-                        </a>
-                <?php endforeach; ?>
+                        <?php foreach ($attachment_ids as $attachment_id) :
+                            $image_url = wp_get_attachment_url($attachment_id); ?>
+                            <a href="<?= esc_attr($image_url) ?>" class="img-block__show" data-lightbox="gallery-<?= esc_attr($unicID) ?>">
+                                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/search-show.svg' ?>" alt="look" class="img-block__show-icon"/>
+                                <img src="<?= esc_attr($image_url) ?>" alt="" class="img-block__image"/>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
-            <?php endif; ?>
+                <?php }
+            }
 
-            <?php
             $post_id = get_the_ID();
 
             //get the setting configured in the admin panel under settings discussions "Enable threaded (nested) comments  levels deep"
