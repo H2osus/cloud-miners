@@ -11,7 +11,9 @@
 <div class="service-item <?= ($checkedStatus !== 0) ? 'favorite' : '' ?>">
     <div class="service-item_top">
         <div class="service-item__image">
-            <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+            <?php if(get_the_post_thumbnail_url($postId)): ?>
+                <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+            <?php endif; ?>
             <img src="<?= get_template_directory_uri() . '/src/img/images/svg/crown.svg'?>" alt="crown" class="crown"/>
         </div>
         <div>
@@ -46,7 +48,7 @@
             <?php endif; ?>
 
             <?php if ($linkedin_net !== 0) : ?>
-                <a href="<?php echo esc_url($linkedin_net); ?>" target="_blank" class="social-button">
+                <a href="<?php echo esc_url($linkedin_net); ?>" target="_blank" class="social-button" rel="nofollow">
                     <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="LinkedIn" />
                 </a>
             <?php endif; ?>

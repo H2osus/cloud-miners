@@ -16,7 +16,9 @@ $profitability = get_field('profitability', $postId) ?? 0;
     <div class="service-long__info">
         <div class="service-item_top">
             <div class="service-item__image">
-                <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+                <?php if(get_the_post_thumbnail_url($postId)): ?>
+                    <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+                <?php endif; ?>
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/crown.svg'?>" alt="crown" class="crown"/>
             </div>
             <div  class="service-item__right">

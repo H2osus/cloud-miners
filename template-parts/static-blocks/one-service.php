@@ -19,7 +19,7 @@
                     </a>
                 <?php endif; ?>
                 <?php if ($linkedin_net !== 0) : ?>
-                    <a href="<?php echo esc_url($linkedin_net); ?>" target="_blank" class="social-button">
+                    <a href="<?php echo esc_url($linkedin_net); ?>" target="_blank" class="social-button" rel="nofollow">
                         <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="LinkedIn" />
                     </a>
                 <?php endif; ?>
@@ -72,7 +72,8 @@
                 $wordChar = get_field('word_char', get_the_ID()) ?? '';
             ?>
             <p class="one-service__info-graduate--text"><?= esc_html($wordChar); ?> <span>(<?= esc_html($countGrade) ?> <?= esc_html__('оценок', 'cloud_miners') ?>)</span></p>
-            <a target="_blank" href="#" rel=”nofollow” class="button telegram-button">
+            <?php $tLink = get_field('telegram_net', get_the_ID()) ?? 0; ?>
+            <a target="_blank" href="<?= ($tLink && $tLink !== 0) ? $tLink : '#' ?>" rel=”nofollow” class="button telegram-button">
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram.svg'?>" alt="Author"/>
                 <?= esc_html__('Telegram', 'cloud_miners') ?>
             </a>

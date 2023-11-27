@@ -233,6 +233,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./src/js/helper/links.js":
+/*!********************************!*\
+  !*** ./src/js/helper/links.js ***!
+  \********************************/
+/***/ (() => {
+
+// $(document).ready(function () {
+//     console.log('links.js')
+//     // Перебираем все ссылки на странице
+//     $('a').each(function () {
+//         // Получаем значение атрибута href
+//         var hrefValue = $(this).attr('href');
+//
+//         // Получаем текущий URL страницы
+//         var currentPageUrl = window.location.href;
+//
+//         // Проверяем, ведет ли ссылка на текущую страницу
+//         if (hrefValue === currentPageUrl || hrefValue === '' || hrefValue === '#') {
+//             // Если да, делаем атрибут href пустым
+//             $(this).attr('href', '');
+//         }
+//     });
+// });
+
+$(document).ready(function () {
+  // Перебираем все ссылки на странице
+  $('a').each(function () {
+    // Получаем значение атрибута href
+    var hrefValue = $(this).attr('href');
+
+    // Получаем текущий URL страницы
+    var currentPageUrl = window.location.href;
+
+    // Проверяем, ведет ли ссылка на текущую страницу
+    if (hrefValue === currentPageUrl || hrefValue === '') {
+      // Если да, заменяем тег <a> на <div>
+      $(this).replaceWith(function () {
+        return $('<div>', {
+          html: $(this).html(),
+          "class": $(this).attr('class')
+        });
+      });
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/import/lightbox-plus-jquery.js":
 /*!***********************************************!*\
   !*** ./src/js/import/lightbox-plus-jquery.js ***!
@@ -10114,6 +10162,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/lightbox-plus-jquery */ "./src/js/import/lightbox-plus-jquery.js");
 /* harmony import */ var _import_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
+/* harmony import */ var _helper_links_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helper/links.js */ "./src/js/helper/links.js");
+/* harmony import */ var _helper_links_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_helper_links_js__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 })();
