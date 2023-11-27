@@ -1,6 +1,10 @@
 <div class="article-item">
     <div class="article-item_img">
-        <img src="<?=get_the_post_thumbnail_url($article)?>" alt="news item"/>
+        <?php if(get_the_post_thumbnail_url($article)): ?>
+            <img src="<?=get_the_post_thumbnail_url($article)?>" alt="news item"/>
+        <?php else: ?>
+            <img src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="news item"/>
+        <?php endif; ?>
     </div>
     <!--    use class - purple-badge - for badge with purple circle-->
     <?php $term = wp_get_post_terms($article, 'category-articles'); ?>

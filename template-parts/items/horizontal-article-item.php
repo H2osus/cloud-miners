@@ -1,5 +1,9 @@
 <div class="horizontal-article-item">
-    <img src="<?=get_the_post_thumbnail_url($article)?>" alt="" class="horizontal-article-item__img"/>
+    <?php if(get_the_post_thumbnail_url($article)): ?>
+        <img src="<?= get_the_post_thumbnail_url($article)?>" alt="" class="horizontal-article-item__img"/>
+    <?php else: ?>
+        <img src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="" class="horizontal-article-item__img"/>
+    <?php endif; ?>
     <div class="horizontal-article-item__content">
         <?php $term = wp_get_post_terms($article, 'category-articles'); ?>
         <p class="green-badge bg-light-bg"><?= $term ? esc_html($term[0]->name) : '' ?></p>

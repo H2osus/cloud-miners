@@ -14,6 +14,13 @@ $subtitle = get_field('subtitle_404', 'option') ?? 0;
 $text1 = get_field('text_1_404', 'option') ?? 0;
 $text2 = get_field('text_2_404', 'option') ?? 0;
 $link = get_field('link_404', 'option') ?? 0;
+
+require  get_template_directory() . "/template-parts/modal/modal-bg.php";
+require  get_template_directory() . "/template-parts/modal/modal-add-service.php";
+require  get_template_directory() . "/template-parts/modal/modal-add-complaint.php";
+require  get_template_directory() . "/template-parts/modal/modal-complaint-success.php";
+require  get_template_directory() . "/template-parts/modal/modal-thank-comment-success.php";
+require  get_template_directory() . "/template-parts/modal/modal-thank-service-success.php";
 ?>
 
     <main class="main">

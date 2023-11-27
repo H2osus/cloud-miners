@@ -1,6 +1,9 @@
 <div class="one-article">
-    <img src="<?= get_the_post_thumbnail_url(get_the_ID()) ?>" alt="look"/>
-
+    <?php if(get_the_post_thumbnail_url(get_the_ID())): ?>
+        <img src="<?= get_the_post_thumbnail_url(get_the_ID()) ?>" alt="look"/>
+    <?php else: ?>
+        <img src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="look"/>
+    <?php endif; ?>
     <h2><?= the_title() ?></h2>
     <div class="one-article__date-time">
         <?php $term = wp_get_post_terms(get_the_ID(), 'category-articles'); ?>
