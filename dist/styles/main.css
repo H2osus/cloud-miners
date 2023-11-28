@@ -1711,13 +1711,13 @@ p.tag-purple {
   flex-direction: column;
 }
 
-.menu-mobile nav .header_li {
+.menu-mobile nav .header_list li {
   padding: 20px 0;
   margin: 0;
   width: 100%;
 }
 
-.menu-mobile nav .header_li:not(:last-child) {
+.menu-mobile nav .header_list li:not(:last-child) {
   border-bottom: 1px solid #EAEAEA;
 }
 

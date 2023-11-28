@@ -297,15 +297,17 @@
     .header {
       &_list {
         flex-direction: column;
-      }
-      &_li {
-        padding: 20px 0;
-        margin: 0;
-        width: 100%;
-        &:not(:last-child) {
-          border-bottom: 1px solid #EAEAEA;
+
+        & li {
+          padding: 20px 0;
+          margin: 0;
+          width: 100%;
+          &:not(:last-child) {
+            border-bottom: 1px solid #EAEAEA;
+          }
         }
       }
+
       &_link {
         font-size: 14px;
         font-weight: 500;

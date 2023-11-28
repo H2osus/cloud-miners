@@ -53,23 +53,14 @@
                                 <img src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('custom_logo'))); ?>" alt="Cloud Miners" class="logo"/>
                             </a>
                         <?php endif ?>
-                        <ul class="header_list">
-                            <?php
-                            if($checkedLinks !== 0) {
-                                foreach ($checkedLinks as $link) {
-                                    if(!is_array($link)) : ?>
-                                        <li class="header_li">
-                                            <button class="header_link js-add-service" ><?= $link ? esc_html($link) : '' ?></button>
-                                        </li>
-                                    <?php else: ?>
-                                        <li class="header_li">
-                                            <a href="<?= $link ? esc_attr($link['url']) : '' ?>" class="header_link"><?= $link ? esc_html($link['title']) : '' ?></a>
-                                        </li>
-                                    <?php endif;
-                                }
-                            }
-                            ?>
-                        </ul>
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'header-menu',
+                            'menu' => 'header-menu',
+                            'menu_class' => 'header_list',
+                            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                            'link_class' => 'header_link',
+                        )); ?>
                     </nav>
                 </div>
                 <div class="search-mobile" id="search-mobile">
