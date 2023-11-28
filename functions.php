@@ -240,46 +240,46 @@ function cloud_miners_comment_end ( $comment, $args, $depth ){
     echo '</li>';
 }
 
-    add_action( 'wpcf7_init', 'custom_add_form_tag_checkboxes' );
-    function custom_add_form_tag_checkboxes() {
-        wpcf7_add_form_tag( 'checkboxes', 'custom_checkboxes_form_tag_handler' );
-    }
-    function custom_checkboxes_form_tag_handler( $tag ) {
+add_action( 'wpcf7_init', 'custom_add_form_tag_checkboxes' );
+function custom_add_form_tag_checkboxes() {
+    wpcf7_add_form_tag( 'checkboxes', 'custom_checkboxes_form_tag_handler' );
+}
+function custom_checkboxes_form_tag_handler( $tag ) {
 
 
-        $responce = '
-        <div class="group-checkbox-title">
-               <p>Тип канала</p>
+    $responce = '
+    <div class="group-checkbox-title">
+           <p>Тип канала</p>
+       </div>
+       <div class="group-checkbox">
+           <div class="form-group">
+               <input name="FREE" type="checkbox" id="FREE">
+               <label for="FREE">Публичный (FREE)</label>
            </div>
-           <div class="group-checkbox">
-               <div class="form-group">
-                   <input name="FREE" type="checkbox" id="FREE">
-                   <label for="FREE">Публичный (FREE)</label>
-               </div>
-               <div class="form-group">
-                   <input name="VIP" type="checkbox" id="VIP">
-                   <label for="VIP">Приватный (VIP)</label>
-               </div>
+           <div class="form-group">
+               <input name="VIP" type="checkbox" id="VIP">
+               <label for="VIP">Приватный (VIP)</label>
            </div>
-        ';
-        return $responce;
+       </div>
+    ';
+    return $responce;
+}
+
+
+add_action( 'wp_footer', function() {
+    if (is_post_type_archive('services')) {
+    ?>
+    <script>
+        (function($) {
+            $(function() {
+                if ('undefined' !== typeof FWP) {
+                    FWP.auto_refresh = false;
+                }
+            });
+        })(fUtil);
+    </script>
+    <?php
     }
-
-
-    add_action( 'wp_footer', function() {
-        if (is_post_type_archive('services')) {
-        ?>
-        <script>
-            (function($) {
-                $(function() {
-                    if ('undefined' !== typeof FWP) {
-                        FWP.auto_refresh = false;
-                    }
-                });
-            })(fUtil);
-        </script>
-        <?php
-        }
-    }, 100 );
+}, 100 );
 
 ?>

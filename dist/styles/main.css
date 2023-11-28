@@ -1992,7 +1992,7 @@ p.tag-purple {
 
 .comment-respond form {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 44px;
@@ -2097,7 +2097,29 @@ p.tag-purple {
   display: none;
 }
 
-.comment-respond form .acf-comment-fields label {
+.comment-respond form .rmp-rating-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.comment-respond form .rmp-rating-widget li {
+  padding-left: 5px !important;
+}
+
+.comment-respond form .rmp-rating-widget i {
+  font-size: 29px;
+}
+
+.comment-respond form .rmp-rating-widget i.rmp-icon--full-highlight {
+  color: #F8CC32 !important;
+}
+
+.comment-respond form .rmp-rating-widget .js-rmp-results {
+  display: none;
+}
+
+.comment-respond form .rmp-rating-widget .rmp-heading.rmp-heading--title {
   font-size: 12px;
   margin-bottom: 12px;
   font-weight: 400;
@@ -2716,6 +2738,7 @@ p.tag-purple {
   line-height: 120%;
   margin-bottom: 18px;
   text-decoration: none;
+  font-family: "Commissioner", sans-serif;
 }
 
 .author__descr {
@@ -3030,6 +3053,48 @@ p.tag-purple {
   font-size: 12px;
   font-weight: 300;
   line-height: 23.5px;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__visual-rating {
+  order: 2;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__visual-rating .rmp-icon--full-highlight {
+  color: #F8CC32;
+  margin: 0 2px;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__avg-rating {
+  order: 1;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__avg-rating span {
+  color: #151515;
+  font-family: "Commissioner", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23.5px;
+  /* 58.75% */
+  margin: 0 0 8px;
+  display: block;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__vote-count {
+  order: 3;
+  margin: 4px 0 12px;
+  color: rgba(21, 21, 21, 0.56);
+  font-family: "Commissioner", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
 }
 
 .one-service__info-graduate {

@@ -58,20 +58,22 @@
         </div>
 
         <div class="one-service__info-graduate">
-            <?php $rating = get_field('rating', get_the_ID()) ?? 0; ?>
-            <p class="one-service__info-graduate--total"><?= ($rating !== 0) ? esc_html($rating) : '0' ?></p>
-            <div class="one-service__info-graduate--stars">
-                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="star" />
-                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="star" />
-                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="star" />
-                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star-grey.svg'?>" alt="star" />
-                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star-grey.svg'?>" alt="star" />
-            </div>
-            <?php
-                $countGrade = get_field('count_grade', get_the_ID()) ?? 0;
-                $wordChar = get_field('word_char', get_the_ID()) ?? '';
-            ?>
-            <p class="one-service__info-graduate--text"><?= esc_html($wordChar); ?> <span>(<?= esc_html($countGrade) ?> <?= esc_html__('оценок', 'cloud_miners') ?>)</span></p>
+<!--            --><?php //$rating = get_field('rating', get_the_ID()) ?? 0; ?>
+<!--            <p class="one-service__info-graduate--total">--><?php //= ($rating !== 0) ? esc_html($rating) : '0' ?><!--</p>-->
+<!--            <div class="one-service__info-graduate--stars">-->
+<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star.svg'?><!--" alt="star" />-->
+<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star.svg'?><!--" alt="star" />-->
+<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star.svg'?><!--" alt="star" />-->
+<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star-grey.svg'?><!--" alt="star" />-->
+<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star-grey.svg'?><!--" alt="star" />-->
+<!--            </div>-->
+<!--            --><?php
+//                $countGrade = get_field('count_grade', get_the_ID()) ?? 0;
+//                $wordChar = get_field('word_char', get_the_ID()) ?? '';
+//            ?>
+<!--            <p class="one-service__info-graduate--text">--><?php //= esc_html($wordChar); ?><!-- <span>(--><?php //= esc_html($countGrade) ?><!-- --><?php //= esc_html__('оценок', 'cloud_miners') ?><!--)</span></p>-->
+            <?= do_shortcode('[ratemypost-result]') ?>
+
             <?php $tLink = get_field('telegram_net', get_the_ID()) ?? 0; ?>
             <a target="_blank" href="<?= ($tLink && $tLink !== 0) ? $tLink : '#' ?>" rel=”nofollow” class="button telegram-button">
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram.svg'?>" alt="Author"/>

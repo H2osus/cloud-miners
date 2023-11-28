@@ -102,7 +102,7 @@ if ( post_password_required() ) {
         // change the title of send button
         'label_submit'=> __('Оставить отзыв', 'cloud_miners'),
         'logged_in_as'=> '<p class="logged-in-as">Вы вошли как "'.$user_identity.'"</p>',
-        'comment_field' => '
+        'comment_field' => do_shortcode('[ratemypost]'). '
 			<p class="comment-form-comment">
 				<label for="comment">' . __( 'Ваш Отзыв', 'cloud_miners' ) . '</label>
 				<textarea id="comment" name="comment" cols="60" maxlength="65525" rows="7"></textarea>
