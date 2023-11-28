@@ -72,7 +72,7 @@
 //                $wordChar = get_field('word_char', get_the_ID()) ?? '';
 //            ?>
 <!--            <p class="one-service__info-graduate--text">--><?php //= esc_html($wordChar); ?><!-- <span>(--><?php //= esc_html($countGrade) ?><!-- --><?php //= esc_html__('оценок', 'cloud_miners') ?><!--)</span></p>-->
-            <?= do_shortcode('[ratemypost-result]') ?>
+            <?= do_shortcode('[ratemypost-result id="'.get_the_ID().'"]') ?>
 
             <?php $tLink = get_field('telegram_net', get_the_ID()) ?? 0; ?>
             <a target="_blank" href="<?= ($tLink && $tLink !== 0) ? $tLink : '#' ?>" rel=”nofollow” class="button telegram-button">

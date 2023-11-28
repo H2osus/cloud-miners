@@ -3,12 +3,6 @@ $postId = get_the_ID();
 $status = get_field('status', $postId);
 $checkedStatus = $status[0] ?? 0;
 
-$rating = get_field('rating', $postId) ?? 0;
-$count_grade = get_field('count_grade', $postId) ?? 0;
-
-$rating = $rating ?: 0;
-$count_grade = $count_grade ?: 0;
-
 $profitability = get_field('profitability', $postId) ?? 0;
 ?>
 <!--add class 'service-long__favorite' to do block with crown-->
@@ -25,8 +19,7 @@ $profitability = get_field('profitability', $postId) ?? 0;
                 <p class="service-item_title"><?= get_the_title($postId); ?></p>
                 <div class="service-item_top__all-rate">
                     <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="banner mask" crossorigin="main-img"/>
-                    <p class="service-item_top__all-rate_graduate"><?= esc_html($rating) ?></p>
-                    <p class="service-item_top__all-rate_count">(<?= esc_html($count_grade) ?> <?= esc_html__('оценок', 'cloud_miners') ?>)</p>
+                    <?= do_shortcode('[ratemypost-result id="'.$postId.'"]') ?>
                     <p class="service-item_percent"><?= ($profitability !== 0) ? esc_html($profitability['percent'] . '%') : '0%' ?> / <?= ($profitability !== 0) ? esc_html($profitability['term']) : esc_html__('Год', 'cloud_miners') ?></p>
                 </div>
                 <p class="service-item__text"><?= get_the_excerpt($postId); ?></p>

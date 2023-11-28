@@ -179,8 +179,8 @@ function cloud_miners_comment ( $comment, $args, $depth ){
                         ?>
                         <a href="<?= esc_attr(get_author_posts_url($comment->user_id)) ?>" class="comment-author__info-name"><?= esc_html($lName . ' ' . $fName); ?></a>
                         <div class="comment-author__info-stars">
-                            <?php $rating = get_field('star_rating', $comment); ?>
-                            <?= $rating; ?>
+<!--                            --><?php //$rating = get_field('star_rating', $comment); ?>
+<!--                            --><?php //= $rating; ?>
                         </div>
 <!--                        <p class="comment-author__info-graduate">4.0</p>-->
                     </div>

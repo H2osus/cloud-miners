@@ -161,7 +161,7 @@ function create_taxonomy()
         'capabilities' => array(),
         'meta_box_cb' => null,
         'show_admin_column' => true,
-        'show_in_rest' => null,
+        'show_in_rest' => true,
         'rest_base' => null,
         // '_builtin'              => false,
         //'update_count_callback' => '_update_post_term_count',

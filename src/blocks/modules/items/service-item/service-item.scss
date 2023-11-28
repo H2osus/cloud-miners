@@ -3,6 +3,35 @@
   padding: 14px;
   border-radius: 5px;
 
+  & .rmp-results-widget__visual-rating {
+    display: none;
+  }
+
+  & .rmp-results-widget__visual-rating {
+    display: none;
+  }
+
+  & .js-rmp-avg-rating {
+    font-size: 10px;
+    color: #151515;
+    font-weight: 600;
+    margin: 0 0 0 4px;
+    font-family: "Commissioner", sans-serif;
+  }
+
+  & .rmp-results-widget__vote-count {
+    font-size: 10px;
+    color: #151515;
+    opacity: 0.58;
+    margin: 0;
+    line-height: 150%;
+    font-family: "Commissioner", sans-serif;
+  }
+
+  & .js-rmp-vote-count::after {
+    content: ' оценок';
+  }
+
   &_top {
     display: flex;
     align-items: center;
