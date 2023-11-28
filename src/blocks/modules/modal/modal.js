@@ -10,6 +10,7 @@ const modalCommentSuccess = document.getElementById("modal-comment-success");
 const buttonCommentSuccess = document.getElementById("button-comment-success");
 
 const addService = document.getElementsByClassName( "js-add-service");
+
 const leftComplaint = document.getElementById( "left-complaint");
 const leftComplaintMob = document.getElementById( "left-complaint-mob");
 
@@ -55,6 +56,7 @@ leftComplaintMob?.addEventListener("click", (e) => {
     modalBg.classList.add("opened");
     body.classList.add("opened");
 });
+
 
 for (let i = 0; i < closeModalElements.length; i++) {
     addService[i]?.addEventListener("click", (e) => {
@@ -107,3 +109,12 @@ wpcf7Elm2.addEventListener(
     false
 );
 
+const addServices = document.querySelectorAll('a[href="#add-service"]');
+addServices.forEach((element) => {
+    element.addEventListener("click", (e) => {
+        e.preventDefault();
+        modalAddService.classList.add("opened");
+        modalBg.classList.add("opened");
+        body.classList.add("opened");
+    });
+});

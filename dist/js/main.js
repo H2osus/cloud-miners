@@ -199,6 +199,15 @@ wpcf7Elm2.addEventListener("wpcf7mailsent", function (event) {
   modalBg.classList.add("opened");
   body.classList.add("opened");
 }, false);
+var addServices = document.querySelectorAll('a[href="#add-service"]');
+addServices.forEach(function (element) {
+  element.addEventListener("click", function (e) {
+    e.preventDefault();
+    modalAddService.classList.add("opened");
+    modalBg.classList.add("opened");
+    body.classList.add("opened");
+  });
+});
 
 /***/ }),
 

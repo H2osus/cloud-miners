@@ -11,10 +11,6 @@
 <body id="body" <?php  body_class(); ?> >
 <?php wp_body_open(); ?>
 <main>
-    <?php
-    $links = get_field('header_links', 'option');
-    $checkedLinks = $links ?? 0;
-    ?>
     <header class='header header-dark' id="header">
         <div class="container">
             <div class="header_container">
@@ -22,25 +18,16 @@
                     <a href="<?= home_url('/'); ?>">
                         <img src="<?= ($logo !== 0) ? esc_attr($logo['url']): '' ?>" alt="<?= ($logo !== 0) ? esc_attr($logo['alt']): '' ?>" class="logo"/>
                     </a>
-                <nav>
-                    <ul class="header_list">
-                        <?php
-                        if($checkedLinks !== 0) {
-                            foreach ($checkedLinks as $link) {
-                                if(!is_array($link)) : ?>
-                                    <li class="header_li">
-                                        <a href="Javascript:void(0)" class="header_link js-add-service"><?= $link ? esc_html($link) : '' ?></a>
-                                    </li>
-                                <?php else: ?>
-                                    <li class="header_li">
-                                        <a href="<?= $link ? esc_attr($link['url']) : '' ?>" class="header_link"><?= $link ? esc_html($link['title']) : '' ?></a>
-                                    </li>
-                                <?php endif;
-                            }
-                        }
-                        ?>
-                    </ul>
-                </nav>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'header-menu',
+                    'menu' => 'header-menu',
+                    'menu_class' => 'header_list',
+                    'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                    'container' => 'nav',
+                    'container_class' => 'nav',
+                    'link_class' => 'header_link',
+                )); ?>
                 <div class="search-hamburger">
                     <div class="search-input__container">
 <!--                        <input class="search-input" id="search-input">-->

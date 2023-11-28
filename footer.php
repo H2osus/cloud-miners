@@ -8,8 +8,7 @@
  *
  * @package cloud_miners
  */
-$links = get_field('footer_links', 'option');
-$checkedLinks = $links ?? 0;
+
 $logo = get_field('footer_logo', 'option');
 $copyright = get_field('copyright', 'option');
 ?>
@@ -22,25 +21,16 @@ $copyright = get_field('copyright', 'option');
             <a href="<?= esc_attr('/') ?>">
                 <img src="<?= $logo ? esc_attr($logo['url']) : ''?>" alt="<?= $logo ? esc_attr($logo['alt']) : ''?>" class="Cloud Miners"/>
             </a>
-            <nav>
-                <ul class="footer_list">
-                    <?php
-                        if($checkedLinks !== 0) {
-                            foreach ($checkedLinks as $link) {
-                                if(!is_array($link)) : ?>
-                                    <li class="footer_li">
-                                        <a href="Javascript:void(0)" class="footer_link js-add-service"><?= $link ? esc_html($link) : '' ?></a>
-                                    </li>
-                                <?php else: ?>
-                                    <li class="footer_li">
-                                        <a href="<?= $link ? esc_attr($link['url']) : '' ?>" class="footer_link"><?= $link ? esc_html($link['title']) : '' ?></a>
-                                    </li>
-                                <?php endif;
-                            }
-                        }
-                    ?>
-                </ul>
-            </nav>
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'footer-menu',
+                'menu' => 'footer-menu',
+                'menu_class' => 'footer_list',
+                'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+                'container' => 'nav',
+                'container_class' => 'nav',
+                'link_class' => 'footer_link',
+            )); ?>
             <p class="footer__copyright"><?= $copyright ? esc_html($copyright) : ''; ?></p>
         </div>
     </div>

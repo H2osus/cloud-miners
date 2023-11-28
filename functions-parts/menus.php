@@ -22,15 +22,12 @@
 	}
  
   
-	function wpml_floating_language_switcher($items) { 
-		return $items .= do_shortcode('[wpml_language_switcher]');
-	}
+//	function wpml_floating_language_switcher($items) {
+//		return $items .= do_shortcode('[wpml_language_switcher]');
+//	}
 
 
 
 	add_filter('nav_menu_link_attributes', 'additional_class', 1, 3);
-	add_filter('wp_nav_menu_items', 'wpml_floating_language_switcher', 9, 5);
-
-
-
+//	add_filter('wp_nav_menu_items', 'wpml_floating_language_switcher', 9, 5);
  ?>
