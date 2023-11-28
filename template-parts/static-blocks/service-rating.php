@@ -1,6 +1,6 @@
 <div class="service-rating">
     <div class="service-rating__title">
-        <h2><?= esc_html__('Рейтинг Сервисов', 'cloud_miners') ?></h2>
+        <span><?= esc_html__('Рейтинг Сервисов', 'cloud_miners') ?></span>
         <p><?= esc_html__('Лучшей системой, которая позволит каждому желающему получать криптовалюту без внушительных вложений фиатных средств, является сервис BitMine. По сравнению с другими проектами, этот ресурс выглядит очень перспективно. Развивается он стабильно и платить хорошие деньги всем пользователям.', 'cloud_miners') ?></p>
     </div>
     <div class="select-group__container" id="select-group__container">

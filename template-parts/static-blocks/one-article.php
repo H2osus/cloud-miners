@@ -4,7 +4,7 @@
     <?php else: ?>
         <img src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="look"/>
     <?php endif; ?>
-    <h2><?= the_title() ?></h2>
+    <span><?= the_title() ?></span>
     <div class="one-article__date-time">
         <?php $term = wp_get_post_terms(get_the_ID(), 'category-articles'); ?>
         <p class="green-badge bg-light-bg"><?= $term ? esc_html($term[0]->name) : '' ?></p>

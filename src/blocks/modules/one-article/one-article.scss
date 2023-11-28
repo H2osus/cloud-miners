@@ -8,9 +8,15 @@
     max-width: 100%;
   }
 
-  h2 {
+  span {
     margin-top: 16px;
     margin-bottom: 16px;
+    font-size: 52px;
+    font-weight: 700;
+    color: #151515;
+    line-height: 116%;
+    font-family: "Commissioner", sans-serif;
+    display: block;
 
     @media screen and (min-width: 768px) {
       margin-top: 26px;

@@ -694,11 +694,13 @@ p {
   display: block;
 }
 
-.search-content h2 {
+.search-content span {
   text-align: center;
   font-size: 24px;
   margin-bottom: 12px;
   font-weight: 400;
+  font-family: "Commissioner", sans-serif;
+  display: block;
 }
 
 .search-content h4 {
@@ -1898,6 +1900,8 @@ p.tag-purple {
   color: #FFFFFF;
   position: relative;
   z-index: 2;
+  font-family: "Commissioner", sans-serif;
+  display: block;
   font-size: 32px;
   margin-bottom: 12px;
   font-weight: 400;
@@ -2468,7 +2472,12 @@ p.tag-purple {
   justify-content: space-between;
 }
 
-.service-rating__title h2 {
+.service-rating__title span {
+  font-size: 52px;
+  font-weight: 700;
+  color: #151515;
+  font-family: "Commissioner", sans-serif;
+  line-height: 116%;
   margin-bottom: 10px;
 }
 
@@ -2633,9 +2642,12 @@ p.tag-purple {
   background-color: #FFFFFF;
 }
 
-.articles-page h2 {
+.articles-page span {
   font-size: 34px;
   font-weight: 600;
+  color: #151515;
+  font-family: "Commissioner", sans-serif;
+  line-height: 116%;
 }
 
 .articles-page__titles {
@@ -2946,6 +2958,14 @@ p.tag-purple {
   justify-content: space-between;
   max-width: 375px;
   width: 100%;
+}
+
+.one-service__title-left span {
+  font-size: 52px;
+  font-weight: 600;
+  color: #151515;
+  line-height: 130%;
+  font-family: "Commissioner", sans-serif;
 }
 
 .one-service__info {
@@ -3339,9 +3359,15 @@ p.tag-purple {
   max-width: 100%;
 }
 
-.one-article h2 {
+.one-article span {
   margin-top: 16px;
   margin-bottom: 16px;
+  font-size: 52px;
+  font-weight: 700;
+  color: #151515;
+  line-height: 116%;
+  font-family: "Commissioner", sans-serif;
+  display: block;
 }
 
 .one-article__date-time {
@@ -4987,7 +5013,7 @@ p.tag-purple {
     font-size: 18px;
   }
 
-  .one-article h2 {
+  .one-article span {
     margin-top: 26px;
     margin-bottom: 26px;
   }
@@ -5333,7 +5359,7 @@ p.tag-purple {
     display: none;
   }
 
-  .search-content h2 {
+  .search-content span {
     font-size: 34px;
     text-align: left;
     margin-bottom: 36px;
@@ -5481,7 +5507,7 @@ p.tag-purple {
     font-size: 16px;
   }
 
-  .service-rating__title h2 {
+  .service-rating__title span {
     margin-bottom: 20px;
   }
 

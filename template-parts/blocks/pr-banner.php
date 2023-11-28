@@ -19,7 +19,7 @@ $text = get_field('text');
     <div class="container">
         <div class="banner_content">
             <div class="banner_text">
-                <h1 class="banner_title"><?= $title_1 ? esc_html($title_1) : '' ;?><b><?= $title_2 ? esc_html($title_2) : '' ;?><span><?= $title_3 ? esc_html($title_3) : '' ;?></span></b></h1>
+                <span class="banner_title"><?= $title_1 ? esc_html($title_1) : '' ;?><b><?= $title_2 ? esc_html($title_2) : '' ;?><span><?= $title_3 ? esc_html($title_3) : '' ;?></span></b></span>
                 <p><?= $text ? esc_html($text) : '' ; ?></p>
             </div>
         </div>

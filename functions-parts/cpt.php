@@ -40,7 +40,7 @@ function register_post_types()
         //'capabilities'      => 'post',
         //'map_meta_cap'      => null,
         'hierarchical' => false,
-        'supports' => ['title', 'thumbnail', 'excerpt', 'editor', 'author', 'comments'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => ['title', 'thumbnail', 'excerpt', 'editor', 'author', 'page-attributes', 'post-formats', 'custom-fields', 'comments'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies' => [],
         'has_archive' => true,
         'rewrite' => true,
@@ -123,7 +123,7 @@ function create_taxonomy()
         'capabilities' => array(),
         'meta_box_cb' => null,
         'show_admin_column' => true,
-        'show_in_rest' => null,
+        'show_in_rest' => true,
         'rest_base' => null,
         // '_builtin'              => false,
         //'update_count_callback' => '_update_post_term_count',

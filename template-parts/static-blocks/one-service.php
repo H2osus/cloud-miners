@@ -1,7 +1,7 @@
 <div class="one-service">
     <div class="one-service__title">
         <div class="one-service__title-left">
-            <h2><?= get_the_title() ?></h2>
+            <span><?= get_the_title() ?></span>
             <div class="social-buttons">
                 <?php
                 $facebook_net = get_field('facebook_net', get_the_ID()) ?? 0;

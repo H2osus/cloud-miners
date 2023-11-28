@@ -1,9 +1,12 @@
 .articles-page {
   background-color: $white;
 
-  h2 {
+  span {
     font-size: 34px;
     font-weight: 600;
+    color: #151515;
+    font-family: "Commissioner", sans-serif;
+    line-height: 116%;
   }
 
   &__titles {

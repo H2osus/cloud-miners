@@ -1,7 +1,12 @@
 .service-rating {
 
   &__title {
-    h2 {
+    span {
+      font-size: 52px;
+      font-weight: 700;
+      color: #151515;
+      font-family: "Commissioner", sans-serif;
+      line-height: 116%;
       margin-bottom: 10px;
       @media screen and (min-width: 1024px) {
         margin-bottom: 20px;

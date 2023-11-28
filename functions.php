@@ -281,4 +281,5 @@ function cloud_miners_comment_end ( $comment, $args, $depth ){
         <?php
         }
     }, 100 );
+
 ?>

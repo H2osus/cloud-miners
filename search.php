@@ -24,7 +24,7 @@ get_header('dark');
         <div class="container-with-sidebar">
             <div class="search-content">
 
-                <h2><?= esc_html__( 'Результат поиска', 'cloud_miners' ) ?> <b>“<?= get_search_query() ?>”</b></h2>
+                <span><?= esc_html__( 'Результат поиска', 'cloud_miners' ) ?> <b>“<?= get_search_query() ?>”</b></span>
 
                 <?php
                 // Переменная для отслеживания типа поста

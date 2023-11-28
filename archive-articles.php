@@ -14,7 +14,7 @@
             <div>
                 <div class="articles-page">
                     <div class="articles-page__titles">
-                        <h2>Статьи</h2>
+                        <span><?= esc_html__('Статьи', 'cloud_miners') ?></span>
                     </div>
                     <div class="filter">
                         <ul>

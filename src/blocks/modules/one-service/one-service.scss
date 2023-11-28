@@ -35,6 +35,14 @@
     justify-content: space-between;
     max-width: 375px;
     width: 100%;
+
+    & span {
+      font-size: 52px;
+      font-weight: 600;
+      color: #151515;
+      line-height: 130%;
+      font-family: "Commissioner", sans-serif;
+    }
   }
 
   &__info {
