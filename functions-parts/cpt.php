@@ -116,7 +116,7 @@ function create_taxonomy()
         // 'show_in_menu'          => true,
         // 'show_tagcloud'         => true,
         // 'show_in_quick_edit'    => null,
-        'hierarchical' => false,
+        'hierarchical' => true,
 
         'rewrite' => true,
         //'query_var'             => $taxonomy,
