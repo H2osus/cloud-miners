@@ -179,10 +179,7 @@ function cloud_miners_comment ( $comment, $args, $depth ){
                         ?>
                         <a href="<?= esc_attr(get_author_posts_url($comment->user_id)) ?>" class="comment-author__info-name"><?= esc_html($lName . ' ' . $fName); ?></a>
                         <div class="comment-author__info-stars">
-<!--                            --><?php //$rating = get_field('star_rating', $comment); ?>
-<!--                            --><?php //= $rating; ?>
                         </div>
-<!--                        <p class="comment-author__info-graduate">4.0</p>-->
                     </div>
                     <p class="comment-author__data"><?= get_comment_date('d.m.Y', get_comment_ID()); ?></p>
                 </div>
@@ -282,4 +279,34 @@ add_action( 'wp_footer', function() {
     }
 }, 100 );
 
-?>
+
+//
+    add_action( 'set_comment_cookies', function( $comment, $user ) {
+        setcookie( 'ta_comment_wait_approval', '1' );
+    }, 10, 2 );
+
+    add_action( 'init', function() {
+        if( isset($_COOKIE['ta_comment_wait_approval']) && $_COOKIE['ta_comment_wait_approval'] === '1' ) {
+            // Instead of null, use an empty string as the default value
+            setcookie( 'ta_comment_wait_approval', '', time() - 3600, '/' );
+            add_action( 'comment_form_before', function() {
+                echo '<script>
+                const modalCommentSuccess = document.getElementById("modal-comment-success");
+                const buttonCommentSuccess = document.getElementById("button-comment-success");
+                const modalBg = document.getElementById("modal-bg");
+                
+                modalCommentSuccess.classList.add("opened");
+                modalBg.classList.add("opened");
+                body.classList.add("opened");
+                               
+                </script>';
+            });
+        }
+    });
+
+    add_filter( 'comment_post_redirect', function( $location, $comment ) {
+        $location = get_permalink( $comment->comment_post_ID ) . '#wait_approval';
+        return $location;
+    }, 10, 2 );
+
+    ?>

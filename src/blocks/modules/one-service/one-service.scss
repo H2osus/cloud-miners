@@ -133,6 +133,10 @@
       & .rmp-results-widget__visual-rating {
         order: 2;
 
+        & .rmp-icon--half-highlight {
+          background: linear-gradient(to right,#F8CC32 50%,#ccc 50%);
+          -webkit-background-clip: text;
+        }
         & .rmp-icon--full-highlight {
           color: #F8CC32;
           margin: 0 2px;

@@ -148,6 +148,11 @@
       & i {
         font-size: 29px;
 
+        &.rmp-icon--half-highlight {
+          background: linear-gradient(to right,#F8CC32 50%,#ccc 50%) !important;
+          -webkit-background-clip: text !important;
+        }
+
         &.rmp-icon--full-highlight {
           color: #F8CC32 !important;
         }

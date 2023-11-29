@@ -2111,6 +2111,11 @@ p.tag-purple {
   font-size: 29px;
 }
 
+.comment-respond form .rmp-rating-widget i.rmp-icon--half-highlight {
+  background: linear-gradient(to right, #F8CC32 50%, #ccc 50%) !important;
+  -webkit-background-clip: text !important;
+}
+
 .comment-respond form .rmp-rating-widget i.rmp-icon--full-highlight {
   color: #F8CC32 !important;
 }
@@ -2363,6 +2368,15 @@ p.tag-purple {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 4px;
+}
+
+.comment-author__info i.rmp-icon--half-highlight {
+  background: linear-gradient(to right, #F8CC32 50%, #ccc 50%) !important;
+  -webkit-background-clip: text !important;
+}
+
+.comment-author__info i.rmp-icon--full-highlight {
+  color: #F8CC32 !important;
 }
 
 .comment-author__info-name {
@@ -3063,6 +3077,11 @@ p.tag-purple {
 
 .one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__visual-rating {
   order: 2;
+}
+
+.one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__visual-rating .rmp-icon--half-highlight {
+  background: linear-gradient(to right, #F8CC32 50%, #ccc 50%);
+  -webkit-background-clip: text;
 }
 
 .one-service__info .rmp-results-widget.js-rmp-results-widget .rmp-results-widget__visual-rating .rmp-icon--full-highlight {
@@ -3907,6 +3926,20 @@ p.tag-purple {
   background: #FFF;
   margin-bottom: 20px;
   width: 100%;
+}
+
+.service-long .rmp-results-widget {
+  display: flex;
+  align-items: center;
+}
+
+.service-long .rmp-results-widget .rmp-results-widget__vote-count {
+  display: flex;
+}
+
+.service-long .rmp-results-widget .js-rmp-vote-count {
+  font-size: 16px !important;
+  margin: 0 !important;
 }
 
 .service-long .rmp-results-widget__visual-rating {

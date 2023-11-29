@@ -1,6 +1,10 @@
 <div class="author-article">
     <div class="author-article__img">
-        <img src="<?=get_the_post_thumbnail_url(get_the_ID())?>" alt="news item"/>
+        <?php if(get_the_post_thumbnail_url(get_the_ID())): ?>
+            <img src="<?=get_the_post_thumbnail_url(get_the_ID())?>" alt="news item"/>
+        <?php else: ?>
+            <img src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="news item"/>
+        <?php endif; ?>
     </div>
     <div class="author-article__content">
         <?php $term = wp_get_post_terms(get_the_ID(), 'category-articles'); ?>

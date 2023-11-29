@@ -5,6 +5,20 @@
   margin-bottom: 20px;
   width: 100%;
 
+  & .rmp-results-widget {
+    display: flex;
+    align-items: center;
+
+    & .rmp-results-widget__vote-count {
+      display: flex;
+    }
+
+    & .js-rmp-vote-count {
+      font-size: 16px !important;
+      margin: 0 !important;
+    }
+  }
+
   & .rmp-results-widget__visual-rating {
     display: none;
   }

@@ -29,18 +29,14 @@ get_header('dark');
                 <?php
                 // Переменная для отслеживания типа поста
                 $post_type = '';
-
                 /* Start the Loop */
                 echo '<h4>'.esc_html__('Сервисы', 'cloud_miners').'</h4>';
                 while ( have_posts() ) : the_post();
                     $current_post_type = get_post_type();
-                    if ($current_post_type != $post_type) {
-                        $post_type = $current_post_type;
-
-                        if ($post_type == 'services') {
-                            // Включите файл services-long.php
-                            require get_template_directory() . "/template-parts/items/services-long.php";
-                        }
+                    $post_type = $current_post_type;
+                    if ($post_type == 'services') {
+                        // Включите файл services-long.php
+                        require get_template_directory() . "/template-parts/items/services-long.php";
                     }
 
                 endwhile;
@@ -49,15 +45,13 @@ get_header('dark');
                 echo '<h4>'.esc_html__('Статьи', 'cloud_miners').'</h4>';
                 while ( have_posts() ) : the_post();
                     $current_post_type = get_post_type();
-                    if ($current_post_type != $post_type) {
-                        $post_type = $current_post_type;
-
-                        if ($post_type == 'articles') {
-                            require get_template_directory() . "/template-parts/items/author-article.php";
-                        }
+                    $post_type = $current_post_type;
+                    if ($post_type == 'articles') {
+                        require get_template_directory() . "/template-parts/items/author-article.php";
                     }
 
                 endwhile;
+
                 ?>
             </div>
             <?php require get_template_directory() . "/template-parts/static-blocks/sidebar.php"; ?>
