@@ -32,6 +32,38 @@
       font-family: "Commissioner", sans-serif;
     }
 
+    input[type=file] {
+      padding: 10px 0;
+      color: transparent;
+      cursor: pointer;
+
+      &:focus {
+        outline: unset;
+      }
+      &:focus-visible {
+        outline: unset;
+      }
+    }
+    input[type=file]::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    input[type=file]::before {
+      content: 'Загрузить фотографию';
+      color: #460BF9;
+      font-family: 'Commissioner', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22.5px; /* 187.5% */
+      border-radius: 3px;
+      border: 1px solid #460BF9;
+      padding: 8px 18px 8px 35px;
+      background-image: url("../../src/img/images/svg/link.svg");
+      background-position: 8% center;
+      background-repeat: no-repeat;
+    }
+
     & .logged-in-as {
       width: 100%;
       padding: 44px 0 0;
