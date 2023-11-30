@@ -2001,6 +2001,7 @@ p.tag-purple {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 44px;
+  position: relative;
 }
 
 .comment-respond form p,
@@ -2080,11 +2081,18 @@ p.tag-purple {
 }
 
 .comment-respond form .comment-form-attachment {
-  width: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 65px;
 }
 
 .comment-respond form .comment-form-attachment__label {
-  display: none;
+  font-size: 12px;
+  max-width: 200px;
+  line-height: normal;
+  margin: 0 0 12px;
 }
 
 .comment-respond form .comment-form-attachment__file-size-notice {
@@ -6163,6 +6171,37 @@ p.tag-purple {
 }
 
 @media screen and (max-width: 980px) {
+  .comment-respond form {
+    padding: 0 16px;
+  }
+
+  .comment-respond form input[type=file] {
+    width: 189px;
+  }
+
+  .comment-respond form .logged-in-as {
+    text-align: center;
+  }
+
+  .comment-respond form .comment-form-comment textarea {
+    width: 100%;
+  }
+
+  .comment-respond form .comment-form-attachment {
+    position: relative;
+    bottom: unset;
+    width: 100%;
+    align-items: center;
+  }
+
+  .comment-respond form .comment-form-attachment__label {
+    max-width: unset;
+  }
+
+  .comment-respond form .form-submit {
+    justify-content: center;
+  }
+
   .one-service__content .video-block__show {
     width: 100%;
   }

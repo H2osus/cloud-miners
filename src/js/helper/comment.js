@@ -46,5 +46,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $
+    var newLabelText = 'Добавить фото (до 4х штук, размер не более 2Mb):';
+    $('.comment-form-attachment__label[for="attachment"]').text(newLabelText);
 });

@@ -24,6 +24,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 44px;
+    position: relative;
+
+    @media screen and (max-width: 980px) {
+      padding: 0 16px;
+    }
 
     p,
     label,
@@ -36,6 +41,10 @@
       padding: 10px 0;
       color: transparent;
       cursor: pointer;
+
+      @media screen and (max-width: 980px) {
+        width: 189px;
+      }
 
       &:focus {
         outline: unset;
@@ -71,6 +80,10 @@
       font-weight: 500;
       color: #151515;
 
+      @media screen and (max-width: 980px) {
+        text-align: center;
+      }
+
       & a,
       & span {
         display: none;
@@ -87,6 +100,10 @@
         resize: none;
         border-radius: 5px;
         padding: 12px;
+
+        @media screen and (max-width: 980px) {
+          width: 100%;
+        }
       }
 
       & label {
@@ -99,10 +116,28 @@
     }
 
     & .comment-form-attachment {
-      width: 100%;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 65px;
+
+      @media screen and (max-width: 980px) {
+        position: relative;
+        bottom: unset;
+        width: 100%;
+        align-items: center;
+      }
 
       &__label{
-        display: none;
+        font-size: 12px;
+        max-width: 200px;
+        line-height: normal;
+        margin: 0 0 12px;
+
+        @media screen and (max-width: 980px) {
+          max-width: unset;
+        }
       }
       &__file-size-notice{
         display: none !important;
@@ -117,12 +152,7 @@
         display: none !important;
       }
 
-      & input {
-        //border: 1px solid #460BF9;
-        //color: #460BF9;
-        //text-decoration: none;
-        //background: #F3F6FB;
-      }
+
     }
 
     & .acf-comment-fields {
@@ -212,6 +242,9 @@
       display: flex;
       justify-content: flex-end;
 
+      @media screen and (max-width: 980px) {
+        justify-content: center;
+      }
       & input.submit {
         padding: 13px 34px;
         font-size: 14px;
