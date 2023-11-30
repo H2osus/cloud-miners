@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( 'Комментарий (%1$s)', 'Комментарии (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+					esc_html( _nx( 'Отзыв (%1$s)', 'Отзывы (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
 					number_format_i18n( $cloud_miners_comment_count ),
 
 				);
@@ -75,12 +75,12 @@ if ( post_password_required() ) {
 
                 printf(
                 /* translators: 1: comment count number, 2: title. */
-                    esc_html( _nx( 'Комментарий (%1$s)', 'Комментарии (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+                    esc_html( _nx( 'Отзыв (%1$s)', 'Отзывы (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
                     number_format_i18n( $cloud_miners_comment_count ),
 
                 );
                 ?>
-                <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+                <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить отзыв', 'cloud_miners') ?></button>
             </h3><!-- .comments-title -->
 	<?php endif; // Check for have_comments().
 

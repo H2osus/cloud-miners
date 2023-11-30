@@ -14,11 +14,11 @@
             <div class="big-article-item__content-bot">
                 <div class="article-data">
                     <div class="article-data">
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/calendar.svg'?>" alt=""/>
+                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/calendar-white.svg'?>" alt=""/>
                         <p><?= get_the_date('d.m.Y', $article_id) ?></p>
                     </div>
                     <div class="article-data">
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/message.svg'?>" alt=""/>
+                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/message-white.svg'?>" alt=""/>
                         <p><?= get_comments_number($article_id) ?></p>
                     </div>
                 </div>

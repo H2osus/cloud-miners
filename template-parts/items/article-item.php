@@ -8,7 +8,15 @@
     </div>
     <!--    use class - purple-badge - for badge with purple circle-->
     <?php $term = wp_get_post_terms($article, 'category-articles'); ?>
-    <p class="green-badge bg-light-bg"><?= $term ? esc_html($term[0]->name) : '' ?></p>
+    <?php
+    if(is_front_page()){
+        $style = 'background-color: #fff;';
+    } else {
+        $style = '';
+    }
+    ?>
+
+    <p class="green-badge bg-light-bg" style="<?= esc_attr($style) ?>"><?= $term ? esc_html($term[0]->name) : '' ?></p>
     <p class="article-title"><?= get_the_title($article); ?></p>
     <div class="horizontal-article-item__content-bot">
         <div class="article-data">

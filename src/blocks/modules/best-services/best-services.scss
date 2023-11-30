@@ -65,6 +65,11 @@
       @media screen and (min-width: 768px) {
         margin: 0;
       }
+
+      & .button,
+      & p {
+        font-size: 12px;
+      }
     }
 
     &-three {

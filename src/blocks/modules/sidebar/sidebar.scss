@@ -19,6 +19,15 @@
 
   .service-item {
     margin-bottom: 12px;
+
+    &__text {
+      font-size: 12px;
+    }
+
+    & .button {
+      font-size: 12px;
+
+    }
   }
 
   &__button {
@@ -33,9 +42,16 @@
 
   .button {
     margin-bottom: 42px;
+    font-size: 12px;
+    font-family: "Commissioner", sans-serif;
+
     @media screen and (min-width: 1024px) {
       margin-bottom: 54px;
     }
+  }
+
+  & .js-add-service {
+    padding: 7px 0;
   }
 
   .add-service, .service-item {

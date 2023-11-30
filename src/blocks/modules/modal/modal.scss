@@ -53,6 +53,17 @@
     }
   }
 
+  & .popup-success-icon {
+    background: #460BF9;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6px 0 0;
+  }
+
   &__check {
     display: flex;
     align-items: center;
@@ -119,6 +130,14 @@
     overflow-y: auto;
     padding: 50px 70px;
     width: 100%;
+
+    scrollbar-width: none; /* Для Firefox */
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     @media screen and (min-width: 768px) {
       padding: 70px 140px;
     }
@@ -197,6 +216,15 @@
       font-size: 16px;
       font-family: 'Commissioner', sans-serif;
       padding: 8.5px;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url(../../src/img/images/svg/arrow-down-1.svg);
+      background-position: right center;
+      background-repeat: no-repeat;
+      padding-right: 18px;
+      background-origin: content-box;
     }
 
     & .wpcf7-response-output {

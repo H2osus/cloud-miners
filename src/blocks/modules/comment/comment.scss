@@ -1,5 +1,6 @@
 .comment-respond {
   background: #F3F6FB;
+  margin: 48px 0 0;
 
   & .comment-reply-title {
     display: none;
@@ -168,6 +169,9 @@
       }
     }
 
+    & .rmp-widgets-container {
+      margin: 0 !important;
+    }
 
     & .form-submit {
       width: 100%;
@@ -180,7 +184,7 @@
         padding: 13px 34px;
         font-size: 14px;
         background: #460BF9;
-        color: #FFFFFF;
+        color: #ECF1FF;
         border-radius: 3px;
         display: flex;
         align-items: center;
@@ -228,6 +232,10 @@
   background: #F3F6FB;
   padding: 15px;
   margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
 
   &-inner {
     padding-top: 10px;
@@ -368,6 +376,7 @@
   text-decoration: underline;
   margin-top: 10px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .show-more-comment {
@@ -417,6 +426,8 @@
 
     p {
       margin: 0 10px;
+      font-size: 20px;
+      font-weight: 500;
     }
     img {
       width: 20px;

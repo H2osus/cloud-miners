@@ -6,6 +6,7 @@
     padding: 100px 0;
 
   }
+
   h2 {
     text-align: center;
     font-size: 24px;
@@ -16,7 +17,8 @@
       margin-bottom: 36px;
     }
   }
-   &_content {
+
+  &_content {
      display: grid;
      grid-template-columns: repeat(1, 1fr);
      grid-gap: 12px;
@@ -34,7 +36,18 @@
        grid-gap: 32px;
      }
    }
+
   &_pagination {
     padding-top: 46px;
+  }
+
+  & .service-item {
+    &__text {
+      font-size: 12px;
+    }
+
+    & .button {
+      font-size: 12px;
+    }
   }
 }

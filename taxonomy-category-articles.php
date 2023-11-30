@@ -33,7 +33,10 @@ $i = 0;
                 <h2> <?= esc_html($term->name) ?> </h2>
                 <p><?= esc_html($term->description) ?></p>
 
-                <h3><?= ($title_1 !== 0) ? esc_html($title_1) : '' ?></h3>
+                <?php  if($title_1 && $title_1 !== 0) : ?>
+                    <h3><?= esc_html($title_1)?></h3>
+                <?php endif; ?>
+
                 <p><?= ($text_1 !== 0) ? esc_html($text_1) : '' ?></p>
                 <div class="article-category__three-item">
                     <?php
@@ -48,8 +51,9 @@ $i = 0;
                     ?>
                 </div>
 
-
-                <h3><?= ($title_2 !== 0) ? esc_html($title_2) : '' ?></h3>
+                <?php  if($title_2 && $title_2 !== 0) : ?>
+                    <h3><?= esc_html($title_2)?></h3>
+                <?php endif; ?>
                 <p><?= ($text_2  !== 0) ? esc_html($text_2) : '' ?></p>
                 <div class="article-category__three-item">
                     <?php
@@ -64,7 +68,9 @@ $i = 0;
                     ?>
                 </div>
 
-                <h3><?= ($title_3 !== 0) ? esc_html($title_3) : '' ?></h3>
+                <?php  if($title_3 && $title_3 !== 0) : ?>
+                    <h3><?= esc_html($title_3)?></h3>
+                <?php endif; ?>
                 <p><?= ($text_3  !== 0) ? esc_html($text_3) : '' ?></p>
                 <div class="article-category__three-item">
                     <?php

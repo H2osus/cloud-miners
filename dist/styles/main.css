@@ -1023,6 +1023,8 @@ ul.list-bordered li {
 ul.list-bordered li a {
   color: #151515;
   text-decoration: none;
+  font-size: 14px;
+  display: flex;
 }
 
 .one-service ul.list-bordered li:before,
@@ -1030,8 +1032,8 @@ ul.list-bordered li:before {
   content: "";
   position: absolute;
   left: 5px;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   margin: auto;
   width: 5px;
   height: 5px;
@@ -1046,8 +1048,8 @@ ul.list-bordered li:after {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   margin: auto;
   width: 15px;
   height: 15px;
@@ -1972,6 +1974,7 @@ p.tag-purple {
 
 .comment-respond {
   background: #F3F6FB;
+  margin: 48px 0 0;
 }
 
 .comment-respond .comment-reply-title {
@@ -2130,6 +2133,10 @@ p.tag-purple {
   font-weight: 400;
 }
 
+.comment-respond form .rmp-widgets-container {
+  margin: 0 !important;
+}
+
 .comment-respond form .form-submit {
   width: 100%;
   padding: 0 0 44px;
@@ -2142,7 +2149,7 @@ p.tag-purple {
   padding: 13px 34px;
   font-size: 14px;
   background: #460BF9;
-  color: #FFFFFF;
+  color: #ECF1FF;
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -2184,6 +2191,10 @@ p.tag-purple {
   background: #F3F6FB;
   padding: 15px;
   margin-bottom: 18px;
+}
+
+.comment:last-child {
+  margin-bottom: 24px;
 }
 
 .comment-inner {
@@ -2279,6 +2290,7 @@ p.tag-purple {
   text-decoration: underline;
   margin-top: 10px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .show-more-comment {
@@ -2318,6 +2330,8 @@ p.tag-purple {
 
 .comment-authorize__left p {
   margin: 0 10px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .comment-authorize__left img {
@@ -2446,6 +2460,14 @@ p.tag-purple {
   padding-top: 46px;
 }
 
+.services .service-item__text {
+  font-size: 12px;
+}
+
+.services .service-item .button {
+  font-size: 12px;
+}
+
 .sidebar {
   display: none;
 }
@@ -2462,6 +2484,14 @@ p.tag-purple {
   margin-bottom: 12px;
 }
 
+.sidebar .service-item__text {
+  font-size: 12px;
+}
+
+.sidebar .service-item .button {
+  font-size: 12px;
+}
+
 .sidebar__button {
   display: flex;
   align-items: center;
@@ -2470,6 +2500,12 @@ p.tag-purple {
 
 .sidebar .button {
   margin-bottom: 42px;
+  font-size: 12px;
+  font-family: "Commissioner", sans-serif;
+}
+
+.sidebar .js-add-service {
+  padding: 7px 0;
 }
 
 .sidebar .add-service .button,
@@ -2529,6 +2565,7 @@ p.tag-purple {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  background: #F3F6FB;
   border-radius: 5px;
 }
 
@@ -2557,6 +2594,7 @@ p.tag-purple {
 
 .service-rating .select-group .facetwp-facet {
   margin-bottom: 0;
+  border-right: 1px solid #d9dbdf;
 }
 
 .service-rating .select-group .facetwp-facet .fs-label-wrap,
@@ -2567,6 +2605,21 @@ p.tag-purple {
   border: unset;
   color: rgba(21, 21, 21, 0.21);
   font-family: "Commissioner", sans-serif;
+}
+
+.service-rating .select-group .facetwp-facet .fs-label {
+  font-size: 12px;
+}
+
+.service-rating .select-group .facetwp-facet .fs-arrow {
+  border: unset;
+  background-image: url(../../src/img/images/svg/arrow-down-1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 12px;
+  height: 12px;
+  margin: auto 12px auto 0;
 }
 
 .service-rating .select-group .facetwp-facet .fs-dropdown * {
@@ -2680,19 +2733,19 @@ p.tag-purple {
   background-color: #FFFFFF;
 }
 
-.articles-page span {
-  font-size: 34px;
-  font-weight: 600;
-  color: #151515;
-  font-family: "Commissioner", sans-serif;
-  line-height: 116%;
-}
-
 .articles-page__titles {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 32px;
+}
+
+.articles-page__titles span {
+  font-size: 52px;
+  font-weight: 600;
+  color: #151515;
+  font-family: "Commissioner", sans-serif;
+  line-height: 116%;
 }
 
 .articles-page__content {
@@ -2874,6 +2927,11 @@ p.tag-purple {
   margin-bottom: 12px;
 }
 
+.best-services__container .service-item .button,
+.best-services__container .service-item p {
+  font-size: 12px;
+}
+
 .form-comment {
   padding: 16px;
   background-color: #F3F6FB;
@@ -3007,6 +3065,10 @@ p.tag-purple {
   font-family: "Commissioner", sans-serif;
 }
 
+.one-service__title-left .social-buttons {
+  margin: 0 0 0 42px;
+}
+
 .one-service__info {
   display: grid;
   grid-template-columns: 2.2fr 2.8fr;
@@ -3027,12 +3089,41 @@ p.tag-purple {
 .one-service__info-img img {
   width: 100%;
   max-width: 100%;
+  height: 100%;
+}
+
+.one-service__info .one-service__info-date-price::after {
+  content: "";
+  background-image: url("../../src/img/images/breadcrumbs-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70px;
+  height: 20px;
+  z-index: 9;
+  position: absolute;
+  bottom: 25%;
+  right: 0;
+}
+
+.one-service__info .one-service__info-date-price::before {
+  content: "";
+  background-image: url("../../src/img/images/breadcrumbs-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scaleX(-1);
+  width: 70px;
+  height: 20px;
+  z-index: 9;
+  position: absolute;
+  top: 7%;
+  left: 0;
 }
 
 .one-service__info-date-price {
   border-radius: 3px;
   background: #F3F6FB;
   padding: 30px 14px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3160,6 +3251,8 @@ p.tag-purple {
 }
 
 .one-service__info-graduate .button {
+  font-size: 18px;
+  text-decoration: none;
   width: 100%;
 }
 
@@ -3412,6 +3505,10 @@ p.tag-purple {
   margin-bottom: 20px;
 }
 
+.one-service__content .sharing__share p {
+  font-size: 14px;
+}
+
 .one-service__content .sharing__share .social-button {
   width: 24px;
   height: 24px;
@@ -3466,6 +3563,7 @@ p.tag-purple {
 .one-article__date-time .green-badge {
   margin-bottom: 12px;
   margin-right: 18px;
+  font-size: 16px;
 }
 
 .one-article__date-time .article-data {
@@ -3474,7 +3572,7 @@ p.tag-purple {
 }
 
 .one-article__date-time .article-data img {
-  max-width: 10px;
+  width: 14px;
 }
 
 .one-article__date-time .article-data p {
@@ -4252,6 +4350,17 @@ p.tag-purple {
   outline: none;
 }
 
+.modal .popup-success-icon {
+  background: #460BF9;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 6px 0 0;
+}
+
 .modal__check {
   display: flex;
   align-items: center;
@@ -4301,6 +4410,13 @@ p.tag-purple {
   overflow-y: auto;
   padding: 50px 70px;
   width: 100%;
+  scrollbar-width: none;
+  /* Для Firefox */
+  -ms-overflow-style: none;
+}
+
+.modal__container::-webkit-scrollbar {
+  display: none;
 }
 
 .modal__title {
@@ -4358,6 +4474,14 @@ p.tag-purple {
   font-size: 16px;
   font-family: "Commissioner", sans-serif;
   padding: 8.5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(../../src/img/images/svg/arrow-down-1.svg);
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 18px;
+  background-origin: content-box;
 }
 
 .modal form .wpcf7-response-output {
@@ -5185,6 +5309,10 @@ p.tag-purple {
   .article-category__three-item .article-item {
     max-width: 30%;
     margin-bottom: 20px;
+  }
+
+  .article-category__three-item .article-item .article-title {
+    font-size: 16px;
   }
 
   .article-item {
