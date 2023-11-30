@@ -2195,6 +2195,18 @@ p.tag-purple {
   margin-bottom: 18px;
 }
 
+.comment .reply-of-comment {
+  color: rgba(21, 21, 21, 0.58);
+  font-family: "Commissioner", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.5px;
+  /* 235% */
+  margin: 0 0 14px;
+  display: block;
+}
+
 .comment:last-child {
   margin-bottom: 24px;
 }

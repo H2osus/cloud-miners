@@ -158,7 +158,6 @@ function wpdocs_comment_reply_link_class( $class ) {
 function cloud_miners_comment ( $comment, $args, $depth ){
     ?><li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
         <div class="comment-inner">
-
             <div class="comment-author">
                 <?php
                     $authorLogo = get_field('avatar', 'user_'. $comment->user_id) ?? 0;
@@ -184,7 +183,15 @@ function cloud_miners_comment ( $comment, $args, $depth ){
                     <p class="comment-author__data"><?= get_comment_date('d.m.Y', get_comment_ID()); ?></p>
                 </div>
             </div>
-
+            <?php if($comment->comment_parent !== '0'):
+                $comment_text = get_comment_text($comment->comment_parent);
+                $trimmed_text = strlen($comment_text) > 50 ? substr($comment_text, 0, 50) . '...' : $comment_text;
+                ?>
+            <span class="reply-of-comment">
+                <?= esc_html__('В ответ на ','cloud_miners') ?>
+                <?= esc_html($trimmed_text); ?>
+            </span>
+            <?php endif; ?>
             <p class="comment-content"><?= get_comment_text(get_comment_ID()); ?></p>
 
             <?php
