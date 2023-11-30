@@ -1,6 +1,7 @@
 .similar-articles {
   background-color:  $light-bg;
   padding: 42px 42px;
+  margin: 76px 0 0 0;
 
   @media screen and (min-width: 600px) {
     padding: 36px;
@@ -28,6 +29,12 @@
     }
     @media screen and (min-width: 1024px) {
       grid-gap: 32px;
+    }
+  }
+
+  & .article-item {
+    & .article-title {
+      font-size: 16px;
     }
   }
 }

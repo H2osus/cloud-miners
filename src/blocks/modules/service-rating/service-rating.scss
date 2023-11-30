@@ -86,6 +86,10 @@
       margin-bottom: 0;
       border-right: 1px solid #d9dbdf;
 
+      & .fs-wrap {
+        width: 100%;
+      }
+
       & .fs-label-wrap,
       & .facetwp-dropdown {
         padding: 12px 17px;

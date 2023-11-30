@@ -31,27 +31,39 @@ get_header('dark');
                 $post_type = '';
                 /* Start the Loop */
                 echo '<h4>'.esc_html__('Сервисы', 'cloud_miners').'</h4>';
-                while ( have_posts() ) : the_post();
-                    $current_post_type = get_post_type();
-                    $post_type = $current_post_type;
-                    if ($post_type == 'services') {
-                        // Включите файл services-long.php
-                        require get_template_directory() . "/template-parts/items/services-long.php";
-                    }
+                $have_services = false;
 
+                while ( have_posts() ) : the_post();
+                        $current_post_type = get_post_type();
+                        $post_type = $current_post_type;
+                        if ($post_type == 'services') {
+                            require get_template_directory() . "/template-parts/items/services-long.php";
+                            $have_services = true;
+                        }
                 endwhile;
+
+                if (!$have_services) {
+                    echo '<p>'.esc_html__('Поиск не дал результатов', 'cloud_miners').'</p>';
+                }
 
                 /* Start the Loop */
                 echo '<h4>'.esc_html__('Статьи', 'cloud_miners').'</h4>';
-                while ( have_posts() ) : the_post();
+                $have_articles = false;
+
+                while (have_posts()) : the_post();
                     $current_post_type = get_post_type();
                     $post_type = $current_post_type;
+
                     if ($post_type == 'articles') {
                         require get_template_directory() . "/template-parts/items/author-article.php";
+                        $have_articles = true;
                     }
 
                 endwhile;
 
+                if (!$have_articles) {
+                    echo '<p>'.esc_html__('Поиск не дал результатов', 'cloud_miners').'</p>';
+                }
                 ?>
             </div>
             <?php require get_template_directory() . "/template-parts/static-blocks/sidebar.php"; ?>

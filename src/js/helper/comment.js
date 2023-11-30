@@ -6,6 +6,13 @@ $(document).ready(function () {
             scrollTop: targetElement.offset().top - 200
         }, 1000);
     });
+    $('.button-to-login').on('click', function () {
+        var targetElement = $('#commentform').length ? $('#commentform') : $('#comment-authorize');
+
+        $('html, body').animate({
+            scrollTop: targetElement.offset().top - 200
+        }, 1000);
+    });
 });
 
 $(document).ready(function () {

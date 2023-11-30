@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6, ul, li, p, a, button {
 
         p {
             margin-bottom: 0;
+            font-size: 14px;
         }
 
         a {
@@ -144,7 +145,7 @@ p {
         display: block;
 
         @media screen and (min-width: 1024px) {
-            font-size: 34px;
+            font-size: 52px;
             text-align: left;
             margin-bottom: 36px;
         }

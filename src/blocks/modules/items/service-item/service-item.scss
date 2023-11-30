@@ -3,6 +3,11 @@
   padding: 14px;
   border-radius: 5px;
 
+  & .rmp-results-widget {
+    display: flex;
+    align-items: center;
+  }
+
   & .rmp-results-widget__visual-rating {
     display: none;
   }
@@ -12,15 +17,17 @@
   }
 
   & .js-rmp-avg-rating {
-    font-size: 10px;
+    font-size: 10px !important;
     color: #151515;
     font-weight: 600;
-    margin: 0 0 0 4px;
+    margin: 0 4px;
     font-family: "Commissioner", sans-serif;
   }
 
   & .rmp-results-widget__vote-count {
-    font-size: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 10px !important;
     color: #151515;
     opacity: 0.58;
     margin: 0;
@@ -28,8 +35,16 @@
     font-family: "Commissioner", sans-serif;
   }
 
+  & .js-rmp-vote-count {
+    font-size: 10px !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    display: flex;
+    align-items: center;
+  }
   & .js-rmp-vote-count::after {
     content: ' оценок';
+    margin: 0 0 0 4px;
   }
 
   &_top {

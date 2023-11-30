@@ -227,6 +227,8 @@ function cloud_miners_comment ( $comment, $args, $depth ){
             );
             if (is_user_logged_in()) {
                 comment_reply_link($default,$comment->ID,$post_id);
+            } else {
+                echo '<a rel="nofollow" class="comment-reply-link comment-button-answered button-to-login" href="Javascipt:void(0)" >Ответить</a>';
             }
             ?>
 

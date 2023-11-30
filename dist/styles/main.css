@@ -626,6 +626,7 @@ button {
 
 .container-with-sidebar .sharing__share p {
   margin-bottom: 0;
+  font-size: 14px;
 }
 
 .container-with-sidebar .sharing__share a {
@@ -1245,6 +1246,7 @@ ul.list-bordered li:after {
   font-weight: 500;
   line-height: 20px;
   position: relative;
+  text-decoration: unset;
 }
 
 .telegram-button img {
@@ -2597,6 +2599,10 @@ p.tag-purple {
   border-right: 1px solid #d9dbdf;
 }
 
+.service-rating .select-group .facetwp-facet .fs-wrap {
+  width: 100%;
+}
+
 .service-rating .select-group .facetwp-facet .fs-label-wrap,
 .service-rating .select-group .facetwp-facet .facetwp-dropdown {
   padding: 12px 17px;
@@ -2657,6 +2663,7 @@ p.tag-purple {
 .similar-articles {
   background-color: #F3F6FB;
   padding: 42px 42px;
+  margin: 76px 0 0 0;
 }
 
 .similar-articles h2 {
@@ -2669,6 +2676,10 @@ p.tag-purple {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 12px;
+}
+
+.similar-articles .article-item .article-title {
+  font-size: 16px;
 }
 
 .actual-articles {
@@ -2784,6 +2795,9 @@ p.tag-purple {
   display: block;
   width: 100%;
   max-width: 120px;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .author__img img {
@@ -2806,6 +2820,27 @@ p.tag-purple {
   margin-bottom: 18px;
   text-decoration: none;
   font-family: "Commissioner", sans-serif;
+}
+
+.author .author-titles {
+  display: flex;
+}
+
+.author .author-titles .telegram-button-1 {
+  border: 1px solid #151515;
+  border-radius: 50%;
+  padding: 0;
+  width: max-content;
+  height: max-content;
+  margin: 0 0 0 16px;
+}
+
+.author .author-titles .telegram-button-1:hover {
+  box-shadow: none;
+}
+
+.author .author-titles .telegram-button-1 img {
+  margin: 0;
 }
 
 .author__descr {
@@ -3895,6 +3930,11 @@ p.tag-purple {
   border-radius: 5px;
 }
 
+.service-item .rmp-results-widget {
+  display: flex;
+  align-items: center;
+}
+
 .service-item .rmp-results-widget__visual-rating {
   display: none;
 }
@@ -3904,15 +3944,17 @@ p.tag-purple {
 }
 
 .service-item .js-rmp-avg-rating {
-  font-size: 10px;
+  font-size: 10px !important;
   color: #151515;
   font-weight: 600;
-  margin: 0 0 0 4px;
+  margin: 0 4px;
   font-family: "Commissioner", sans-serif;
 }
 
 .service-item .rmp-results-widget__vote-count {
-  font-size: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 10px !important;
   color: #151515;
   opacity: 0.58;
   margin: 0;
@@ -3920,8 +3962,17 @@ p.tag-purple {
   font-family: "Commissioner", sans-serif;
 }
 
+.service-item .js-rmp-vote-count {
+  font-size: 10px !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  display: flex;
+  align-items: center;
+}
+
 .service-item .js-rmp-vote-count::after {
   content: " оценок";
+  margin: 0 0 0 4px;
 }
 
 .service-item_top {
@@ -4033,6 +4084,7 @@ p.tag-purple {
 
 .service-long .rmp-results-widget .rmp-results-widget__vote-count {
   display: flex;
+  font-size: 16px !important;
 }
 
 .service-long .rmp-results-widget .js-rmp-vote-count {
@@ -4045,7 +4097,7 @@ p.tag-purple {
 }
 
 .service-long .js-rmp-avg-rating {
-  font-size: 16px;
+  font-size: 16px !important;
   color: #151515;
   font-weight: 600;
   margin: 0 4px;
@@ -5642,7 +5694,7 @@ p.tag-purple {
   }
 
   .search-content span {
-    font-size: 34px;
+    font-size: 52px;
     text-align: left;
     margin-bottom: 36px;
   }
@@ -5834,11 +5886,6 @@ p.tag-purple {
 
   .author__aut {
     font-size: 14px;
-  }
-
-  .author__name {
-    font-size: 32px;
-    margin-bottom: 22px;
   }
 
   .author__descr {
@@ -6092,6 +6139,10 @@ p.tag-purple {
 
   .select2:not(:last-child) {
     border-bottom: 1px solid rgba(21, 21, 21, 0.12);
+  }
+
+  .comment__title .button {
+    margin: 16px 0 0;
   }
 }
 

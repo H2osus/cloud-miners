@@ -11,6 +11,7 @@
 
     & .rmp-results-widget__vote-count {
       display: flex;
+      font-size: 16px !important;
     }
 
     & .js-rmp-vote-count {
@@ -24,7 +25,7 @@
   }
 
   & .js-rmp-avg-rating {
-    font-size: 16px;
+    font-size: 16px !important;
     color: #151515;
     font-weight: 600;
     margin: 0 4px;
