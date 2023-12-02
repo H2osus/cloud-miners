@@ -1564,6 +1564,11 @@ p.tag-purple {
   width: 16px;
 }
 
+.header .search-link-mob {
+  display: flex;
+  align-items: center;
+}
+
 .header .search-hamburger {
   display: flex;
   align-items: center;
@@ -1588,7 +1593,7 @@ p.tag-purple {
   border-bottom: 1px solid #FFFFFF;
   outline: none;
   color: #FFFFFF;
-  padding: 5px;
+  padding: 5px 20px 5px 5px;
   font-size: 12px;
   opacity: 0;
   z-index: -1;
@@ -2615,6 +2620,10 @@ p.tag-purple {
 .service-rating__title p {
   font-size: 12px;
   margin-bottom: 12px;
+}
+
+.service-rating .hidden-sort {
+  display: none;
 }
 
 .service-rating .select-group {
@@ -4636,6 +4645,8 @@ p.tag-purple {
 
 .modal form .group-checkbox label {
   font-family: "Commissioner", sans-serif !important;
+  display: flex;
+  align-items: center;
 }
 
 .modal form .group-checkbox-title p {

@@ -30,3 +30,14 @@
 </main>
 
 <?php get_footer(); ?>
+
+<?php
+/*
+ * Template Name: Sort Poems by Rating
+ * Template Post Type: page
+*/
+
+get_header();
+
+?>
+

@@ -292,6 +292,8 @@
 
       & label {
         font-family: 'Commissioner', sans-serif !important;
+        display: flex;
+        align-items: center;
       }
 
       &-title {

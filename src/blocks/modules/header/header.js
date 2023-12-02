@@ -38,3 +38,20 @@ openFilter?.addEventListener("click", () => {
     selectGroupContainer.classList.toggle("opened");
     selectGroup.classList.toggle("opened");
 });
+
+$(document).ready(function() {
+    // Обработчик события на клик по ссылке с классом search-link
+    $('.search-link-desc').click(function() {
+        // Находим ближайшую форму и отправляем ее
+        var form = $('.search-form-desc');
+        console.log(form);
+        form.submit();
+    });
+
+    $('.search-link-mob').click(function() {
+        // Находим ближайшую форму и отправляем ее
+        var form = $('.search-form-mob');
+        console.log(form);
+        form.submit();
+    });
+});

@@ -19,6 +19,10 @@
             <?php echo facetwp_display('facet','min_sum');  ?>
             <button onclick="FWP.refresh()" class="button-select-approve">Применить</button>
         </div>
+        <div class="hidden-sort">
+            <!-- ?_rs=1 -->
+            <?php echo facetwp_display('facet','rs'); ?>
+        </div>
     </div>
     <div class="facetwp-template">
     <?php
@@ -31,62 +35,6 @@
         echo 'No services found.';
     endif;
     ?>
-
-
-    <?php
-//    add_filter('posts_orderby', 'edit_posts_orderby');
-//    add_filter('posts_join_paged','edit_posts_join_paged');
-//    add_filter( 'posts_groupby', 'edit_posts_groupby' );
-//
-//    function edit_posts_groupby($groupby) {
-//        global $wpdb;
-//        $analytics = $wpdb->prefix . "rmp_analytics";
-//        $groupby = "$analytics.post";
-//        return $groupby;
-//    }
-//
-//    function edit_posts_join_paged($join_paged_statement) {
-//        global $wpdb;
-//        $analytics = $wpdb->prefix . "rmp_analytics";
-//        $join_paged_statement .= "LEFT JOIN $analytics ON $analytics.post = " . $wpdb->prefix . "posts.ID";
-//        return $join_paged_statement;
-//    }
-//
-//    function edit_posts_orderby($orderby_statement) {
-//        global $wpdb;
-//        $analytics = $wpdb->prefix . "rmp_analytics";
-//        $orderby_statement = "(SUM($analytics.value)/COUNT($analytics.votes)) DESC";
-//        return $orderby_statement;
-//    }
-//
-//    $args = array(
-//        'post_type' => 'services',
-//        'post_status' => 'publish',
-//        'posts_per_page' => 10,
-//    );
-//
-//    $query = new WP_Query($args);
-//
-////    echo "<br />Records returned: " . $query->found_posts . "<br />";
-////    echo "<br />Post Count: " . $query->post_count . "<br />";
-//    //echo "Last Error: " . $wpdb->last_error . "<br />";
-//    //echo "Last Query: " . $wpdb->last_query . "<br />";
-//    ?>
-<?php
-//    if ($query->have_posts()) :
-//        while ($query->have_posts()) :
-//            $query->the_post();
-//
-//            require get_template_directory() . "/template-parts/items/services-long.php";
-//
-//        endwhile;
-//
-//    endif;
-//    wp_reset_postdata();
-    ?>
-
-
-
 
     </div>
     <?php echo facetwp_display('facet','services_pager');  ?>

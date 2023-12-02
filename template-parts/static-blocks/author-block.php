@@ -9,11 +9,11 @@
 ?>
 <div class="author">
     <?php if($avatar && $avatar !== 0): ?>
-        <a class="author__img" href="<?= get_author_posts_url($authorID, $niceName) ?>">
+        <a class="author__img" href="<?= get_author_posts_url($authorID, $niceName) ?><?= (!is_archive()) ? esc_html('?b='.get_the_ID().'') : '' ?>">
             <img src="<?= ($avatar !== 0) ? $avatar['url'] : '' ?>" alt="Author"/>
         </a>
     <?php else: ?>
-        <a class="author__img" href="<?= get_author_posts_url($authorID, $niceName) ?>">
+        <a class="author__img" href="<?= get_author_posts_url($authorID, $niceName) ?><?= (!is_archive()) ? esc_html('?b='.get_the_ID().'') : '' ?>">
             <img src="<?= get_template_directory_uri() . '/src/img/images/svg/user-avatar.svg'?>" alt="Author"/>
         </a>
     <?php endif; ?>
@@ -21,13 +21,13 @@
         <p class="author__aut"><?= esc_html__('Автор', 'cloud_miners') ?></p>
         <?php if(!is_author()): ?>
         <div class="author-titles">
-            <a class="author__name" href="<?= get_author_posts_url($authorID, $niceName) ?>"><?= esc_html($lName . ' ' . $fName);?></a>
+            <a class="author__name" href="<?= get_author_posts_url($authorID, $niceName) ?><?= (!is_archive()) ? esc_html('?b='.get_the_ID().'') : '' ?>"><?= esc_html($lName . ' ' . $fName);?></a>
             <a target="_blank" href="<?= ($telegram !== 0) ? esc_attr($telegram) : '#' ?>" rel=”nofollow” class="button telegram-button-1">
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram-1.svg'?>" alt="Author"/>
             </a>
         </div>
         <?php else: ?>
-            <a class="author__name" href="<?= get_author_posts_url($authorID, $niceName) ?>"><?= esc_html($lName . ' ' . $fName);?></a>
+            <a class="author__name" href="<?= get_author_posts_url($authorID, $niceName) ?><?= (!is_archive()) ? esc_html('?b='.get_the_ID().'') : '' ?>"><?= esc_html($lName . ' ' . $fName);?></a>
         <?php endif; ?>
         <p class="author__descr"><?= esc_html($desc); ?></p>
         <?php if(is_author()): ?>

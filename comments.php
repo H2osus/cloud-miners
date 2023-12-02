@@ -51,6 +51,8 @@ if ( post_password_required() ) {
                     'type' => 'all',
                     'max_depth' => 4,
                     'per_page' => 6,
+                    'reverse_top_level' => true,
+                    'reverse_children' => true,
                     'callback' => 'cloud_miners_comment',
                     'end-callback' => 'cloud_miners_comment_end'
                 )

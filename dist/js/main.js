@@ -70,9 +70,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-openFilter === null || openFilter === void 0 ? void 0 : openFilter.addEventListener("click", function () {
+openFilter === null || openFilter === void 0 || openFilter.addEventListener("click", function () {
   selectGroupContainer.classList.toggle("opened");
   selectGroup.classList.toggle("opened");
+});
+$(document).ready(function () {
+  // Обработчик события на клик по ссылке с классом search-link
+  $('.search-link-desc').click(function () {
+    // Находим ближайшую форму и отправляем ее
+    var form = $('.search-form-desc');
+    console.log(form);
+    form.submit();
+  });
+  $('.search-link-mob').click(function () {
+    // Находим ближайшую форму и отправляем ее
+    var form = $('.search-form-mob');
+    console.log(form);
+    form.submit();
+  });
 });
 
 /***/ }),

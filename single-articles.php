@@ -19,7 +19,7 @@ get_header();
         require  get_template_directory() . "/template-parts/modal/modal-thank-service-success.php";
         require  get_template_directory() . "/template-parts/static-blocks/breadcrumbs.php";
         ?>
-        <div class="container">
+        <div class="container container-article">
             <div class="container-with-sidebar">
                 <div>
                     <?php  require get_template_directory() . "/template-parts/static-blocks/one-article.php";  ?>

@@ -122,6 +122,10 @@
       }
     }
   }
+  .search-link-mob {
+    display: flex;
+    align-items: center;
+  }
 
   .search-hamburger {
     display: flex;
@@ -154,7 +158,7 @@
       border-bottom: 1px solid $white;
       outline: none;
       color: $white;
-      padding: 5px;
+      padding: 5px 20px 5px 5px;
       font-size: 12px;
       opacity: 0;
       z-index: -1;
