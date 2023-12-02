@@ -345,4 +345,15 @@ add_action( 'wp_footer', function() {
     }
     add_action( 'pre_get_posts', 'cloud_miners_add_cpt_post_names_to_main_query' );
 
+//
+
+    function custom_redirect() {
+        if (is_archive() && is_post_type_archive('services') && !isset($_GET['_rs'])) {
+            wp_redirect(home_url('/services/?_rs=1'), 301);
+            exit();
+        }
+    }
+    add_action('template_redirect', 'custom_redirect');
+
+
     ?>
