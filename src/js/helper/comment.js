@@ -49,3 +49,21 @@ $(document).ready(function () {
     var newLabelText = 'Добавить фото (до 4х штук, размер не более 2Mb):';
     $('.comment-form-attachment__label[for="attachment"]').text(newLabelText);
 });
+
+$(document).ready(function() {
+    // Найти все блоки с классом "comment-rating"
+    $(".comment-rating").each(function() {
+        // Извлечь число изнутри <span>
+        var ratingValue = parseFloat($(this).find("span").text());
+
+        // Найти все элементы с классом "js-rmp-results-icon" в текущем блоке
+        var stars = $(this).find(".js-rmp-results-icon");
+
+        // Добавить классы в соответствии с числом внутри <span>
+        stars.each(function(index) {
+            if (index < ratingValue) {
+                $(this).addClass("rmp-icon--full-highlight");
+            }
+        });
+    });
+});

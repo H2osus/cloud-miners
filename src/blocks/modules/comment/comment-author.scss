@@ -8,6 +8,24 @@
     margin-bottom: 14px;
   }
 
+  & .comment-rating {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 5px;
+    
+    & div {
+      display: flex;
+    }
+
+    & span {
+      font-size: 10px;
+      line-height: normal;
+    }
+    & i {
+      font-size: 12px;
+    }
+  }
+
   &__img {
     margin: 0;
     margin-right: 17px;

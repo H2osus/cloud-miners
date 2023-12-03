@@ -178,6 +178,30 @@ function cloud_miners_comment ( $comment, $args, $depth ){
                         ?>
                         <a href="<?= esc_attr(get_author_posts_url($comment->user_id)) ?>" class="comment-author__info-name"><?= esc_html($lName . ' ' . $fName); ?></a>
                         <div class="comment-author__info-stars">
+<!--                            -->
+                        <?php
+                        $analyticsData = retrieve_analytics_table_data();
+                        $postId = $comment->comment_post_ID;
+                        $userId = $comment->user_id;
+
+                        foreach ($analyticsData as $row) :
+                            if ($postId == $row['postID'] && $userId == $row['user_id']) : ?>
+                            <div class="comment-rating">
+                                <div class="rmp-results-widget__visual-rating">
+                                    <i class="js-rmp-results-icon rmp-icon rmp-icon--ratings rmp-icon--star"></i> <!-- rmp-icon--full-highlight -->
+                                    <i class="js-rmp-results-icon rmp-icon rmp-icon--ratings rmp-icon--star"></i>
+                                    <i class="js-rmp-results-icon rmp-icon rmp-icon--ratings rmp-icon--star"></i>
+                                    <i class="js-rmp-results-icon rmp-icon rmp-icon--ratings rmp-icon--star"></i>
+                                    <i class="js-rmp-results-icon rmp-icon rmp-icon--ratings rmp-icon--star"></i>
+                                </div>
+                                <span> <?php echo number_format($row['newRating'], 1); ?> </span>
+                            </div>
+                           <?php
+                                break;
+                            endif;
+                        endforeach;
+                        ?>
+<!--                            -->
                         </div>
                     </div>
                     <p class="comment-author__data"><?= get_comment_date('d.m.Y', get_comment_ID()); ?></p>
@@ -356,4 +380,74 @@ add_action( 'wp_footer', function() {
     add_action('template_redirect', 'custom_redirect');
 
 
+//
+
+    function retrieve_analytics_table_data() {
+		// get the data from plugin's table
+		global $wpdb;
+		$analytics_table = $wpdb->prefix . "rmp_analytics";
+		$analytics_data = $wpdb->get_results( "SELECT * FROM $analytics_table ORDER BY id DESC LIMIT 100" );
+		// reverse array - we want latest actions first
+		$analytics_data = array_reverse( $analytics_data );
+		// for storing
+		$complete_data = array();
+
+		// populate complete_data array
+		foreach ( $analytics_data as $row) {
+			$analytics_row = array();
+
+			$analytics_row['id'] = intval( $row->id );
+			$analytics_row['postTitle'] = get_the_title( $row->post );
+			$analytics_row['postLink'] = get_the_permalink( $row->post );
+			$analytics_row['postID'] = intval( $row->post );
+			$analytics_row['action'] = intval( $row->action );
+			$analytics_row['newRating'] = floatval( $row->average );
+			$analytics_row['newVotes'] = intval( $row->votes );
+			$analytics_row['value'] = intval( $row->value );
+
+			// not yet functional
+			$analytics_row['country'] = $row->country;
+			// reformat time
+			$time = strtotime( $row->time );
+			$analytics_row['time'] = date( 'd-m-Y H:i:s', $time );
+			// user if available
+			if( $row->user == -1 ) {
+				$analytics_row['user'] = esc_html__( 'Tracking Disabled', 'rate-my-post' );
+                $analytics_row['user_id'] = esc_html__( 'Tracking Disabled', 'rate-my-post' );
+			} elseif ( $row->user ) {
+				$user_info = get_userdata( $row->user );
+				$username = $user_info->user_login;
+                $user_id = $user_info->ID;
+				// allow hiding username in admin panel
+				if( has_filter('rmp_rater_username') ) {
+					$username = apply_filters( 'rmp_rater_username', $username );
+				}
+				$analytics_row['user'] = $username;
+                $analytics_row['user_id'] = $user_id;
+			} else {
+				$analytics_row['user'] = esc_html__( 'Not logged in', 'rate-my-post' );
+			}
+
+			// ip if enabled
+			if ( $row->ip == -1 ) {
+				$analytics_row['ip'] = esc_html__( 'Tracking Disabled', 'rate-my-post' );
+			} elseif ( $row->ip ) {
+				$analytics_row['ip'] = sanitize_text_field( $row->ip );
+			} else {
+				$analytics_row['ip'] = 'n/a';
+			}
+
+			// duration
+			if( $row->duration == -1 ) {
+					$analytics_row['duration'] = 'AMP - n/a';
+			} else {
+				$analytics_row['duration'] = intval( $row->duration ) . ' seconds';
+			}
+
+			//push $analyticsRow to $completeAnalyticsData
+			$complete_data[] = $analytics_row;
+		}
+
+		return $complete_data;
+	}
     ?>

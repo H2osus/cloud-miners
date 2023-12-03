@@ -690,6 +690,28 @@ p {
   line-height: 130%;
 }
 
+.wptelegram-login-output-wrap {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wptelegram-login-output-wrap::after {
+  content: "";
+  background-image: url("../../src/img/images/telegram-auth.png");
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  pointer-events: none;
+}
+
 .mob-sidebar .sidebar {
   padding: 40px 0;
   display: block;
@@ -2412,7 +2434,7 @@ p.tag-purple {
 }
 
 .comment-authorize__right .social-button {
-  width: 37.08px;
+  width: 32px;
   height: 32px;
 }
 
@@ -2425,6 +2447,25 @@ p.tag-purple {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 8px;
+}
+
+.comment-author .comment-rating {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0 5px;
+}
+
+.comment-author .comment-rating div {
+  display: flex;
+}
+
+.comment-author .comment-rating span {
+  font-size: 10px;
+  line-height: normal;
+}
+
+.comment-author .comment-rating i {
+  font-size: 12px;
 }
 
 .comment-author__img {
@@ -6279,6 +6320,18 @@ p.tag-purple {
     max-width: 80px;
     right: -30px;
     z-index: 0;
+  }
+}
+
+@media only screen and (max-width: 980px) and (min-width: 600px) and (max-width: 1024px) {
+  .comment-respond form .comment-form-attachment {
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .comment-respond form .comment-form-attachment__label {
+    max-width: 200px;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */

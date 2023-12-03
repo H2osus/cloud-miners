@@ -127,6 +127,10 @@
         bottom: unset;
         width: 100%;
         align-items: center;
+
+        @media only screen and (min-width: 600px) and (max-width: 1024px) {
+          align-items: flex-start;
+        }
       }
 
       &__label{
@@ -137,6 +141,10 @@
 
         @media screen and (max-width: 980px) {
           max-width: unset;
+        }
+
+        @media only screen and (min-width: 600px) and (max-width: 1024px) {
+          max-width: 200px;
         }
       }
       &__file-size-notice{
@@ -529,7 +537,7 @@
     }
 
     .social-button {
-      width: 37.08px;
+      width: 32px;
       height: 32px;
 
       img {
