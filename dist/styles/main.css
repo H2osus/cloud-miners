@@ -4497,6 +4497,10 @@ p.tag-purple {
   transition: 0.75s;
 }
 
+.modal label {
+  font-family: "Commissioner", sans-serif;
+}
+
 .modal .wpcf7-not-valid-tip {
   display: none;
 }
@@ -4683,6 +4687,7 @@ p.tag-purple {
 .modal form .button {
   padding: 7px 52px;
   font-size: 12px;
+  font-family: "Commissioner", sans-serif !important;
 }
 
 .modal form .group-checkbox {

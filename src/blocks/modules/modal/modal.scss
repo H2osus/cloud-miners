@@ -29,6 +29,10 @@
   z-index: -1;
   transition: 0.75s;
 
+  & label {
+    font-family: "Commissioner", sans-serif;
+  }
+
   @media screen and (min-width: 768px) {
     max-width: 40%;
   }
@@ -280,6 +284,7 @@
     .button {
       padding: 7px 52px;
       font-size: 12px;
+      font-family: 'Commissioner', sans-serif !important;
 
       @media screen and (min-width: 768px) {
         padding: 12px 67px;
