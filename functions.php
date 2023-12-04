@@ -450,4 +450,12 @@ add_action( 'wp_footer', function() {
 
 		return $complete_data;
 	}
+
+//    Remove admin panel for non-admin users
+    add_action('after_setup_theme', 'remove_admin_bar');
+    function remove_admin_bar() {
+        if (!current_user_can('administrator') && !is_admin()) {
+            show_admin_bar(false);
+        }
+    }
     ?>

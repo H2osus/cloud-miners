@@ -56,24 +56,20 @@
                 <p class="one-service__info-date-price__item-value">$ <?= ($min_payout !== 0) ? esc_html($min_payout) : '0' ?></p>
             </div>
         </div>
-
+<?php $char = get_field('word_char') ?? ''; ?>
         <div class="one-service__info-graduate">
-<!--            --><?php //$rating = get_field('rating', get_the_ID()) ?? 0; ?>
-<!--            <p class="one-service__info-graduate--total">--><?php //= ($rating !== 0) ? esc_html($rating) : '0' ?><!--</p>-->
-<!--            <div class="one-service__info-graduate--stars">-->
-<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star.svg'?><!--" alt="star" />-->
-<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star.svg'?><!--" alt="star" />-->
-<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star.svg'?><!--" alt="star" />-->
-<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star-grey.svg'?><!--" alt="star" />-->
-<!--                <img src="--><?php //= get_template_directory_uri() . '/src/img/images/svg/star-grey.svg'?><!--" alt="star" />-->
-<!--            </div>-->
-<!--            --><?php
-//                $countGrade = get_field('count_grade', get_the_ID()) ?? 0;
-//                $wordChar = get_field('word_char', get_the_ID()) ?? '';
-//            ?>
-<!--            <p class="one-service__info-graduate--text">--><?php //= esc_html($wordChar); ?><!-- <span>(--><?php //= esc_html($countGrade) ?><!-- --><?php //= esc_html__('оценок', 'cloud_miners') ?><!--)</span></p>-->
             <?= do_shortcode('[ratemypost-result id="'.get_the_ID().'"]') ?>
-
+            <style>
+                .one-service__info-graduate .rmp-results-widget__vote-count::before {
+                 content: '<?= esc_attr($char) ?>';
+                    color: #151515;
+                    font-size: 10px;
+                    font-family: 'Commissioner', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px;
+                }
+            </style>
             <?php $tLink = get_field('telegram_net', get_the_ID()) ?? 0; ?>
             <a target="_blank" href="<?= ($tLink && $tLink !== 0) ? $tLink : '#' ?>" rel=”nofollow” class="button telegram-button">
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/telegram.svg'?>" alt="Author"/>

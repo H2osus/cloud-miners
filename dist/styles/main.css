@@ -3165,6 +3165,11 @@ p.tag-purple {
   padding: 13px 34px;
 }
 
+.one-service .js-rmp-vote-count::after {
+  content: "оценок";
+  margin-left: 5px;
+}
+
 .one-service__container-mob {
   display: flex;
   align-items: center;
@@ -3332,7 +3337,7 @@ p.tag-purple {
   font-weight: 600;
   line-height: 23.5px;
   /* 58.75% */
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   display: block;
 }
 

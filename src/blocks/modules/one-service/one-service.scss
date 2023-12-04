@@ -1,5 +1,9 @@
 .one-service {
 
+  & .js-rmp-vote-count::after {
+    content: 'оценок';
+    margin-left: 5px;
+  }
   &__container-mob {
     display: flex;
     align-items: center;
@@ -185,7 +189,7 @@
           font-style: normal;
           font-weight: 600;
           line-height: 23.5px; /* 58.75% */
-          margin: 0 0 8px;
+          margin: 0 0 10px;
           display: block;
         }
       }

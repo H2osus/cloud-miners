@@ -30,14 +30,21 @@ if ( post_password_required() ) {
 			<?php
 			$cloud_miners_comment_count = get_comments_number();
 
-				printf(
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( 'Отзыв (%1$s)', 'Отзывы (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
-					number_format_i18n( $cloud_miners_comment_count ),
-
-				);
-			?>
-            <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+            if (get_post_type(get_the_ID()) == 'services') {
+                printf(
+                /* translators: 1: comment count number, 2: title. */
+                    esc_html( _nx( 'Отзыв (%1$s)', 'Отзывы (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+                    number_format_i18n( $cloud_miners_comment_count ),
+                ); ?>
+                <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить отзыв', 'cloud_miners') ?></button>
+            <?php } elseif (get_post_type(get_the_ID()) == 'articles') {
+                printf(
+                /* translators: 1: comment count number, 2: title. */
+                    esc_html( _nx( 'Комментарий (%1$s)', 'Комментарии (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+                    number_format_i18n( $cloud_miners_comment_count ),
+                ); ?>
+                <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить Комментарий', 'cloud_miners') ?></button>
+            <?php } ?>
 		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
@@ -75,14 +82,21 @@ if ( post_password_required() ) {
                 <?php
                 $cloud_miners_comment_count = get_comments_number();
 
-                printf(
-                /* translators: 1: comment count number, 2: title. */
-                    esc_html( _nx( 'Отзыв (%1$s)', 'Отзывы (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
-                    number_format_i18n( $cloud_miners_comment_count ),
-
-                );
-                ?>
-                <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить отзыв', 'cloud_miners') ?></button>
+                if (get_post_type(get_the_ID()) == 'services') {
+                    printf(
+                    /* translators: 1: comment count number, 2: title. */
+                        esc_html( _nx( 'Отзыв (%1$s)', 'Отзывы (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+                        number_format_i18n( $cloud_miners_comment_count ),
+                    ); ?>
+                    <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить отзыв', 'cloud_miners') ?></button>
+                <?php } elseif (get_post_type(get_the_ID()) == 'articles') {
+                    printf(
+                    /* translators: 1: comment count number, 2: title. */
+                        esc_html( _nx( 'Комментарий (%1$s)', 'Комментарии (%1$s)', $cloud_miners_comment_count, 'comments title', 'cloud_miners' ) ),
+                        number_format_i18n( $cloud_miners_comment_count ),
+                    ); ?>
+                    <button class="leave-comment-trigger button purple-outline-button"><?= esc_html__('Оставить комментарий', 'cloud_miners') ?></button>
+                <?php } ?>
             </h3><!-- .comments-title -->
 	<?php endif; // Check for have_comments().
 
