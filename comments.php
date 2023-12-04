@@ -107,10 +107,18 @@ if ( post_password_required() ) {
 
     if ($auth_links && $auth_links !== 0) {
         foreach ($auth_links as $link) {
-            $total_links .= '
+            // Проверка, содержит ли URL строку "google"
+            if (strpos($link['link']['url'], 'google') === false) {
+                $total_links .= '
             <a href="'.esc_attr($link['link']['url']).'" target="'.esc_attr($link['link']['target']).'" class="social-button" rel=”nofollow”>
                <img src="'.esc_attr($link['logo']['url']).'" alt="'.esc_attr($link['logo']['alt']).'" />
             </a>';
+            } else {
+                $total_links .= '
+            <a href="'.esc_attr($link['link']['url']).'" class="social-button" rel=”nofollow” data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+               <img src="'.esc_attr($link['logo']['url']).'" alt="'.esc_attr($link['logo']['alt']).'" />
+            </a>';
+            }
         }
     }
 
