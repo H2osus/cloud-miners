@@ -1997,6 +1997,7 @@ p.tag-purple {
   background-color: #460BF9;
 }
 
+.filter ul .filter-item.filter-active div,
 .filter ul .filter-item.filter-active a {
   color: #FFFFFF;
 }
