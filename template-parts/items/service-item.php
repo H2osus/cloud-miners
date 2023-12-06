@@ -10,7 +10,11 @@
     <div class="service-item_top">
         <div class="service-item__image">
             <?php if(get_the_post_thumbnail_url($postId)): ?>
+                <a href="<?= get_the_permalink($postId) ?>" style="margin-bottom:0;">
                 <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+                </a>
+            <?php else: ?>
+                <a href="<?= get_the_permalink($postId) ?>" style="margin-bottom:0;"></a>
             <?php endif; ?>
             <img src="<?= get_template_directory_uri() . '/src/img/images/svg/crown.svg'?>" alt="crown" class="crown"/>
         </div>
@@ -19,7 +23,9 @@
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="banner mask" crossorigin="main-img"/>
                 <?= do_shortcode('[ratemypost-result id="'.$postId.'"]') ?>
             </div>
-            <p class="service-item_title"><?= get_the_title($postId); ?></p>
+            <a href="<?= get_the_permalink($postId) ?>" style="margin-bottom:0; text-decoration: unset;">
+                <p class="service-item_title"><?= get_the_title($postId); ?></p>
+            </a>
             <p class="service-item_percent"><?= ($profitability !== 0) ? esc_html($profitability['percent'] . '%') : '0%' ?> / <?= ($profitability !== 0) ? esc_html($profitability['term']) : esc_html__('Год', 'cloud_miners') ?></p>
         </div>
     </div>

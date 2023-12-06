@@ -1,4 +1,11 @@
 .author {
+  & a.author__name {
+    transition: .3s all;
+    &:hover {
+      color: rgba(70, 11, 249, .4);
+    }
+  }
+
   &:not(.archive) {
     padding: 30px 15px;
     background-color: $light-bg;
@@ -65,10 +72,7 @@
       width: max-content;
       height: max-content;
       margin: 0 0 0 16px;
-
-      &:hover {
-        box-shadow: none;
-      }
+      transition: .3s all;
 
       & img {
         margin: 0;
