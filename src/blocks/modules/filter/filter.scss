@@ -8,6 +8,15 @@
     max-width: 100%;
     overflow-x: auto;
 
+    & .filter-item {
+      transition: .3s all;
+
+      &:hover {
+        background-color: $purple;
+        & a {color: $white;}
+      }
+    }
+
     li, .filter-item {
       padding: 6px 12px;
       white-space: nowrap;

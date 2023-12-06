@@ -40,6 +40,11 @@
       text-decoration: none;
       padding: 2px;
       margin: 0;
+      transition: .3s all;
+
+        &:hover {
+            opacity: 0.45;
+        }
     }
 
     .breadcrumb_last {

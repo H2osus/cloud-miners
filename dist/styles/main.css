@@ -1040,6 +1040,17 @@ ul.list-bordered li {
   margin-bottom: 16px;
   padding-left: 25px;
   position: relative;
+  transition: 0.3s all;
+}
+
+.one-service ul.list-bordered li:last-child,
+ul.list-bordered li:last-child {
+  margin-bottom: 0;
+}
+
+.one-service ul.list-bordered li:last-child a,
+ul.list-bordered li:last-child a {
+  margin: 0;
 }
 
 .one-service ul.list-bordered li a,
@@ -1048,6 +1059,25 @@ ul.list-bordered li a {
   text-decoration: none;
   font-size: 14px;
   display: flex;
+  position: relative;
+  width: max-content;
+}
+
+.one-service ul.list-bordered li a:hover:before,
+ul.list-bordered li a:hover:before {
+  width: 100%;
+}
+
+.one-service ul.list-bordered li a:before,
+ul.list-bordered li a:before {
+  width: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  height: 1px;
+  background-color: #460BF9;
+  transition: 1s;
 }
 
 .one-service ul.list-bordered li:before,
@@ -1807,6 +1837,27 @@ p.tag-purple {
   border-top: 1px solid #460BF9;
 }
 
+.footer .top-up {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(37, 8, 110, 0.5);
+  border-radius: 50%;
+  display: block;
+  position: fixed;
+  bottom: -5em;
+  right: 2em;
+  transition: 0.3s all;
+  cursor: pointer;
+  background-image: url("../../src/img/images/svg/arrow-down-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.footer .top-up.visible {
+  bottom: 4em;
+}
+
 .footer-container {
   position: relative;
   z-index: 2;
@@ -1873,6 +1924,23 @@ p.tag-purple {
   line-height: 24px;
   text-transform: capitalize;
   cursor: pointer;
+  position: relative;
+  padding: 0 0 4px;
+}
+
+.footer_link:before {
+  width: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  height: 1px;
+  background-color: #460BF9;
+  transition: 1s;
+}
+
+.footer_link:hover:before {
+  width: 100%;
 }
 
 .banner {
@@ -1968,6 +2036,18 @@ p.tag-purple {
   justify-content: flex-start;
   max-width: 100%;
   overflow-x: auto;
+}
+
+.filter ul .filter-item {
+  transition: 0.3s all;
+}
+
+.filter ul .filter-item:hover {
+  background-color: #460BF9;
+}
+
+.filter ul .filter-item:hover a {
+  color: #FFFFFF;
 }
 
 .filter ul li,
@@ -2234,6 +2314,12 @@ p.tag-purple {
   margin: 0;
   text-decoration: none;
   font-family: "Commissioner", sans-serif;
+  transition: 0.3s all;
+}
+
+.comment-respond form .form-submit input.submit:hover {
+  background: #ffffff;
+  color: #460BF9;
 }
 
 .comment-respond .acf-input {
@@ -2365,6 +2451,9 @@ p.tag-purple {
   font-weight: 400;
   line-height: 166%;
   margin-bottom: 8px;
+  max-height: 145px;
+  overflow: auto;
+  padding: 0 20px 0 0;
 }
 
 .comment-button-answered {
@@ -2376,6 +2465,11 @@ p.tag-purple {
   margin-top: 10px;
   cursor: pointer;
   font-size: 14px;
+  transition: 0.3s all;
+}
+
+.comment-button-answered:hover {
+  color: rgba(21, 21, 21, 0.58);
 }
 
 .show-more-comment {
@@ -2749,6 +2843,11 @@ p.tag-purple {
   width: 100%;
 }
 
+.service-rating .select-group .button-select-approve:hover {
+  background: #460BF9;
+  color: #fff;
+}
+
 .useful-articles {
   background-color: #F3F6FB;
   padding: 50px 0;
@@ -3036,6 +3135,11 @@ p.tag-purple {
   margin: 0 0 0 10px;
 }
 
+.author__button .facetwp-load-more:hover {
+  box-shadow: 0px 0px 24px 0px rgb(70, 11, 249);
+  opacity: 0.9;
+}
+
 .best-services {
   background-color: #F3F6FB;
   padding: 40px 0 60px;
@@ -3164,6 +3268,19 @@ p.tag-purple {
 
 .form-comment__button .button {
   padding: 13px 34px;
+}
+
+.one-service .one-service__title-red svg path,
+.one-service .one-service__title-red p {
+  transition: 0.3s all;
+}
+
+.one-service .one-service__title-red:hover svg path {
+  stroke: #000000;
+}
+
+.one-service .one-service__title-red:hover p {
+  color: #000000;
 }
 
 .one-service .js-rmp-vote-count::after {
@@ -4816,6 +4933,11 @@ p.tag-purple {
   text-decoration: none;
   padding: 2px;
   margin: 0;
+  transition: 0.3s all;
+}
+
+.breadcrumbs .breadcrumbs-content a:hover {
+  opacity: 0.45;
 }
 
 .breadcrumbs .breadcrumbs-content .breadcrumb_last {
@@ -6306,6 +6428,10 @@ p.tag-purple {
 
   .header .search-hamburger .search-link {
     display: none;
+  }
+
+  .footer .top-up {
+    right: 1em;
   }
 
   .comment-inner.second-step,

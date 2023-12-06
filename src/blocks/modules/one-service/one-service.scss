@@ -1,5 +1,22 @@
 .one-service {
 
+  & .one-service__title-red {
+   & svg path,
+   & p {
+     transition: .3s all;
+   }
+  }
+  & .one-service__title-red:hover {
+    & svg {
+      & path {
+        stroke: #000000;
+      }
+    }
+    & p {
+      color: #000000;
+    }
+  }
+
   & .js-rmp-vote-count::after {
     content: 'оценок';
     margin-left: 5px;

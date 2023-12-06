@@ -27,7 +27,30 @@ document.addEventListener('DOMContentLoaded', function () {
   \*********************************************/
 /***/ (() => {
 
-
+$(document).ready(function () {
+  setupScrollListener();
+  setupScrollEvent();
+});
+function setupScrollEvent() {
+  var scrollButton = $(".top-up");
+  scrollButton.click(function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, "slow");
+  });
+}
+function setupScrollListener() {
+  var scrollButton = $(".top-up");
+  var scrollBreakpoint = $(window).innerHeight() * 0.9;
+  $(window).scroll(function () {
+    var scrollOffset = $(window).scrollTop();
+    if (scrollOffset >= scrollBreakpoint) {
+      scrollButton.addClass("visible");
+    } else {
+      scrollButton.removeClass("visible");
+    }
+  });
+}
 
 /***/ }),
 

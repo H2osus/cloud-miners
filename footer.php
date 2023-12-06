@@ -34,6 +34,8 @@ $copyright = get_field('copyright', 'option');
             <p class="footer__copyright"><?= $copyright ? esc_html($copyright) : ''; ?></p>
         </div>
     </div>
+
+    <div class="top-up"></div>
 </footer>
 
 </div>

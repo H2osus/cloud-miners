@@ -170,6 +170,11 @@
         display: block;
         margin: 0 0 0 10px;
       }
+
+      &:hover {
+        box-shadow: 0px 0px 24px 0px rgb(70, 11, 249);
+        opacity: 0.9;
+      }
     }
 
     @media screen and (min-width: 768px) {
