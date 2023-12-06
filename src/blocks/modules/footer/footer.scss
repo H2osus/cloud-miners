@@ -27,6 +27,10 @@
     background-position: center;
     transform: rotate(180deg);
 
+    &:hover {
+      background-color: rgba(37, 8, 110, 0.8);
+    }
+
     @media screen and (max-width: 767px) {
       right: 1em;
     }

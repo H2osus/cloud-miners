@@ -7,6 +7,9 @@ p.green-badge, p.purple-badge, .green-badge, .purple-badge {
   border-radius: 3px;
   font-size: $font-xxs;
   color: rgba(21, 21, 21, 0.70);
+  font-family: "Commissioner", sans-serif;
+  line-height: 150%;
+
   &:before {
     content: '';
     position: absolute;

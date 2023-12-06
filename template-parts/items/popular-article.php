@@ -5,8 +5,10 @@
 <div class="popular-article">
     <div>
         <?php $term = wp_get_post_terms($id, 'category-articles'); ?>
-        <p class="green-badge bg-light-bg"><?= $term ? esc_html($term[0]->name) : '' ?></p>
-        <h5><?= get_the_title($id); ?></h5>
+        <a href="<?= $term ? get_term_link($term[0]->term_id) : '#' ?>" class="green-badge bg-light-bg" style="text-decoration: unset;"><?= $term ? esc_html($term[0]->name) : '' ?></a>
+        <a class="popular-article-title-link" href="<?= get_the_permalink($id); ?>" style="text-decoration: unset;">
+            <h5><?= get_the_title($id); ?></h5>
+        </a>
         <div class="big-article-item__content-bot">
             <div class="article-data">
                 <div class="article-data">

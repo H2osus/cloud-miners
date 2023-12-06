@@ -23,7 +23,7 @@
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="banner mask" crossorigin="main-img"/>
                 <?= do_shortcode('[ratemypost-result id="'.$postId.'"]') ?>
             </div>
-            <a href="<?= get_the_permalink($postId) ?>" style="margin-bottom:0; text-decoration: unset;">
+            <a class="title-link" href="<?= get_the_permalink($postId) ?>">
                 <p class="service-item_title"><?= get_the_title($postId); ?></p>
             </a>
             <p class="service-item_percent"><?= ($profitability !== 0) ? esc_html($profitability['percent'] . '%') : '0%' ?> / <?= ($profitability !== 0) ? esc_html($profitability['term']) : esc_html__('Год', 'cloud_miners') ?></p>

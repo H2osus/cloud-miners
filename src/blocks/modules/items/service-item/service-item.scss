@@ -82,7 +82,16 @@
       }
     }
   }
+  & .title-link {
+    margin-bottom:0;
+    text-decoration: unset;
+    transition: .3s all;
 
+    &:hover {
+      color: #151515;
+      opacity: 0.45;
+    }
+  }
   &_title {
     color: $black;
     font-size: $font-sm;
@@ -135,6 +144,7 @@
     position: relative;
     border: 0.4px solid #DDDDDD;
 
+    & div,
     & a {
       max-width: 60%;
       width: 100%;

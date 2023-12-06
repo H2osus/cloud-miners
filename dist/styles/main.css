@@ -1333,6 +1333,8 @@ p.purple-badge,
   border-radius: 3px;
   font-size: 10px;
   color: rgba(21, 21, 21, 0.7);
+  font-family: "Commissioner", sans-serif;
+  line-height: 150%;
 }
 
 p.green-badge:before,
@@ -1857,6 +1859,10 @@ p.tag-purple {
   background-repeat: no-repeat;
   background-position: center;
   transform: rotate(180deg);
+}
+
+.footer .top-up:hover {
+  background-color: rgba(37, 8, 110, 0.8);
 }
 
 .footer .top-up.visible {
@@ -2718,6 +2724,15 @@ p.tag-purple {
 
 .popular-articles {
   margin-top: 42px;
+}
+
+.popular-articles .popular-article-title-link {
+  transition: 0.3s all;
+}
+
+.popular-articles .popular-article-title-link:hover {
+  color: #151515;
+  opacity: 0.48;
 }
 
 .popular-articles .popular-article .button {
@@ -3944,6 +3959,15 @@ p.tag-purple {
   margin-bottom: 20px;
 }
 
+.article-item .title-link {
+  transition: 0.3s all;
+}
+
+.article-item .title-link:hover {
+  color: #151515;
+  opacity: 0.45;
+}
+
 .article-item_img {
   overflow: hidden;
   margin-bottom: 10px;
@@ -3964,6 +3988,15 @@ p.tag-purple {
 
 .author-article {
   margin: 20px 0;
+}
+
+.author-article .author-article-title {
+  transition: 0.3s all;
+}
+
+.author-article .author-article-title:hover {
+  color: #151515;
+  opacity: 0.48;
 }
 
 .author-article .article-data p {
@@ -4122,9 +4155,23 @@ p.tag-purple {
   margin-bottom: 15px;
 }
 
-.horizontal-article-item__img {
+.horizontal-article-item .img-link {
   max-width: 30%;
+  margin-right: 20px;
+}
+
+.horizontal-article-item .title-link {
+  transition: 0.3s all;
+}
+
+.horizontal-article-item .title-link:hover {
+  color: #151515;
+  opacity: 0.45;
+}
+
+.horizontal-article-item__img {
   width: 100%;
+  height: 100%;
   border-radius: 3px;
   margin-right: 10px;
   object-fit: cover;
@@ -4241,6 +4288,17 @@ p.tag-purple {
   margin: 0;
 }
 
+.service-item .title-link {
+  margin-bottom: 0;
+  text-decoration: unset;
+  transition: 0.3s all;
+}
+
+.service-item .title-link:hover {
+  color: #151515;
+  opacity: 0.45;
+}
+
 .service-item_title {
   color: #151515;
   font-size: 14px;
@@ -4282,6 +4340,7 @@ p.tag-purple {
   border: 0.4px solid #DDDDDD;
 }
 
+.service-item__image div,
 .service-item__image a {
   max-width: 60%;
   width: 100%;

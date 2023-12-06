@@ -11,12 +11,18 @@ $profitability = get_field('profitability', $postId) ?? 0;
         <div class="service-item_top">
             <div class="service-item__image">
                 <?php if(get_the_post_thumbnail_url($postId)): ?>
-                    <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+                    <a href="<?= get_the_permalink($postId) ?>" style="margin-bottom:0;">
+                        <img src="<?=get_the_post_thumbnail_url($postId)?>" alt="banner mask" crossorigin="main-img"/>
+                    </a>
+                <?php else: ?>
+                    <a href="<?= get_the_permalink($postId) ?>" style="margin-bottom:0;"></a>
                 <?php endif; ?>
                 <img src="<?= get_template_directory_uri() . '/src/img/images/svg/crown.svg'?>" alt="crown" class="crown"/>
             </div>
             <div  class="service-item__right">
-                <p class="service-item_title"><?= get_the_title($postId); ?></p>
+                <a class="title-link" href="<?= get_the_permalink($postId) ?>">
+                    <p class="service-item_title"><?= get_the_title($postId); ?></p>
+                </a>
                 <div class="service-item_top__all-rate">
                     <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="banner mask" crossorigin="main-img"/>
                     <?= do_shortcode('[ratemypost-result id="'.$postId.'"]') ?>

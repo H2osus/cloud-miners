@@ -1,6 +1,14 @@
 .popular-articles {
   margin-top: 42px;
 
+  & .popular-article-title-link {
+    transition: .3s all;
+    &:hover {
+     color: #151515;
+      opacity: .48;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     min-height: 54px;
   }

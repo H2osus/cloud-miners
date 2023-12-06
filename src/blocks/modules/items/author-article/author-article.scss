@@ -11,6 +11,15 @@
     margin-bottom: 24px;
   }
 
+  & .author-article-title {
+    transition: .3s all;
+
+    &:hover {
+      color: #151515;
+      opacity: .48;
+    }
+  }
+
   .article-data {
     p {
       font-size: $font-xs;

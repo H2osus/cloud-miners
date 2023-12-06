@@ -1,6 +1,14 @@
 .article-item {
   margin-bottom: 20px;
 
+  & .title-link {
+    transition: .3s all;
+    &:hover {
+      color: #151515;
+      opacity: 0.45;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
   }
