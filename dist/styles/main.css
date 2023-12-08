@@ -2214,6 +2214,10 @@ p.tag-purple {
   margin: 0 0 12px;
 }
 
+.comment-respond form .comment-form-attachment__label.error {
+  color: #FF0000;
+}
+
 .comment-respond form .comment-form-attachment__file-size-notice {
   display: none !important;
 }
@@ -2546,6 +2550,64 @@ p.tag-purple {
 
 .comment-authorize__right .social-button img {
   width: 8px;
+}
+
+#cancel-comment-reply-link {
+  color: #460BF9;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s all;
+}
+
+#cancel-comment-reply-link:hover {
+  color: rgba(21, 21, 21, 0.58);
+}
+
+.comment-images-prev {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 105%;
+  width: 45vw;
+}
+
+.comment-images-prev span {
+  margin-right: 12px;
+  padding: 2px 6px;
+  background-color: white;
+  border-radius: 5px;
+  width: max-content;
+  margin-bottom: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.clear-image-input-container {
+  width: 100%;
+  margin: 4px 0 0 0;
+}
+
+.clear-image-input {
+  color: #460BF9;
+  font-family: "Commissioner", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.5px;
+  border-radius: 3px;
+  border: 1px solid #460BF9;
+  height: 28px;
+  padding: 0 20px;
+  background: transparent;
+  cursor: pointer;
 }
 
 .comment-author {
@@ -3163,6 +3225,10 @@ p.tag-purple {
 .author__button .facetwp-load-more:hover {
   box-shadow: 0px 0px 24px 0px rgb(70, 11, 249);
   opacity: 0.9;
+}
+
+.author__button .facetwp-load-more.facetwp-hidden {
+  display: none !important;
 }
 
 .best-services {
@@ -6458,6 +6524,22 @@ p.tag-purple {
   }
 
   .comment-respond form .form-submit {
+    justify-content: center;
+  }
+
+  .comment-images-prev {
+    position: relative;
+    top: unset;
+    width: 100%;
+  }
+
+  .comment-images-prev span {
+    max-width: unset;
+  }
+
+  .clear-image-input-container {
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
 

@@ -51,19 +51,61 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
-    // Найти все блоки с классом "comment-rating"
     $(".comment-rating").each(function() {
-        // Извлечь число изнутри <span>
         var ratingValue = parseFloat($(this).find("span").text());
 
-        // Найти все элементы с классом "js-rmp-results-icon" в текущем блоке
         var stars = $(this).find(".js-rmp-results-icon");
 
-        // Добавить классы в соответствии с числом внутри <span>
         stars.each(function(index) {
             if (index < ratingValue) {
                 $(this).addClass("rmp-icon--full-highlight");
             }
         });
+    });
+});
+
+// File input
+
+$('#attachment').change(function() {
+    $('.comment-form-attachment__label').removeClass('error');
+    $('.comment-form-attachment .comment-images-prev').remove();
+    var files = $('#attachment')[0].files;
+
+    var maxFiles = 4;
+
+    if (files.length > maxFiles) {
+        $('#attachment').val('');
+        $('.comment-form-attachment__label').addClass('error');
+        return;
+    }
+});
+
+$(document).ready(function () {
+    $('#attachment').change(function () {
+        var files = $('#attachment')[0].files;
+
+        $('.comment-form-attachment .comment-images-prev').remove();
+
+        if (files.length > 0) {
+            var newImagesPrevBlock = $('<div class="comment-images-prev"></div>');
+
+            for (var i = 0; i < files.length; i++) {
+                var fileName = files[i].name;
+
+                var fileSpan = $('<span title="' + fileName + '">' + fileName + '</span>');
+                newImagesPrevBlock.append(fileSpan);
+            }
+
+            // Add clear button
+            var clearButton = $('<div class="clear-image-input-container"><button class="clear-image-input" type="button">Очистить</button></div>');
+            newImagesPrevBlock.append(clearButton);
+
+            $('.comment-form-attachment').append(newImagesPrevBlock);
+            $('.clear-image-input').on('click', function () {
+                console.log('click')
+                $('#attachment').val(''); // Clear input value
+                newImagesPrevBlock.remove(); // Remove preview block
+            });
+        }
     });
 });

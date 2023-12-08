@@ -122,6 +122,8 @@ if ( post_password_required() ) {
         }
     }
 
+
+
     $comments_args = array(
         // change the title of send button
         'label_submit'=> __('Оставить отзыв', 'cloud_miners'),
@@ -130,7 +132,7 @@ if ( post_password_required() ) {
 			<p class="comment-form-comment">
 				<label for="comment">' . __( 'Ваш Отзыв', 'cloud_miners' ) . '</label>
 				<textarea id="comment" name="comment" cols="60" maxlength="65525" rows="7"></textarea>
-			</p>',
+			</p>'. cancel_comment_reply_link(__( 'Отменить ответ', 'textdomain' )),
         'must_log_in' =>
             '
             <div class="comment-authorize" id="comment-authorize">

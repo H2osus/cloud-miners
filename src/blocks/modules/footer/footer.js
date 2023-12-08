@@ -25,3 +25,19 @@ function setupScrollListener() {
         }
     });
 }
+
+$('.comment-reply-link').click(function() {
+    var rating = $('.rmp-rating-widget');
+    if (rating.length) {
+        $(rating).css('opacity', '0');
+        $(rating).css('pointer-events', 'none');
+    }
+});
+
+$('#cancel-comment-reply-link').click(function() {
+    var rating = $('.rmp-rating-widget');
+    if (rating.length) {
+        $(rating).css('opacity', '1');
+        $(rating).css('pointer-events', 'all');
+    }
+})

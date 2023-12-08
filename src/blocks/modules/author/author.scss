@@ -179,6 +179,10 @@
         box-shadow: 0px 0px 24px 0px rgb(70, 11, 249);
         opacity: 0.9;
       }
+
+      &.facetwp-hidden {
+        display: none !important;
+      }
     }
 
     @media screen and (min-width: 768px) {
