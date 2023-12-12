@@ -1,3 +1,10 @@
+a.green-badge:hover {
+  background-color: rgba(120, 116, 240, 0.3);
+}
+
+a.green-badge.bg-light-bg:hover {
+  background-color: rgba(120, 116, 240, 0.3);
+}
 p.green-badge, p.purple-badge, .green-badge, .purple-badge {
   background-color: transparent;
   padding: 5px 8px 5px 18px;
@@ -9,6 +16,7 @@ p.green-badge, p.purple-badge, .green-badge, .purple-badge {
   color: rgba(21, 21, 21, 0.70);
   font-family: "Commissioner", sans-serif;
   line-height: 150%;
+  transition: .3s all;
 
   &:before {
     content: '';

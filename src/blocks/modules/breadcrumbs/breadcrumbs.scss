@@ -31,6 +31,15 @@
     span {
       font-size: $font-xxs;
       font-weight: 300;
+
+      display: flex;
+      align-items: center;
+
+      & .breadcrumb_last {
+        //max-width: 500px;
+        overflow: hidden;
+        display: block;
+      }
     }
 
     a {
@@ -38,7 +47,7 @@
       color: $black;
       font-size: $font-xxs;
       text-decoration: none;
-      padding: 2px;
+      padding: 2px 4px;
       margin: 0;
       transition: .3s all;
 
@@ -52,8 +61,10 @@
       color: $black;
       font-size: $font-xxs;
       opacity: 0.45;
-      padding: 2px;
+      padding: 2px 4px;
       margin: 0;
+      max-width: 880px;
+      overflow: hidden;
     }
   }
 }

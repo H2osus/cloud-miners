@@ -16,6 +16,11 @@
     display: none;
   }
 
+  & .rmp-results-widget__avg-rating {
+    display: flex;
+    align-items: center;
+  }
+
   & .js-rmp-avg-rating {
     font-size: 10px !important;
     color: #151515;
@@ -55,7 +60,8 @@
 
     &__all-rate {
       display: flex;
-      align-items: flex-end;
+      //align-items: flex-end;
+      align-items: center;
       justify-content: flex-start;
       margin-bottom: 8px;
 

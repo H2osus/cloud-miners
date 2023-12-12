@@ -666,6 +666,7 @@ main {
   margin: 0 4px;
   font-size: 10px;
   color: #151515;
+  opacity: 0.64;
 }
 
 .main {
@@ -696,6 +697,12 @@ p {
   overflow: hidden;
   border-radius: 50%;
   position: relative;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.wptelegram-login-output-wrap:hover {
+  box-shadow: 0px 0px 13px 0px rgba(70, 11, 249, 0.6);
 }
 
 .wptelegram-login-output-wrap::after {
@@ -723,6 +730,12 @@ p {
   margin-bottom: 12px;
   font-weight: 400;
   font-family: "Commissioner", sans-serif;
+  display: block;
+}
+
+.search-content b {
+  word-wrap: break-word;
+  max-width: 880px;
   display: block;
 }
 
@@ -1321,6 +1334,14 @@ ul.list-bordered li:after {
   display: flex;
 }
 
+a.green-badge:hover {
+  background-color: rgba(120, 116, 240, 0.3);
+}
+
+a.green-badge.bg-light-bg:hover {
+  background-color: rgba(120, 116, 240, 0.3);
+}
+
 p.green-badge,
 p.purple-badge,
 .green-badge,
@@ -1335,6 +1356,7 @@ p.purple-badge,
   color: rgba(21, 21, 21, 0.7);
   font-family: "Commissioner", sans-serif;
   line-height: 150%;
+  transition: 0.3s all;
 }
 
 p.green-badge:before,
@@ -4294,6 +4316,11 @@ p.tag-purple {
   display: none;
 }
 
+.service-item .rmp-results-widget__avg-rating {
+  display: flex;
+  align-items: center;
+}
+
 .service-item .js-rmp-avg-rating {
   font-size: 10px !important;
   color: #151515;
@@ -4335,7 +4362,7 @@ p.tag-purple {
 
 .service-item_top__all-rate {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   margin-bottom: 8px;
 }
@@ -5064,6 +5091,13 @@ p.tag-purple {
 .breadcrumbs .breadcrumbs-content span {
   font-size: 10px;
   font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs .breadcrumbs-content span .breadcrumb_last {
+  overflow: hidden;
+  display: block;
 }
 
 .breadcrumbs .breadcrumbs-content a {
@@ -5071,7 +5105,7 @@ p.tag-purple {
   color: #151515;
   font-size: 10px;
   text-decoration: none;
-  padding: 2px;
+  padding: 2px 4px;
   margin: 0;
   transition: 0.3s all;
 }
@@ -5085,8 +5119,10 @@ p.tag-purple {
   color: #151515;
   font-size: 10px;
   opacity: 0.45;
-  padding: 2px;
+  padding: 2px 4px;
   margin: 0;
+  max-width: 880px;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 600px) {

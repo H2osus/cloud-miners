@@ -35,7 +35,7 @@
                     <div class="search-input__container">
 <!--                        <input class="search-input" id="search-input">-->
                         <form role="search" method="get" class="search-form search-form-desc" action="<?php echo home_url( '/' ); ?>">
-                            <input type="search" id="search-input" class="search-input search-field" value="<?php echo get_search_query() ?>" name="s" />
+                            <input type="search" id="search-input" autocomplete="off" class="search-input search-field" value="<?php echo get_search_query() ?>" name="s" />
                         </form>
                         <a href="Javascript:void(0)" class="search-link search-link-desc" id="search-input-button">
                             <img src="<?= get_template_directory_uri() . '/src/img/images/svg/arrow-down-white.svg'?>" alt="banner mask" class=""/>
@@ -66,7 +66,7 @@
                 <div class="search-mobile" id="search-mobile">
                     <div class="search-input__container">
                         <form role="search" method="get" class="search-form search-form-mob" action="<?php echo home_url( '/' ); ?>">
-                            <input type="search" id="search-input" class="search-input search-field" value="<?php echo get_search_query() ?>" name="s" />
+                            <input type="search" id="search-input" autocomplete="off" class="search-input search-field" value="<?php echo get_search_query() ?>" name="s" />
                         </form>
                         <a href="Javascript:void(0)" class="search-link search-link-mob">
                             <img src="<?= get_template_directory_uri() . '/src/img/images/svg/arrow-down.svg'?>" alt="banner mask" class=""/>
