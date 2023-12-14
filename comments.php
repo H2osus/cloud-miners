@@ -132,7 +132,7 @@ if ( post_password_required() ) {
 			<p class="comment-form-comment">
 				<label for="comment">' . __( 'Ваш Отзыв', 'cloud_miners' ) . '</label>
 				<textarea id="comment" name="comment" cols="60" maxlength="65525" rows="7"></textarea>
-			</p>'. cancel_comment_reply_link(__( 'Отменить ответ', 'textdomain' )),
+			</p>',
         'must_log_in' =>
             '
             <div class="comment-authorize" id="comment-authorize">
@@ -150,7 +150,20 @@ if ( post_password_required() ) {
             </div>
             ',
     );
-
+//    cancel_comment_reply_link(__( 'Отменить ответ', 'textdomain' ));
     comment_form($comments_args);
 	?>
 </div><!-- #comments -->
+<script>
+    jQuery(function ($) {
+        $(document).on('click touchstart', '.comment-reply-link', function () {
+            console.log('as');
+            $('#cancel-comment-reply-link').insertAfter('.submit').add('cancel-comment-reply-link').show();
+        });
+
+        $(document).on('click touchstart', '#cancel-comment-reply-link', function () {
+            $(this).hide();
+        });
+    });
+
+</script>

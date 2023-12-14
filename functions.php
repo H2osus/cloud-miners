@@ -459,4 +459,33 @@ add_action( 'wp_footer', function() {
             show_admin_bar(false);
         }
     }
+
+
+//
+
+    add_filter( 'wpcf7_validate_textarea*', 'custom_confirmation_validation_filter', 10, 2 );
+    add_filter( 'wpcf7_validate_textarea', 'custom_confirmation_validation_filter', 10, 2 );
+    add_filter('wpcf7_validate_text*','custom_confirmation_validation_filter', 10, 2);
+    add_filter('wpcf7_validate_text','custom_confirmation_validation_filter', 10, 2);
+    function custom_confirmation_validation_filter( $result, $tag ) {
+        $type = $tag['type'];
+        $name = $tag['name'];
+
+        if (trim($_POST[$name]) === '') {
+            $result->invalidate( $name, wpcf7_get_message( $name ) );
+        }
+
+        $cleaned_value = sanitize_text_field($_POST[$name]);
+        if ($_POST[$name] !== $cleaned_value) {
+            $result->invalidate( $name, wpcf7_get_message( $name ) );
+        }
+
+        if ($name == 'email' && !filter_var($_POST['name'], FILTER_VALIDATE_EMAIL)) {
+            $result->invalidate( $name, wpcf7_get_message( $name ) );
+        }
+
+        return $result;
+    }
+
+
     ?>

@@ -9,7 +9,10 @@
   top: 0;
   left: 0;
 }
-
+.wpcf7-not-valid {
+  border: .6px solid rgba(252, 0, 0, 0.19) !important;
+  box-shadow: 0 0 2px rgba(252, 0, 0, 1);
+}
 .modal {
   position: fixed;
   top: 50%;

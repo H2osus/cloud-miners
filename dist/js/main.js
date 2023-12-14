@@ -164,12 +164,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var modalAddService = document.getElementById("modal-add-service");
 var modalServiceSuccess = document.getElementById("modal-service-success");
-var buttonServiceSuccess = document.getElementById("button-service-success");
 var modalAddComplaint = document.getElementById("modal-add-complaint");
 var modalComplaintSuccess = document.getElementById("modal-complaint-success");
-var buttonComplaintSuccess = document.getElementById("button-modal-complaint-success");
-var modalCommentSuccess = document.getElementById("modal-comment-success");
-var buttonCommentSuccess = document.getElementById("button-comment-success");
 var addService = document.getElementsByClassName("js-add-service");
 var leftComplaint = document.getElementById("left-complaint");
 var leftComplaintMob = document.getElementById("left-complaint-mob");
@@ -219,14 +215,6 @@ for (var _i2 = 0; _i2 < closeModalElements.length; _i2++) {
     body.classList.add("opened");
   });
 }
-
-// buttonCommentSuccess?.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     modalCommentSuccess.classList.add("opened");
-//     modalBg.classList.add("opened");
-//     body.classList.add("opened");
-// });
-
 var wpcf7Elm = document.querySelector("#modal-add-service .wpcf7");
 
 // wpcf7invalid , wpcf7spam , wpcf7mailsent , wpcf7mailfailed , wpcf7submit

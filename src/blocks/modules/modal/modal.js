@@ -1,13 +1,9 @@
 const modalAddService = document.getElementById("modal-add-service");
 const modalServiceSuccess = document.getElementById("modal-service-success");
-const buttonServiceSuccess = document.getElementById("button-service-success");
 
 const modalAddComplaint = document.getElementById("modal-add-complaint");
 const modalComplaintSuccess = document.getElementById("modal-complaint-success");
-const buttonComplaintSuccess = document.getElementById("button-modal-complaint-success");
 
-const modalCommentSuccess = document.getElementById("modal-comment-success");
-const buttonCommentSuccess = document.getElementById("button-comment-success");
 
 const addService = document.getElementsByClassName( "js-add-service");
 
@@ -67,13 +63,6 @@ for (let i = 0; i < closeModalElements.length; i++) {
     });
 }
 
-// buttonCommentSuccess?.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     modalCommentSuccess.classList.add("opened");
-//     modalBg.classList.add("opened");
-//     body.classList.add("opened");
-// });
-
 
 const wpcf7Elm = document.querySelector("#modal-add-service .wpcf7");
 
@@ -118,3 +107,4 @@ addServices.forEach((element) => {
         body.classList.add("opened");
     });
 });
+

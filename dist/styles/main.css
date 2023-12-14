@@ -2584,6 +2584,8 @@ p.tag-purple {
   cursor: pointer;
   font-size: 14px;
   transition: 0.3s all;
+  position: absolute;
+  bottom: -10px;
 }
 
 #cancel-comment-reply-link:hover {
@@ -2600,7 +2602,7 @@ p.tag-purple {
 
 .comment-images-prev span {
   margin-right: 12px;
-  padding: 2px 6px;
+  padding: 2px 26px 2px 6px;
   background-color: white;
   border-radius: 5px;
   width: max-content;
@@ -2610,6 +2612,23 @@ p.tag-purple {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 150px;
+  position: relative;
+}
+
+.remove-image {
+  position: absolute;
+  top: 50%;
+  text-decoration: unset;
+  right: 5px;
+  transform: translate(0, -50%);
+  width: 12px;
+  height: 12px;
+}
+
+.remove-image svg {
+  width: 100%;
+  display: block;
+  height: 100%;
 }
 
 .clear-image-input-container {
@@ -4762,6 +4781,11 @@ p.tag-purple {
   left: 0;
 }
 
+.wpcf7-not-valid {
+  border: 0.6px solid rgba(252, 0, 0, 0.19) !important;
+  box-shadow: 0 0 2px rgb(252, 0, 0);
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -6561,6 +6585,10 @@ p.tag-purple {
 
   .comment-respond form .form-submit {
     justify-content: center;
+  }
+
+  #cancel-comment-reply-link {
+    bottom: 0;
   }
 
   .comment-images-prev {
