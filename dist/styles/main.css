@@ -1549,6 +1549,57 @@ p.tag-purple {
   align-items: center;
 }
 
+.header .menu-item-has-children {
+  position: relative;
+}
+
+.header .menu-item-has-children:hover > .sub-menu {
+  display: block;
+}
+
+.header .sub-menu {
+  position: absolute;
+  display: none;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #F3F6FB;
+  padding: 24px 16px;
+}
+
+.header .sub-menu li {
+  margin: 0;
+  margin: 0 0 11px;
+}
+
+.header .sub-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.header .sub-menu a {
+  height: auto;
+  display: block;
+  line-height: normal;
+  color: #151515 !important;
+}
+
+.header .sub-menu div {
+  color: #151515 !important;
+}
+
+.header .sub-menu::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 0;
+  transform: translate(-50%, 0);
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 12px solid #F3F6FB;
+}
+
 .header a,
 .header p {
   margin-bottom: 0;

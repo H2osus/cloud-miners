@@ -7,6 +7,57 @@
   display: flex;
   align-items: center;
 
+  .menu-item-has-children {
+    position: relative;
+  }
+
+  .menu-item-has-children:hover > .sub-menu {
+    display: block;
+  }
+
+  .sub-menu {
+    position: absolute;
+    display: none;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #F3F6FB;
+    padding: 24px 16px;
+
+    & li {
+      margin: 0;
+      margin: 0 0 11px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    & a {
+      height: auto;
+      display: block;
+      line-height: normal;
+      color: #151515 !important;
+    }
+
+    & div {
+      color: #151515 !important;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      width: 0;
+      transform: translate(-50%, 0);
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 12px solid #F3F6FB;
+    }
+  }
+
   a,p {
     margin-bottom: 0;
   }
