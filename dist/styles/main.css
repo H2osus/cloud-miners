@@ -2827,6 +2827,10 @@ p.tag-purple {
   font-size: 12px;
 }
 
+.services .service-item .service-item__image {
+  min-width: 64px;
+}
+
 .services .service-item .button {
   font-size: 12px;
 }
@@ -2853,6 +2857,10 @@ p.tag-purple {
 
 .sidebar .service-item .button {
   font-size: 12px;
+}
+
+.sidebar .service-item .service-item__image {
+  min-width: 64px;
 }
 
 .sidebar__button {
@@ -4491,6 +4499,7 @@ p.tag-purple {
 }
 
 .service-item__image {
+  min-width: 64px;
   width: 64px;
   height: 64px;
   background-color: #FFFFFF;

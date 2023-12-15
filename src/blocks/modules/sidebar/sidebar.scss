@@ -28,6 +28,10 @@
       font-size: 12px;
 
     }
+
+    & .service-item__image {
+      min-width: 64px;
+    }
   }
 
   &__button {
