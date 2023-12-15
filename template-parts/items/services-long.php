@@ -21,7 +21,13 @@ $profitability = get_field('profitability', $postId) ?? 0;
             </div>
             <div  class="service-item__right">
                 <a class="title-link" href="<?= get_the_permalink($postId) ?>">
-                    <p class="service-item_title"><?= get_the_title($postId); ?></p>
+                    <?php
+                    $trimmedTitle = mb_substr(get_the_title($postId), 0, 38, 'UTF-8');
+                    if (mb_strlen(get_the_title($postId), 'UTF-8') > 38) {
+                        $trimmedTitle .= '...';
+                    }
+                    ?>
+                    <p class="service-item_title"><?= esc_html($trimmedTitle) ?></p>
                 </a>
                 <div class="service-item_top__all-rate">
                     <img src="<?= get_template_directory_uri() . '/src/img/images/svg/star.svg'?>" alt="banner mask" crossorigin="main-img"/>
