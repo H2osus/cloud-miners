@@ -1553,6 +1553,17 @@ p.tag-purple {
   position: relative;
 }
 
+.header .menu-item-has-children .sub-menu .menu-item-has-children .sub-menu {
+  left: 100%;
+  transform: translate(0, -50%);
+}
+
+.header .menu-item-has-children .sub-menu .menu-item-has-children .sub-menu::after {
+  top: 50%;
+  left: -2px;
+  transform: translate(-50%, 0) rotate(-90deg);
+}
+
 .header .menu-item-has-children:hover > .sub-menu {
   display: block;
 }
@@ -1565,6 +1576,7 @@ p.tag-purple {
   transform: translate(-50%, 0);
   background-color: #F3F6FB;
   padding: 24px 16px;
+  transition: display 0.5s ease;
 }
 
 .header .sub-menu li {
@@ -1581,10 +1593,14 @@ p.tag-purple {
   display: block;
   line-height: normal;
   color: #151515 !important;
+  padding: 0;
+  width: max-content;
 }
 
 .header .sub-menu div {
   color: #151515 !important;
+  padding: 0;
+  width: max-content;
 }
 
 .header .sub-menu::after {
