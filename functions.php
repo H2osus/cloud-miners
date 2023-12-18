@@ -477,13 +477,13 @@ add_action( 'wp_footer', function() {
             $result->invalidate( $name, 'Пожалуйста, заполните это поле' );
         }
 
-        $cleaned_value = sanitize_text_field($_POST[$name]);
-        if ($_POST[$name] !== $cleaned_value) {
-            $result->invalidate( $name, 'Поле содержит ошибки' );
+        if ($name == 'email' && !filter_var($_POST[$name], FILTER_VALIDATE_EMAIL)) {
+            $result->invalidate( $name, 'Поле Email содержит некорректные символы' );
         }
 
-        if ($name == 'email' && !filter_var($_POST['name'], FILTER_VALIDATE_EMAIL)) {
-            $result->invalidate( $name, 'Поле Email содержит некорректные символы' );
+        $cleaned_value = sanitize_text_field($_POST[$name]);
+        if ($name !== 'link' && $_POST[$name] !== $cleaned_value) {
+            $result->invalidate( $name, 'Поле содержит ошибки' );
         }
 
         return $result;
