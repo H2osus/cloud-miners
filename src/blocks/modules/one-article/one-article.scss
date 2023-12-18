@@ -4,6 +4,12 @@
     list-style: auto;
   }
 
+  & p {
+    & div {
+      display: inline;
+    }
+  }
+
   img {
     max-width: 100%;
     width: 100%;

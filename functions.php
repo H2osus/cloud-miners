@@ -209,11 +209,13 @@ function cloud_miners_comment ( $comment, $args, $depth ){
             </div>
             <?php if($comment->comment_parent !== '0'):
                 $comment_text = get_comment_text($comment->comment_parent);
-                $trimmed_text = strlen($comment_text) > 50 ? substr($comment_text, 0, 50) . '...' : $comment_text;
+                $trimmed_text = strlen($comment_text) > 51 ? substr($comment_text, 0, 51) . '...' : $comment_text;
+                $comment_ready_text = preg_replace('/[^\p{L}\p{N}\s]/u', '', $trimmed_text);
+
                 ?>
             <span class="reply-of-comment">
                 <?= esc_html__('В ответ на ','cloud_miners') ?>
-                <?= esc_html($trimmed_text); ?>
+                <?= $trimmed_text; ?>
             </span>
             <?php endif; ?>
             <p class="comment-content"><?= get_comment_text(get_comment_ID()); ?></p>

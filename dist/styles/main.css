@@ -3523,8 +3523,9 @@ p.tag-purple {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 375px;
-  width: 100%;
+  margin: 0 0 20px;
+  width: auto;
+  max-width: 100%;
 }
 
 .one-service__title-left span {
@@ -3740,6 +3741,7 @@ p.tag-purple {
 
 .one-service__title {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
@@ -3830,6 +3832,10 @@ p.tag-purple {
   line-height: 140%;
   color: #151515;
   margin-bottom: 12px;
+}
+
+.one-service__content p div {
+  display: inline;
 }
 
 .one-service__content ul {
@@ -4006,6 +4012,10 @@ p.tag-purple {
 
 .one-article ol {
   list-style: auto;
+}
+
+.one-article p div {
+  display: inline;
 }
 
 .one-article img {

@@ -2,28 +2,28 @@
     <div class="one-service__title">
         <div class="one-service__title-left">
             <span><?= get_the_title() ?></span>
-            <div class="social-buttons">
-                <?php
-                $facebook_net = get_field('facebook_net', get_the_ID()) ?? 0;
-                $instagram_net = get_field('instagram_net', get_the_ID()) ?? 0;
-                $linkedin_net = get_field('linkedin_net', get_the_ID()) ?? 0;
-                ?>
-                <?php if ($facebook_net !== 0) : ?>
-                    <a href="<?php echo esc_url($facebook_net); ?>" target="_blank" class="social-button" rel="nofollow">
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/facebook.svg'?>" alt="Facebook" />
-                    </a>
-                <?php endif; ?>
-                <?php if ($instagram_net !== 0) : ?>
-                    <a href="<?php echo esc_url($instagram_net); ?>" target="_blank" class="social-button" rel="nofollow">
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/instagram.svg'?>" alt="Instagram" />
-                    </a>
-                <?php endif; ?>
-                <?php if ($linkedin_net !== 0) : ?>
-                    <a href="<?php echo esc_url($linkedin_net); ?>" target="_blank" class="social-button" rel="nofollow">
-                        <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="LinkedIn" />
-                    </a>
-                <?php endif; ?>
-            </div>
+        </div>
+        <div class="social-buttons">
+            <?php
+            $facebook_net = get_field('facebook_net', get_the_ID()) ?? 0;
+            $instagram_net = get_field('instagram_net', get_the_ID()) ?? 0;
+            $linkedin_net = get_field('linkedin_net', get_the_ID()) ?? 0;
+            ?>
+            <?php if ($facebook_net !== 0) : ?>
+                <a href="<?php echo esc_url($facebook_net); ?>" target="_blank" class="social-button" rel="nofollow">
+                    <img src="<?= get_template_directory_uri() . '/src/img/images/svg/facebook.svg'?>" alt="Facebook" />
+                </a>
+            <?php endif; ?>
+            <?php if ($instagram_net !== 0) : ?>
+                <a href="<?php echo esc_url($instagram_net); ?>" target="_blank" class="social-button" rel="nofollow">
+                    <img src="<?= get_template_directory_uri() . '/src/img/images/svg/instagram.svg'?>" alt="Instagram" />
+                </a>
+            <?php endif; ?>
+            <?php if ($linkedin_net !== 0) : ?>
+                <a href="<?php echo esc_url($linkedin_net); ?>" target="_blank" class="social-button" rel="nofollow">
+                    <img src="<?= get_template_directory_uri() . '/src/img/images/svg/linkedin.svg'?>" alt="LinkedIn" />
+                </a>
+            <?php endif; ?>
         </div>
         <div class="one-service__title-red" id="left-complaint">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
