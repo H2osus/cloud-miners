@@ -4899,8 +4899,15 @@ p.tag-purple {
   font-family: "Commissioner", sans-serif;
 }
 
+.modal .wpcf7-form-control-wrap {
+  display: block;
+}
+
 .modal .wpcf7-not-valid-tip {
-  display: none;
+  position: absolute;
+  line-height: normal;
+  font-size: 10px;
+  bottom: -15px;
 }
 
 .modal__close {

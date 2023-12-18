@@ -474,16 +474,16 @@ add_action( 'wp_footer', function() {
         $name = $tag['name'];
 
         if (trim($_POST[$name]) === '') {
-            $result->invalidate( $name, wpcf7_get_message( $name ) );
+            $result->invalidate( $name, 'Пожалуйста, заполните это поле' );
         }
 
         $cleaned_value = sanitize_text_field($_POST[$name]);
         if ($_POST[$name] !== $cleaned_value) {
-            $result->invalidate( $name, wpcf7_get_message( $name ) );
+            $result->invalidate( $name, 'Поле содержит ошибки' );
         }
 
         if ($name == 'email' && !filter_var($_POST['name'], FILTER_VALIDATE_EMAIL)) {
-            $result->invalidate( $name, wpcf7_get_message( $name ) );
+            $result->invalidate( $name, 'Поле Email содержит некорректные символы' );
         }
 
         return $result;

@@ -39,8 +39,15 @@
   @media screen and (min-width: 768px) {
     max-width: 40%;
   }
+  & .wpcf7-form-control-wrap {
+    display: block;
+  }
   & .wpcf7-not-valid-tip {
-    display: none;
+    //display: none;
+    position: absolute;
+    line-height: normal;
+    font-size: 10px;
+    bottom: -15px;
   }
   &__close {
     position: absolute;
