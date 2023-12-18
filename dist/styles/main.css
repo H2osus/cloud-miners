@@ -4010,6 +4010,9 @@ p.tag-purple {
 
 .one-article img {
   max-width: 100%;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }
 
 .one-article span {
