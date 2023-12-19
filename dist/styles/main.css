@@ -4010,6 +4010,46 @@ p.tag-purple {
   margin-right: 4px;
 }
 
+.one-article h2 {
+  margin-top: 60px;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.one-article h2::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #460BF9;
+  display: block;
+  z-index: 2;
+}
+
+.one-article h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #460BF9;
+  display: block;
+  opacity: 0.15;
+  z-index: 1;
+}
+
 .one-article ol {
   list-style: auto;
 }
@@ -4018,7 +4058,7 @@ p.tag-purple {
   display: inline;
 }
 
-.one-article img {
+.one-article img.main-img {
   max-width: 100%;
   width: 100%;
   max-height: 400px;

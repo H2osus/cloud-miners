@@ -1,8 +1,8 @@
 <div class="one-article">
     <?php if(get_the_post_thumbnail_url(get_the_ID())): ?>
-        <img src="<?= get_the_post_thumbnail_url(get_the_ID()) ?>" alt="look"/>
+        <img class="main-img" src="<?= get_the_post_thumbnail_url(get_the_ID()) ?>" alt="look"/>
     <?php else: ?>
-        <img src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="look"/>
+        <img class="main-img" src="<?= get_template_directory_uri() . '/src/img/images/img-3.png'?>" alt="look"/>
     <?php endif; ?>
     <span><?= the_title() ?></span>
     <div class="one-article__date-time">
@@ -32,11 +32,18 @@
         </div>
     </div>
 
-
+    <div class="service-navigation" id="service-navigation">
+        <div class="open-navigation" id="open-navigation">
+            <div class="open-navigation__left">
+                <img src="<?= get_template_directory_uri() . '/src/img/images/svg/nav.svg'?>" alt="" />
+                <p><?= esc_html__('Навигация', 'cloud_miners') ?></p>
+            </div>
+            <img src="<?= get_template_directory_uri() . '/src/img/images/svg/arrow-small.svg'?>" alt="" class="open-navigation__arrow"/>
+        </div>
+            <ul class="list-bordered">
+            </ul>
+    </div>
 
     <?= the_content(); ?>
-
-
-
 
 </div>
